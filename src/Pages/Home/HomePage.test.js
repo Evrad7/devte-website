@@ -2,6 +2,8 @@ import React from 'react';
 import Container  from '@mui/material/Container';
 import GridHexagon from '../../Components/Layout/GridHexagon/GridHexagon.layout';
 import { technoligies } from '../../services/data';
+import { Box } from '@mui/material';
+import GridDrowned from '../../Components/Layout/GridDrowned/GridDrowned.layout';
 
 
 const HomePageTest = (props) => {
@@ -20,12 +22,11 @@ const HomePageTest = (props) => {
   // on filtre toutes les technoligies utilisées pour l'inphographie'
   // const allTechnoligies=technoligies.filter(item=>item.infogaphy)
 
-
-
-
+  
     return (
-      <Container maxWidth="xxl" sx={{backgroundColor:"light.main", px:0}}>
-            <GridHexagon items={allTechnoligies}/>         
+      <Container maxWidth="xxl" sx={{backgroundColor:"light.main", px:0, py:10, height:"100vh"}} style={{paddingLeft:0, paddingRight:0}}>
+            {/* <GridHexagon items={allTechnoligies}/>          */}
+            <GridDrowned/>
       </Container>
      
     );

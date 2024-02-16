@@ -4,6 +4,7 @@ const theme=createTheme({
     palette:{
         primary:{
             main:"#10355b",
+            gradient:"linear-gradient(to bottom, #10355B, #030b12)",
         },
         secondary:{
             main:"#707070",

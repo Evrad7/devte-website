@@ -23,23 +23,28 @@ const StyledHexagon=styled(Hexagon)(({theme})=>({
         
     }
 }))
-const StyledText=styled(Text)(({theme, size})=>({
+const StyledText=styled(Text, {shouldForwardProp:prop=>prop!=="size"})(({theme, size})=>({
     fontSize:size>40?16:10,
     fill:theme.palette.dark.main,
     stroke:"none",
 }))
 
-const StyledBoxHexagon=styled(Box)(({theme})=>({
+const StyledBoxHexagon=styled(Box)(()=>({
     position:"relative",
 
 }))
-const StyledHexGrid=styled(HexGrid)(({theme, size})=>({
+const StyledHexGrid=styled(HexGrid, {shouldForwardProp:prop=>prop!=="size"})(({size})=>({
     "& > g ":{
-        transform:"translateX(50%)",
+        "-webkit-transform":"translateX(50%)",
     },
-    "&  svg":{
-        transform:`translate(-${size/4}px, -${size/2}px) scale(${size/80})`,
+    
+    "&  g.tech":{
+        fill:"initial",
+        stroke:"initial",
+        "-webkit-transform":`translate(-${size/4}px, -${size/2}px) scale(${size/70})`,
 
-    }
+    },
+   
+    
 }))
 export {StyledHexagon, StyledText, StyledBoxHexagon, StyledHexGrid}

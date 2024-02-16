@@ -3,76 +3,46 @@ import React from "react";
 import {  Layout } from 'react-hexgrid';
 import { StyledHexGrid, StyledHexagon, StyledText} from "./GridHexagon.style";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 
 
 const GridHexagon=({items})=>{
-    const matchesBreakpoint1=useMediaQuery("(max-width:1430px)")
-    const matchesBreakpoint2=useMediaQuery("(max-width:1225px)")
-    const matchesBreakpoint3=useMediaQuery("(max-width:1070px)")
-    const matchesBreakpoint4=useMediaQuery("(max-width:850px)")
-    const matchesBreakpoint5=useMediaQuery("(max-width:700px)")
-    const matchesBreakpoint6=useMediaQuery("(max-width:500px)")
-    const matchesBreakpoint7=useMediaQuery("(max-width:428px)")
-    const matchesBreakpoint8=useMediaQuery("(max-width:360px)")
-    const matchesBreakpoint9=useMediaQuery("(max-width:310px)")
+    const {width}=useWindowDimensions()
+    const matchesBreakpoint1=useMediaQuery("(max-width:700px)")
+    const matchesBreakpoint2=useMediaQuery("(max-width:500px)")
+    const matchesBreakpoint3=useMediaQuery("(max-width:428px)")
+    const matchesBreakpoint4=useMediaQuery("(max-width:360px)")
+    const matchesBreakpoint5=useMediaQuery("(max-width:310px)")
     var maxItems=0
     var numberItemReducing=3
     var maxNumberInLine=9
-    var xSize=90
-    var ySize=90
-    if (matchesBreakpoint9){
-        xSize=30
-        ySize=30
+    if (matchesBreakpoint5){
         maxNumberInLine=5
         numberItemReducing=1
         maxItems=16
     }
-    else if (matchesBreakpoint8){
-        xSize=35
-        ySize=35
+    else if (matchesBreakpoint4){
         maxNumberInLine=5
         numberItemReducing=1
        maxItems=16
     }
-    else if (matchesBreakpoint7){
-        xSize=40
-        ySize=40
+    else if (matchesBreakpoint3){
         maxNumberInLine=5
         numberItemReducing=1
         maxItems=16
 
     }
-    else if(matchesBreakpoint6){
-        xSize=40
-        ySize=40
+    else if(matchesBreakpoint2){
         maxNumberInLine=6
         numberItemReducing=1
     }
-    else if (matchesBreakpoint5){
-        xSize=40
-        ySize=40
+    else if (matchesBreakpoint1){
         maxNumberInLine=7
         numberItemReducing=1
-
-
     }
-    else if (matchesBreakpoint4){
-        xSize=40
-        ySize=40
-    }
-    else if (matchesBreakpoint3){
-        xSize=50
-        ySize=50
-    }
-    else if (matchesBreakpoint2){
-        xSize=65
-        ySize=65
-    }
-    else if (matchesBreakpoint1){
-        xSize=75
-        ySize=75
-    }
+    const xSize=parseInt((width)/(maxNumberInLine*1.78))
+    const ySize=xSize
   
     if (maxItems){
         items=items.filter(item=>!item.optional).slice(0, maxItems-1)
@@ -117,6 +87,7 @@ const GridHexagon=({items})=>{
 ) 
     return (
         <Box>
+            <h1>{width}</h1>
           <StyledHexGrid size={xSize}  width="100%"  height={ySize*((r+1)*2.1)} viewBox={`0 0 100 ${ySize*((r+1)*2.1)}`}>
           <Layout style={{transform:"translateX(50%)"}} size={{ x:xSize , y:ySize }} flat={false} spacing={1.025} origin={{ x:startWithEvenItems?35:0, y: ySize+4}}>
             {Hexagons}
