@@ -1,0 +1,62 @@
+
+.bloc {
+    border: 2px solid #000;
+    padding: 10px;
+    position: relative;
+    width: 20%;
+    margin: auto;
+  }
+  
+  .item{
+   color:'#003366';
+   display: flex;
+   flex-direction: column;
+  }
+
+  .cont{
+    display: flex;
+    position: relative;
+    height: 250px;
+  }
+
+  .cont2{
+    display: flex;
+    position: relative;
+    height: 250px;
+    margin-top: 50px;
+  }
+
+  .txt{
+    color:#003366;
+    font-size:30px;
+    font-weight:bold
+  }
+
+  .ex{
+    color: #003366;
+    font-size: 30px;
+  }
+
+  .perience{
+    position:absolute;
+    right:-150px;
+    color: #003366;
+    font-size: 30px;
+  }
+
+  .ex2{
+    color: #003366;
+    font-size: 30px;
+    position:absolute;
+    bottom: 0;
+    left: -110px;
+  }
+
+  .perience2{
+    position:absolute;
+    right:-70px;
+    color: #003366;
+    font-size: 35px;
+    bottom: 0;
+  }
+

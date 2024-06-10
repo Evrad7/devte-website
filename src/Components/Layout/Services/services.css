@@ -1,0 +1,25 @@
+.back-color{
+    background: black; /* Fallback color */
+    background: linear-gradient(to top, black, #003366); /* Dégradé de couleur */
+    height: 'auto';
+  }
+
+
+  .txt-agile{
+    color: white;
+    text-align: center;
+    margin: auto;
+    text-decoration: line-through;
+    text-decoration-color: black;
+    text-decoration-thickness:2px ;
+  }
+
+.start{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  bottom: -50px;
+  right: -50px;
+}
+  
+  
