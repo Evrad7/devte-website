@@ -20,14 +20,14 @@ const Qualité =()=>{
                   height: 'auto',
                   width: 300,
                   borderRadius: '10px',
-                  position: 'relative'
-                 
+                  position: 'relative',
+                  padding:'1px 15px 1px 15px'
                 }}
               >
                   <div className="item">
                     <div className="icon">
                          <CloudSync style={{fontSize:'50px',color:'#003366'}}/>&nbsp;&nbsp;&nbsp;
-                         <h3 style={{color:'#003366'}}>DIGITALISATION</h3>
+                         <h3 style={{color:'#003366'}}>DIGITALISATION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
                     </div>
                 </div>
 
@@ -48,13 +48,14 @@ const Qualité =()=>{
                     height: 'auto',
                     width: 300,
                     borderRadius: '10px',
-                    position: 'relative'
+                    position: 'relative',
+                     padding:'1px 15px 1px 15px'
                 }}
               >
               <div className="item">
                     <div className="icon">
                          <Grain style={{fontSize:'50px',color:'#003366'}}/> &nbsp;&nbsp;&nbsp;
-                         <h3 style={{color:'#003366'}}>INNOVATION</h3>
+                         <h3 style={{color:'#003366'}}>INNOVATION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
                     </div>
                 </div>
 
@@ -75,13 +76,14 @@ const Qualité =()=>{
                     height: 'auto',
                     width: 300,
                     borderRadius: '10px',
-                    position: 'relative'
+                    position: 'relative',
+                     padding:'1px 15px 1px 15px'
                 }}
               >
                <div className="item">
                     <div className="icon">
                          <Diversity1 style={{fontSize:'50px',color:'#003366'}}/>&nbsp;&nbsp;&nbsp;
-                         <h3 style={{color:'#003366'}}>FLEXIBILITE</h3>
+                         <h3 style={{color:'#003366'}}>FLEXIBILITE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
                     </div>
                 </div>
 

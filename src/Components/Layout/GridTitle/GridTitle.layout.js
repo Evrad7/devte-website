@@ -20,7 +20,7 @@ const GridTitle =() =>{
                   <h1 className="txt-item">DEVELOPPEMENT DES SITE <br></br> APPLICATION WEB ET MOBILE</h1>
                   <p className="txt-description">
                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, maxime. Autem tempore, minus sequi debitis eligendi fugiat maiores nostrum, quasi dolorum hic iure, inventore a sed error incidunt porro repellendus!
-                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, maxime. Autem tempore, minus sequi debitis eligendi fugiat maiores nostrum, quasi dolorum hic iure, inventore a sed error incidunt porro repellendus!
+                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                   </p>
                   
                </div>
