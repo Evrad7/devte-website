@@ -8,6 +8,13 @@ import Button from '@mui/material/Button';
 import Container  from '@mui/material/Container';
 import Log from "../../assets/img/log.png"
 import Banner from "../../assets/img/banner.jpg"
+import LandingComponent from '../../Components/Layout/LandingComponent/LandingComponent.layout';
+import { Box } from '@mui/material';
+import { useTheme } from '@emotion/react';
+import { MouseFollower, UpdateFollower } from 'react-mouse-follower';
+import zIndex from '@mui/material/styles/zIndex';
+import Separator from '../../Components/Layout/Separator/Separator.layout';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -17,42 +24,47 @@ const Img = styled('img')({
 });
 
 const HomePage = (props) => {
+  // const {height}=useWindowDimensions()
+    const theme=useTheme()
     return (
-      <Container maxWidth="xxl" sx={{backgroundColor:"light.main", px:0}}>
+      <div>
+          <MouseFollower  />
           <Header/>
-          <img src={Banner} alt='Devte banner' style={{width:"100%", height:"700px"}}/>
-          <Paper
-            elevation={0}
-            sx={{
-              p: 2,
-              margin: 'auto',
-              maxWidth: '90%',
-              flexGrow: 1,
-              backgroundColor: (theme) =>
-                theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-            }}
-          >
-            <Grid sx={{backgroundColor:"light.main"}} container spacing={2}>
+          <Box sx={{
+            top:0,
+            left:0,
+            right:0,
+            bottom:0,
+            position:"absolute",
+            overflowX:"hidden",
+            overflowY:"auto", 
+            perspective:50,
+            transformStyle:"preserve-3d",
+            }}>
+            <LandingComponent/> 
+            <UpdateFollower style={{ position:"relative", zIndex:10000}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
+              <Separator direction="top"/>
+              <Box sx={{backgroundColor:theme.palette.light.main}}>
+
+                  <Button color={"info"} variant="contained">Evrad 7 le meilleur</Button>
+                <Footer/>
+
+              <Box sx={{marginTop:"200px", height:400, backgroundColor:theme.palette.primary.main, display:"flex", flexDirection:"column", justifyContent:"space-between"}}>
+              <Separator direction="bottom"/>
+              <Separator direction="top"/>
+
+
+              </Box>
               
-              <Grid item xs={12} sm container>
-                <Grid item xs container direction="column" spacing={2}>
-                  <h1>.</h1>
-                  <h1 style={{fontWeight:'bold',color:'#003366'}}>DevteStartup</h1>
-                  <h2>Le train du developpement et de l'inovation techonologique . nous somme une agence digital de developpement de logiciel.</h2>
-                  <Button variant="contained" style={{backgroundColor:"#003366" ,height:'60px',width:'40%'}} disableElevation>
-                      About Us
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Img width={500} height={500} src={Log}/>
-                </Grid>
-              </Grid>
-            </Grid>
-    </Paper>
-            <Button color={"info"} variant="contained">Evrad 7 le meilleur</Button>
-          <Footer/>
+              
+              </Box>
+            </UpdateFollower>
+          </Box>
+           
+         
+         
                  
-    </Container>
+    </div>
      
     );
   

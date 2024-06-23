@@ -12,8 +12,11 @@ const  App=()=>(
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Routes>
-          <Route  path="/" element={<HomePage/>}/>
-          <Route path="/test" element={<HomePageTest/>}/>
+            <Route  path="/" element={<HomePage/>}/>
+            <Route  path="/services" element={<HomePage/>}/>
+            <Route  path="/about" element={<HomePage/>}/>
+            <Route  path="/contact" element={<HomePageTest/>}/>
+            <Route path="/test" element={<HomePageTest/>}/>         
         </Routes>
     </BrowserRouter>
     </ThemeProvider>

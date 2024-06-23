@@ -1,10 +1,22 @@
 import { createTheme } from "@mui/material";
 
 const theme=createTheme({
+    typography: {
+        fontFamily: [
+          "'Exo'",
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+        ].join(','),
+      },
     palette:{
         primary:{
             main:"#10355b",
-            gradient:"linear-gradient(to bottom, #10355B, #030b12)",
+            gradientToBottom:"linear-gradient(to bottom, #10355B, #030b12)",
+            gradientToTop:"linear-gradient(to top, #10355B, #030b12)",
         },
         secondary:{
             main:"#707070",

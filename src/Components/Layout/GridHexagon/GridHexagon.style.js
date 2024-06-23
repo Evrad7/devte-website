@@ -24,7 +24,7 @@ const StyledHexagon=styled(Hexagon)(({theme})=>({
     }
 }))
 const StyledText=styled(Text, {shouldForwardProp:prop=>prop!=="size"})(({theme, size})=>({
-    fontSize:size>40?16:10,
+    fontSize:size>45?16:9.7,
     fill:theme.palette.dark.main,
     stroke:"none",
 }))

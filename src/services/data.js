@@ -44,26 +44,25 @@ var technoligies=[
     },
     {
         name:"Java",
-        svg:
-        <g className="tech" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="45" height="57" viewBox="0 0 18.816 24.154">
-          <defs>
-            <clipPath id="clip-path">
-              <path id="Tracé_901" data-name="Tracé 901" d="M690,289.5h8.262v17.419H690Zm0,0" transform="translate(-690 -289.5)"/>
-            </clipPath>
-          </defs>
-          <g id="icon_java" transform="translate(-610.481 -289.5)">
-            <path id="Tracé_896" data-name="Tracé 896" d="M637.86,485.937c5.818,2.041,10.6-.92,9.1-2.393a.973.973,0,0,1-.453,1.3c-1.647,1.081-6.855,1.4-8.3.043-.52-.49.456-1.17.762-1.312a.972.972,0,0,1,.5-.122C638.886,482.575,635.726,485.188,637.86,485.937Zm0,0" transform="translate(-22.979 -174.485)" fill="#4e7d9d"/>
-            <path id="Tracé_897" data-name="Tracé 897" d="M686,496.883s-.392,1.019-4.633,1.829a45.5,45.5,0,0,1-14.183.221s.718.6,4.4.84C677.185,500.136,685.793,499.571,686,496.883Zm0,0" transform="translate(-56.699 -186.218)" fill="#4e7d9d"/>
-            <path id="Tracé_898" data-name="Tracé 898" d="M683.935,442.4a24.833,24.833,0,0,1-8.317.4c-2.035-.214-.7-1.215-.7-1.215-5.271,1.772,2.934,3.785,10.3,1.6A3.687,3.687,0,0,1,683.935,442.4Zm0,0" transform="translate(-59.338 -136.483)" fill="#4e7d9d"/>
-            <path id="Tracé_899" data-name="Tracé 899" d="M767.926,419.435a.513.513,0,0,1-.117.155c7.8-2.078,4.932-7.325,1.2-6a1.074,1.074,0,0,0-.5.391,4.423,4.423,0,0,1,.668-.181C771.066,413.4,773.765,416.36,767.926,419.435Zm0,0" transform="translate(-147.141 -111.799)" fill="#4e7d9d"/>
-            <g id="Groupe_243" data-name="Groupe 243" transform="translate(615.743 289.5)" clip-path="url(#clip-path)">
-              <path id="Tracé_900" data-name="Tracé 900" d="M691.317,299.525c-1.451,2.209.713,4.582,3.662,7.28-1.15-2.634-5.051-4.941,0-8.986,6.3-5.042,3.067-8.32,3.067-8.32C699.354,294.708,693.448,296.28,691.317,299.525Zm0,0" transform="translate(-690.737 -289.5)" fill="#f2941b"/>
-            </g>
-            <path id="Tracé_902" data-name="Tracé 902" d="M727.935,336.293s-10.655,2.7-5.565,8.64c1.5,1.752-.395,3.329-.395,3.329s3.812-1.995,2.061-4.492C722.4,341.44,721.145,340.284,727.935,336.293Zm0,0" transform="translate(-103.571 -42.782)" fill="#f2941b"/>
-            <path id="Tracé_903" data-name="Tracé 903" d="M681.456,466.664c-4.785,1.355,2.911,4.156,9,1.51a11.233,11.233,0,0,1-1.713-.849,17.506,17.506,0,0,1-6.444.277C680.266,467.366,681.456,466.664,681.456,466.664Zm0,0" transform="translate(-65.347 -160.16)" fill="#4e7d9d"/>
-            <path id="Tracé_904" data-name="Tracé 904" d="M669.509,417.481a9.8,9.8,0,0,1,1.424-.771s-2.351.427-4.692.627a42.006,42.006,0,0,1-7.483.082c-3.654-.494,2-1.856,2-1.856a10.586,10.586,0,0,0-4.9,1.173C652.668,418.3,663.767,419.013,669.509,417.481Zm0,0" transform="translate(-43.227 -113.158)" fill="#4e7d9d"/>
+        svg:<g className="tech" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="29.868" height="49.871" viewBox="0 0 29.868 49.871">
+        <defs>
+          <clipPath id="clip-path">
+            <path id="Tracé_901" data-name="Tracé 901" d="M690,289.5h17.059v35.966H690Zm0,0" transform="translate(-690 -289.5)"/>
+          </clipPath>
+        </defs>
+        <g id="icon_java" transform="translate(-610.481 -289.5)">
+          <path id="Tracé_896" data-name="Tracé 896" d="M638.638,488.769c12.012,4.215,21.9-1.9,18.779-4.94a2.01,2.01,0,0,1-.936,2.69c-3.4,2.231-14.153,2.9-17.139.09-1.073-1.013.941-2.416,1.573-2.709a2.007,2.007,0,0,1,1.039-.252C640.757,481.827,634.232,487.222,638.638,488.769Zm0,0" transform="translate(-22.856 -153.945)" fill="#4e7d9d"/>
+          <path id="Tracé_897" data-name="Tracé 897" d="M697.048,496.883s-.622,2.1-7.354,3.776a55.765,55.765,0,0,1-22.514.455s1.139,1.24,6.986,1.735C683.062,503.6,696.725,502.434,697.048,496.883Zm0,0" transform="translate(-56.699 -163.683)" fill="#4e7d9d"/>
+          <path id="Tracé_898" data-name="Tracé 898" d="M687.3,443.259a21.086,21.086,0,0,1-10.934.835c-2.676-.442-.924-2.508-.924-2.508-6.93,3.658,3.857,7.814,13.54,3.306A5.344,5.344,0,0,1,687.3,443.259Zm0,0" transform="translate(-55.696 -119.87)" fill="#4e7d9d"/>
+          <path id="Tracé_899" data-name="Tracé 899" d="M768.05,425.882a1.061,1.061,0,0,1-.241.32c16.1-4.29,10.183-15.124,2.483-12.381a2.218,2.218,0,0,0-1.032.806,9.132,9.132,0,0,1,1.378-.374C774.534,413.427,780.107,419.531,768.05,425.882Zm0,0" transform="translate(-142.892 -98.935)" fill="#4e7d9d"/>
+          <g id="Groupe_243" data-name="Groupe 243" transform="translate(616.868 289.5)" clip-path="url(#clip-path)">
+            <path id="Tracé_900" data-name="Tracé 900" d="M691.81,310.2c-3,4.561,1.473,9.46,7.561,15.032-2.375-5.439-10.43-10.2,0-18.553,13.01-10.411,6.332-17.179,6.332-17.179C708.4,300.253,696.21,303.5,691.81,310.2Zm0,0" transform="translate(-690.612 -289.5)" fill="#f2941b"/>
           </g>
-        </g>,
+          <path id="Tracé_902" data-name="Tracé 902" d="M735.327,336.293s-22,5.566-11.491,17.838c3.1,3.617-.815,6.874-.815,6.874s7.87-4.119,4.255-9.276C723.9,346.92,721.308,344.532,735.327,336.293Zm0,0" transform="translate(-101.432 -38.512)" fill="#f2941b"/>
+          <path id="Tracé_903" data-name="Tracé 903" d="M681.769,466.664c-5.787,2.8,3.52,8.582,10.889,3.119a13.13,13.13,0,0,1-2.071-1.754,12.662,12.662,0,0,1-7.793.573C680.331,468.113,681.769,466.664,681.769,466.664Zm0,0" transform="translate(-60.948 -142.055)" fill="#4e7d9d"/>
+          <path id="Tracé_904" data-name="Tracé 904" d="M676.477,419.53a13.89,13.89,0,0,1,2.123-1.592,63.425,63.425,0,0,1-6.993,1.294,45.267,45.267,0,0,1-11.152.169c-5.445-1.021,2.985-3.833,2.985-3.833s-3.275-.309-7.3,2.421C651.379,421.221,667.919,422.692,676.477,419.53Zm0,0" transform="translate(-41.534 -99.425)" fill="#4e7d9d"/>
+        </g>
+      </g>,
          all:true,
          web:true,
          mobile:false,
@@ -259,31 +258,31 @@ var technoligies=[
     },
     {
         name:"Docker",
-        svg:<g className="tech" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="60" height="57" viewBox="0 0 24.08 15.566">
+        svg:<g className="tech" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="52.442" height="33.9" viewBox="0 0 52.442 33.9">
         <defs>
           <clipPath id="clip-path">
-            <path id="Tracé_869" data-name="Tracé 869" d="M605,331h24.08v15.566H605Zm0,0" transform="translate(-605 -331)"/>
+            <path id="Tracé_2497" data-name="Tracé 2497" d="M605,331h52.442v33.9H605Zm0,0" transform="translate(-605 -331)"/>
           </clipPath>
         </defs>
         <g id="icon_docker" transform="translate(-605 -331)">
-          <g id="Groupe_237" data-name="Groupe 237" transform="translate(605 331)" clip-path="url(#clip-path)">
-            <path id="Tracé_868" data-name="Tracé 868" d="M617.938,336.37h2.455v2.5h1.242a5.407,5.407,0,0,0,1.706-.284,4.4,4.4,0,0,0,.829-.372,3.051,3.051,0,0,1-.576-1.578,3.32,3.32,0,0,1,.6-2.349l.258-.3.307.246a3.88,3.88,0,0,1,1.54,2.468,3.77,3.77,0,0,1,2.849.264l.337.193-.177.344a3.557,3.557,0,0,1-3.569,1.692c-2.126,5.263-6.754,7.755-12.365,7.755a7.8,7.8,0,0,1-7.074-3.634l-.025-.042-.221-.446a7.048,7.048,0,0,1-.567-3.591l.035-.369h2.1v-2.5h2.455v-2.441h4.91v-2.441h2.947Zm0,0" transform="translate(-605.409 -331.437)" fill="#364548"/>
+          <g id="Groupe_823" data-name="Groupe 823" transform="translate(605 331)" clip-path="url(#clip-path)">
+            <path id="Tracé_2496" data-name="Tracé 2496" d="M632.64,342.119h5.347v5.435h2.7a11.771,11.771,0,0,0,3.716-.62,9.575,9.575,0,0,0,1.806-.811,6.643,6.643,0,0,1-1.254-3.437,7.23,7.23,0,0,1,1.311-5.115l.562-.646.669.535a8.451,8.451,0,0,1,3.354,5.374,8.211,8.211,0,0,1,6.2.575l.735.42-.386.75c-1.514,2.937-4.678,3.846-7.773,3.686-4.629,11.463-14.709,16.89-26.93,16.89-6.314,0-12.108-2.346-15.405-7.915l-.054-.091-.482-.971a15.352,15.352,0,0,1-1.234-7.82l.076-.8h4.573v-5.435h5.347V336.8h10.694v-5.316h6.418Zm0,0" transform="translate(-605.352 -331.377)" fill="#364548"/>
           </g>
-          <path id="Tracé_870" data-name="Tracé 870" d="M629.407,363.523a3.216,3.216,0,0,0-1.387-2.746,2.974,2.974,0,0,0,.283,3.716,5.186,5.186,0,0,1-3.154,1.008H609.413a6.565,6.565,0,0,0,.652,3.634l.18.326a6.082,6.082,0,0,0,.37.553q.971.062,1.789.044a8.8,8.8,0,0,0,2.611-.378.189.189,0,0,1,.236.124.187.187,0,0,1-.113.231c-.088.031-.18.058-.275.085a8.241,8.241,0,0,1-1.8.293c.043,0-.045.006-.045.006l-.08.006c-.284.016-.591.019-.905.019-.344,0-.681-.006-1.059-.026l-.01.006a7.731,7.731,0,0,0,5.931,2.343c5.438,0,10.051-2.4,12.094-7.777a3.275,3.275,0,0,0,3.476-1.449A3.437,3.437,0,0,0,629.407,363.523Zm0,0" transform="translate(-3.923 -26.666)" fill="#22a0c8"/>
-          <path id="Tracé_871" data-name="Tracé 871" d="M637.639,363.523a3.216,3.216,0,0,0-1.387-2.746,2.974,2.974,0,0,0,.283,3.716,5.186,5.186,0,0,1-3.154,1.008h-14.8a5.069,5.069,0,0,0,2.06,4.557,8.8,8.8,0,0,0,2.611-.378.189.189,0,0,1,.236.124.187.187,0,0,1-.113.231c-.088.031-.18.058-.276.085a8.642,8.642,0,0,1-1.852.3l-.018-.017c1.85.944,4.535.941,7.611-.235a21.384,21.384,0,0,0,8.9-6.7Zm0,0" transform="translate(-12.155 -26.666)" fill="#37b1d9"/>
-          <path id="Tracé_872" data-name="Tracé 872" d="M609.973,421.591a6.231,6.231,0,0,0,.623,2l.179.326a6.064,6.064,0,0,0,.37.553q.971.063,1.789.044a8.816,8.816,0,0,0,2.611-.378.189.189,0,0,1,.236.123.187.187,0,0,1-.113.231c-.088.031-.18.059-.276.086a8.666,8.666,0,0,1-1.849.3c-.025,0-.068,0-.093,0-.284.016-.588.026-.9.026-.343,0-.694-.007-1.071-.026a7.761,7.761,0,0,0,5.944,2.347c4.656,0,8.707-1.757,11.058-5.638H609.973Zm0,0" transform="translate(-4.453 -81.126)" fill="#1b81a5"/>
-          <path id="Tracé_873" data-name="Tracé 873" d="M619.969,421.58a4.7,4.7,0,0,0,1.919,2.927,8.818,8.818,0,0,0,2.61-.378.189.189,0,0,1,.236.123.186.186,0,0,1-.113.231c-.088.031-.18.059-.275.086a8.8,8.8,0,0,1-1.863.3c1.85.943,4.527.93,7.6-.245a20.1,20.1,0,0,0,5.26-3.044H619.969Zm0,0" transform="translate(-13.405 -81.115)" fill="#1d91b4"/>
-          <path id="Tracé_874" data-name="Tracé 874" d="M630.141,361.191h2.128v2.115h-2.128Zm.177.176h.168v1.763h-.168Zm.315,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.322,0h.174v1.763H631.6Zm.323,0h.168v1.763h-.168Zm.673-2.617h2.128v2.115H632.6Zm.177.176h.168v1.762h-.168Zm.315,0h.174v1.762h-.174Zm.322,0h.174v1.762h-.174Zm.322,0h.174v1.762h-.174Zm.322,0h.174v1.762h-.174Zm.322,0h.168v1.762h-.168Zm0,0" transform="translate(-22.515 -24.851)" fill="#23a3c2"/>
-          <path id="Tracé_875" data-name="Tracé 875" d="M653.634,382.113h2.128v2.115h-2.129Zm.177.176h.168v1.763h-.168Zm.315,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.322,0h.168v1.763h-.168Zm0,0" transform="translate(-43.552 -45.773)" fill="#34bbde"/>
-          <path id="Tracé_876" data-name="Tracé 876" d="M677.145,382.113h2.128v2.115h-2.128Zm.177.176h.169v1.763h-.169Zm.315,0h.174v1.763h-.174Zm.323,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.322,0h.175v1.763h-.175Zm.322,0h.168v1.763h-.168Zm0,0" transform="translate(-64.608 -45.773)" fill="#23a3c2"/>
-          <path id="Tracé_877" data-name="Tracé 877" d="M677.145,358.75h2.128v2.115h-2.128Zm.177.176h.169v1.762h-.169Zm.315,0h.174v1.762h-.174Zm.323,0h.174v1.762h-.174Zm.322,0h.174v1.762h-.174Zm.322,0h.175v1.762h-.175Zm.322,0h.168v1.762h-.168Zm.673,2.264h2.128v2.115H679.6Zm.177.176h.168v1.763h-.168Zm.315,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.323,0h.168v1.763h-.168Zm0,0" transform="translate(-64.608 -24.851)" fill="#34bbde"/>
-          <path id="Tracé_878" data-name="Tracé 878" d="M700.648,358.75h2.128v2.115h-2.128Zm.177.176h.168v1.762h-.168Zm.315,0h.174v1.762h-.174Zm.322,0h.174v1.762h-.174Zm.322,0h.174v1.762h-.174Zm.323,0h.174v1.762h-.174Zm.323,0h.168v1.762h-.168Zm0,0" transform="translate(-85.656 -24.851)" fill="#23a3c2"/>
-          <path id="Tracé_879" data-name="Tracé 879" d="M700.648,335.387h2.128V337.5h-2.128Zm.177.176h.168v1.763h-.168Zm.315,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.323,0h.174v1.763h-.174Zm.323,0h.168v1.763h-.168Zm0,0" transform="translate(-85.656 -3.929)" fill="#34bbde"/>
-          <path id="Tracé_880" data-name="Tracé 880" d="M724.148,382.113h2.128v2.115h-2.128Zm.178.176h.168v1.763h-.168Zm.315,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.322,0h.174v1.763h-.174Zm.322,0h.168v1.763h-.168Zm0,0" transform="translate(-106.701 -45.773)" fill="#23a3c2"/>
-          <path id="Tracé_881" data-name="Tracé 881" d="M667.767,435.195a.584.584,0,1,1,.015,1.168h-.016a.584.584,0,0,1,0-1.168Zm0,0" transform="translate(-55.691 -93.31)" fill="#d3ecec"/>
-          <path id="Tracé_882" data-name="Tracé 882" d="M669.129,436.777a.423.423,0,0,1,.152.028.169.169,0,0,0-.062.233.172.172,0,0,0,.148.085.17.17,0,0,0,.15-.089.417.417,0,0,1-.227.546.418.418,0,1,1-.322-.772A.447.447,0,0,1,669.129,436.777Zm0,0" transform="translate(-57.053 -94.727)" fill="#364548"/>
-          <path id="Tracé_883" data-name="Tracé 883" d="M630.424,452.847a5.157,5.157,0,0,1-2.7-2.636,9.084,9.084,0,0,1-1.944.294q-.427.024-.9.024c-.362,0-.743-.011-1.143-.032a7.793,7.793,0,0,0,6.011,2.363Q630.092,452.86,630.424,452.847Zm0,0" transform="translate(-16.788 -106.757)" fill="#bdd9d7"/>
-          <path id="Tracé_884" data-name="Tracé 884" d="M645.745,451.151a5.021,5.021,0,0,1-.539-.94,9.032,9.032,0,0,1-1.944.294A6.223,6.223,0,0,0,645.745,451.151Zm0,0" transform="translate(-34.265 -106.757)" fill="#d3ecec"/>
+          <path id="Tracé_2498" data-name="Tracé 2498" d="M652.995,366.757c.358-2.771-1.727-4.945-3.02-5.98-1.49,1.713-1.723,6.2.617,8.093a11.3,11.3,0,0,1-6.869,2.2h-34.27a14.3,14.3,0,0,0,1.419,7.915l.391.709a13.256,13.256,0,0,0,.806,1.205q2.115.136,3.9.1a19.175,19.175,0,0,0,5.685-.824.412.412,0,0,1,.514.269.407.407,0,0,1-.246.5c-.192.067-.392.127-.6.186a17.945,17.945,0,0,1-3.929.637c.093,0-.1.013-.1.013-.054,0-.12.011-.174.013-.62.035-1.287.041-1.971.041-.748,0-1.483-.013-2.307-.056l-.022.012c2.855,3.192,7.32,5.1,12.917,5.1,11.843,0,21.89-5.22,26.339-16.937,3.155.323,6.188-.479,7.569-3.156A7.486,7.486,0,0,0,652.995,366.757Zm0,0" transform="translate(-3.384 -23.002)" fill="#22a0c8"/>
+          <path id="Tracé_2499" data-name="Tracé 2499" d="M660.1,366.757c.358-2.771-1.727-4.945-3.02-5.98-1.49,1.713-1.722,6.2.617,8.093a11.3,11.3,0,0,1-6.869,2.2H618.582c-.14,4.475,1.531,7.87,4.485,9.924a19.176,19.176,0,0,0,5.685-.824.411.411,0,0,1,.514.269.407.407,0,0,1-.246.5c-.192.067-.392.127-.6.186a18.819,18.819,0,0,1-4.034.664s-.037-.037-.039-.037c4.03,2.056,9.876,2.049,16.576-.511a46.571,46.571,0,0,0,19.385-14.59C660.238,366.687,660.166,366.722,660.1,366.757Zm0,0" transform="translate(-10.485 -23.002)" fill="#37b1d9"/>
+          <path id="Tracé_2500" data-name="Tracé 2500" d="M609.973,421.592a13.578,13.578,0,0,0,1.356,4.364l.391.709a13.253,13.253,0,0,0,.806,1.2q2.115.138,3.9.1a19.2,19.2,0,0,0,5.685-.824.411.411,0,0,1,.514.268.406.406,0,0,1-.246.5c-.192.068-.392.128-.6.187a18.871,18.871,0,0,1-4.028.651c-.054,0-.148,0-.2.006-.62.035-1.28.056-1.965.056-.747,0-1.511-.015-2.333-.056,2.855,3.191,7.346,5.112,12.945,5.112,10.14,0,18.962-3.827,24.082-12.279h-40.3Zm0,0" transform="translate(-3.842 -69.979)" fill="#1b81a5"/>
+          <path id="Tracé_2501" data-name="Tracé 2501" d="M619.969,421.583a10.225,10.225,0,0,0,4.179,6.374,19.2,19.2,0,0,0,5.685-.824.412.412,0,0,1,.515.268.406.406,0,0,1-.246.5c-.192.068-.393.128-.6.187a19.151,19.151,0,0,1-4.056.651c4.03,2.055,9.859,2.024,16.558-.533a43.777,43.777,0,0,0,11.456-6.63h-33.49Zm0,0" transform="translate(-11.563 -69.97)" fill="#1d91b4"/>
+          <path id="Tracé_2502" data-name="Tracé 2502" d="M630.141,364.065h4.634v4.606h-4.634Zm.386.384h.366v3.839h-.366Zm.687,0h.38v3.839h-.38Zm.7,0h.379v3.839h-.379Zm.7,0H633v3.839h-.379Zm.7,0h.38v3.839h-.38Zm.7,0h.366v3.839h-.366Zm1.466-5.7h4.634v4.606h-4.637Zm.386.384h.366v3.838h-.366Zm.687,0h.38v3.838h-.38Zm.7,0h.38v3.838h-.38Zm.7,0h.379v3.838h-.379Zm.7,0h.38v3.838h-.38Zm.7,0h.366v3.838h-.366Zm0,0" transform="translate(-19.421 -21.436)" fill="#23a3c2"/>
+          <path id="Tracé_2503" data-name="Tracé 2503" d="M653.636,382.113h4.634v4.606h-4.637Zm.386.384h.366v3.839h-.366Zm.687,0h.379v3.839h-.379Zm.7,0h.379v3.839h-.379Zm.7,0h.379v3.839h-.379Zm.7,0h.379v3.839h-.379Zm.7,0h.366v3.839h-.366Zm0,0" transform="translate(-37.568 -39.484)" fill="#34bbde"/>
+          <path id="Tracé_2504" data-name="Tracé 2504" d="M677.145,382.113h4.634v4.606h-4.634Zm.386.384h.367v3.839h-.367Zm.687,0h.38v3.839h-.38Zm.7,0h.379v3.839h-.379Zm.7,0H680v3.839h-.38Zm.7,0h.381v3.839h-.381Zm.7,0h.366v3.839h-.366Zm0,0" transform="translate(-55.731 -39.484)" fill="#23a3c2"/>
+          <path id="Tracé_2505" data-name="Tracé 2505" d="M677.145,358.75h4.634v4.606h-4.634Zm.386.384h.367v3.838h-.367Zm.687,0h.38v3.838h-.38Zm.7,0h.379v3.838h-.379Zm.7,0H680v3.838h-.38Zm.7,0h.381v3.838h-.381Zm.7,0h.366v3.838h-.366Zm1.465,4.931h4.634v4.606h-4.634Zm.386.384h.366v3.839h-.366Zm.687,0h.38v3.839h-.38Zm.7,0h.38v3.839h-.38Zm.7,0h.38v3.839h-.38Zm.7,0h.38v3.839h-.38Zm.7,0h.366v3.839h-.366Zm0,0" transform="translate(-55.731 -21.436)" fill="#34bbde"/>
+          <path id="Tracé_2506" data-name="Tracé 2506" d="M700.648,358.75h4.634v4.606h-4.634Zm.386.384h.366v3.838h-.366Zm.687,0h.38v3.838h-.38Zm.7,0h.38v3.838h-.38Zm.7,0h.38v3.838h-.38Zm.7,0h.38v3.838h-.38Zm.7,0h.366v3.838h-.366Zm0,0" transform="translate(-73.887 -21.436)" fill="#23a3c2"/>
+          <path id="Tracé_2507" data-name="Tracé 2507" d="M700.648,335.387h4.634v4.606h-4.634Zm.386.383h.366v3.839h-.366Zm.687,0h.38v3.839h-.38Zm.7,0h.38v3.839h-.38Zm.7,0h.38v3.839h-.38Zm.7,0h.38v3.839h-.38Zm.7,0h.366v3.839h-.366Zm0,0" transform="translate(-73.887 -3.389)" fill="#34bbde"/>
+          <path id="Tracé_2508" data-name="Tracé 2508" d="M724.148,382.113h4.635v4.606h-4.635Zm.387.384h.366v3.839h-.366Zm.687,0h.38v3.839h-.38Zm.7,0h.379v3.839h-.379Zm.7,0h.379v3.839h-.379Zm.7,0h.38v3.839h-.38Zm.7,0h.366v3.839h-.366Zm0,0" transform="translate(-92.04 -39.484)" fill="#23a3c2"/>
+          <path id="Tracé_2509" data-name="Tracé 2509" d="M668.449,435.195a1.271,1.271,0,1,1,.033,2.543h-.035a1.271,1.271,0,0,1,0-2.543Zm0,0" transform="translate(-48.039 -80.489)" fill="#d3ecec"/>
+          <path id="Tracé_2510" data-name="Tracé 2510" d="M669.624,436.777a.921.921,0,0,1,.331.061.369.369,0,0,0-.135.507.374.374,0,0,0,.323.184.37.37,0,0,0,.327-.193.908.908,0,0,1-.5,1.19.911.911,0,1,1-.7-1.682A.974.974,0,0,1,669.624,436.777Zm0,0" transform="translate(-49.213 -81.711)" fill="#364548"/>
+          <path id="Tracé_2511" data-name="Tracé 2511" d="M638.289,455.952a11.23,11.23,0,0,1-5.87-5.741,19.784,19.784,0,0,1-4.233.64q-.929.052-1.952.052c-.787,0-1.619-.023-2.489-.069,2.905,2.886,6.477,5.106,13.091,5.147Q637.566,455.98,638.289,455.952Zm0,0" transform="translate(-14.481 -92.089)" fill="#bdd9d7"/>
+          <path id="Tracé_2512" data-name="Tracé 2512" d="M648.67,452.258a10.938,10.938,0,0,1-1.175-2.047,19.671,19.671,0,0,1-4.233.64A13.553,13.553,0,0,0,648.67,452.258Zm0,0" transform="translate(-29.557 -92.089)" fill="#d3ecec"/>
         </g>
       </g>,
        all:true,
@@ -306,14 +305,14 @@ var technoligies=[
       },
     {
         name:"XD",
-        svg:<g className="tech" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="45" height="57" viewBox="0 0 13.973 13.973">
-                <defs>
-                <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 225 225">
-                    <image width="225" height="225" href="data:image/png;base64,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"/>
-                </pattern>
-                </defs>
-                <rect id="icon_adobe_xd" width="13.973" height="13.973" rx="6.986" fill="url(#pattern)"/>
-            </g>,
+        svg:<g className="tech" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="42" height="42" viewBox="0 0 42 42">
+            <defs>
+              <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 225 225">
+                <image width="225" height="225" href="data:image/png;base64,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"/>
+              </pattern>
+            </defs>
+            <rect id="icon_adobe_xd" width="42" height="42" rx="21" fill="url(#pattern)"/>
+          </g>,
         all:true,
         web:true,
         mobile:true,
@@ -368,4 +367,172 @@ var technoligies=[
 
     
 ]
-export {technoligies}
+
+var fonctionalities=[
+
+  {
+    name:"Géolocalisation",
+    image:require("../assets/img/fonctionnalities/geolocalisation.svg"),
+    all:true,
+    web:false,
+    mobile:true,
+  },
+  {
+    name:"Réalité virtuelle",
+    image:require("../assets/img/fonctionnalities/realite_virtuelle.svg"),
+    all:true,
+    web:false,
+    mobile:true,
+    
+  },
+  {
+    name:"Tchat",
+    image:require("../assets/img/fonctionnalities/tchat.svg"),
+    all:false,
+    web:false,
+    mobile:true,
+  },
+  {
+    name:"Réseau social",
+    image:require("../assets/img/fonctionnalities/reseau_social.svg"),
+    all:false,
+    web:false,
+    mobile:true,
+  },
+  {
+    name:"Notifications et alertes",
+    image:require("../assets/img/fonctionnalities/notifications_et_alertes.svg"),
+    all:false,
+    web:false,
+    mobile:true,
+  },
+  {
+    name:"Blog et actualités",
+    image:require("../assets/img/fonctionnalities/bloc_et_actualites.svg"),
+    all:true,
+    web:true,
+    mobile:false,
+  },
+  {
+    name:"Formulaires de contact",
+    image:require("../assets/img/fonctionnalities/formulaires_de_contact.svg"),
+    all:true,
+    web:true,
+    mobile:false,
+  },
+  {
+    name:"Newsletter",
+    image:require("../assets/img/fonctionnalities/newsletter.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"E-commerce",
+    image:require("../assets/img/fonctionnalities/e_commerce.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"Authentification",
+    image:require("../assets/img/fonctionnalities/authentification.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"Tableau de bord",
+    image:require("../assets/img/fonctionnalities/tableau_de_bord.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"Intelligence artificielle",
+    image:require("../assets/img/fonctionnalities/intelligence_artificielle.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"Mode sombre et clair",
+    image:require("../assets/img/fonctionnalities/mode_sombre_et_clair.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"Tchat bot",
+    image:require("../assets/img/fonctionnalities/tchat_bot.svg"),
+    all:false,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"Téléchargement",
+    image:require("../assets/img/fonctionnalities/telechargement.svg"),
+    all:false,
+    web:true,
+    mobile:true,
+
+  },
+  {
+    name:"Reservation",
+    image:require("../assets/img/fonctionnalities/reservation.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"Support client",
+    image:require("../assets/img/fonctionnalities/support_client.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"Streaming",
+    image:require("../assets/img/fonctionnalities/streaming.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"Traduction",
+    image:require("../assets/img/fonctionnalities/traduction.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"Paiement en ligne",
+    image:require("../assets/img/fonctionnalities/paiement_en_ligne.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"Synchronisation muti-appareils",
+    image:require("../assets/img/fonctionnalities/synchronisation_multi_appareils.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+  {
+    name:"Et bien d'autres",
+    image:require("../assets/img/fonctionnalities/plus_de_fonctionnalites.svg"),
+    all:true,
+    web:true,
+    mobile:true,
+  },
+
+
+
+
+
+
+
+
+]
+export {technoligies, fonctionalities}
