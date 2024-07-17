@@ -48,8 +48,10 @@ const HomePageTest = (props) => {
              <br></br>
              <br></br>
 
-           {/*  <br></br>
              <Experiences/>
+
+           <br></br>
+             
 
              <br></br>
              <br></br>
@@ -58,7 +60,7 @@ const HomePageTest = (props) => {
              <Services/>
 
              <br></br>  
-             <br></br>*/}
+             <br></br>
           
       </Container>
      

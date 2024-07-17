@@ -10,7 +10,8 @@ import './Styles.css'
 import MenuIcon from '@mui/icons-material/Menu';
 import  useWindowDimensions from '../../../hooks/useWindowDimensions'
 import { CloudSync , Diversity1 } from "@mui/icons-material";
-
+import smokeImage from '../../../assets/img/fume.png';
+import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 
 export default function SpacingGrid() {
   const [spacing, setSpacing] = React.useState(2);
@@ -29,10 +30,12 @@ export default function SpacingGrid() {
 `;
 
   return (
+    <div>
     <Grid className='back' >
       <Grid  sx={{ flexGrow: 1 }} container spacing={2} className='back-img'>
        
-      <Grid style={{padding:'60px 0px 20px 0px',width:'100%',textAlign:'center'}}>
+      <Grid style={{padding:'60px 0px 20px 0px',margin:'auto',textAlign:'center',alignItems:'center',display:'flex'}}>
+             <ElectricBoltIcon style={{fontSize:'50px',color:'white'}}/>
              <h1 className='txt-agile'>UNE APPROCHE AGILE</h1>
       </Grid>
 
@@ -51,7 +54,7 @@ export default function SpacingGrid() {
                     theme.palette.mode === 'dark' ? '#003366' : '#003366',
                 }}
               >
-               <div style={{padding:'0px 20px 5px 20px'}}>
+               <div style={{padding:'10px 25px 10px 25px'}}>
                   <h3 style={{color:'white'}}>Approche Iterative</h3>
                   <p style={{color:'white'}}> 
                        Très pratique pour composer des documents complexes, beaucoup
@@ -77,7 +80,7 @@ export default function SpacingGrid() {
                     theme.palette.mode === 'dark' ? '#003366' : '#003366',
                 }}
               >
-              <div style={{padding:'0px 20px 5px 20px'}}>
+              <div style={{padding:'10px 25px 10px 25px'}}>
                   <h3 style={{color:'white'}}>Approche Incremental</h3>
                   <p style={{color:'white'}}> 
                        Très pratique pour composer des documents complexes, beaucoup
@@ -105,7 +108,7 @@ export default function SpacingGrid() {
                     theme.palette.mode === 'dark' ? '#003366' : '#003366',
                 }}
               >
-              <div style={{padding:'0px 20px 5px 20px'}}>
+              <div style={{padding:'10px 25px 10px 25px'}}>
                   <h3 style={{color:'white'}}>ADAPTATIVE</h3>
                   <p style={{color:'white'}}> 
                        Très pratique pour composer des documents complexes, beaucoup
@@ -128,7 +131,7 @@ export default function SpacingGrid() {
                     theme.palette.mode === 'dark' ? '#003366' : '#003366',
                 }}
               >
-              <div style={{padding:'0px 20px 5px 20px'}}>
+              <div style={{padding:'10px 25px 10px 25px'}}>
                   <h3 style={{color:'white'}}>MAIN dans la Main</h3>
                   <p style={{color:'white'}}> 
                        Très pratique pour composer des documents complexes, beaucoup
@@ -145,5 +148,9 @@ export default function SpacingGrid() {
 
   </Grid>
     </Grid>
+
+
+
+    </div>
   );
 }

@@ -6,7 +6,6 @@ import { RunCircle , Grain } from "@mui/icons-material";
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
-
 const Qualité =()=>{
     return(
         <div>
@@ -98,6 +97,9 @@ const Qualité =()=>{
 
         </Grid>
       </Grid>
+
+
+      
 
         </div>
     )

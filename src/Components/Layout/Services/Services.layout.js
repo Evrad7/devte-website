@@ -5,15 +5,21 @@ import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import RadioGroup from '@mui/material/RadioGroup';
 import Radio from '@mui/material/Radio';
+import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import './services.css'
 import MenuIcon from '@mui/icons-material/Menu';
 import  useWindowDimensions from '../../../hooks/useWindowDimensions'
 import { CloudSync , Diversity1 } from "@mui/icons-material";
+import smokeImage from '../../../assets/img/fume.png';
+import Infographie from '../../../assets/img/6.png';
+import PC from '../../../assets/img/16.png';
+import web from '../../../assets/img/29.svg';
+import RocketIcon from '@mui/icons-material/Rocket';
 
-
-export default function Services() {
+export default function SpacingGrid() {
   const [spacing, setSpacing] = React.useState(2);
+
   
   const {width, height } = useWindowDimensions();
 
@@ -29,119 +35,127 @@ export default function Services() {
 `;
 
   return (
-    <Grid className='back-color' >
+    <div>
+    <Grid className='back' >
+      <Grid  sx={{ flexGrow: 1 }} container spacing={2} className='back-imge'>
        
-      <Grid style={{padding:'60px 0px 20px 0px',width:'100%',textAlign:'center'}}>
-             <h1 className='txt-agile'>UNE APPROCHE AGILE</h1>
+      <Grid style={{padding:'60px 0px 20px 0px',margin:'auto',textAlign:'center',alignItems:'center',display:'flex'}}>
+             <RocketIcon style={{fontSize:'50px',color:'white'}}/> &nbsp;
+             <h1 className='txt-agil'>  DECOUVRE NOS SERVICES</h1>
       </Grid>
 
       <Grid  item xs={12}>
-        <Grid container justifyContent="center" spacing={0}>
-            <Grid item>
-              <Paper
+        <Grid container justifyContent="center" spacing={spacing}>
+              <Grid
+                 item
                 sx={{
-                  borderBottom:'1px solid #96b3d1',
                   textAlign:'center',
                   height: 'auto',
                   position: 'relative',
-                  width: 300,
-                  borderRadius: '0 0 -10% 0',
-                  backgroundColor: (theme) =>
-                    theme.palette.mode === 'dark' ? '#003366' : '#003366',
+                  width: 650,       
                 }}
               >
-               <div style={{padding:'0px 20px 5px 20px'}}>
-                  <h3 style={{color:'white'}}>Approche Iterative</h3>
+               <div style={{padding:'10px 20px 5px 20px'}}>
+                  <img src={PC} width={230} height={100}/>
+                  <h3 style={{color:'white'}}>Developpement des sites web et application web</h3>
                   <p style={{color:'white'}}> 
                        Très pratique pour composer des documents complexes, beaucoup
+                        d’automatisation : références croisées, notes de bas de page, table des
                         d’automatisation : références croisées, notes de bas de page, table des
                         matières, des figures, bibliographie, index, mélange de plusieurs
                         langues, équations mathématiques, présentations.
                   </p>
                </div>
-               <div className='start'>
-                  <CloudSync style={{fontSize:'40px',color:'white'}}/>
-               </div>
-             </Paper>
-            </Grid>
+               <Button variant="contained" endIcon={<RocketIcon />}>
+                  En savoir Plus
+               </Button>
+             </Grid>
 
-            <Grid item>
-              <Paper
+              <Grid
+               item
                 sx={{
-                  borderLeft:'1px solid #96b3d1',
                   height: 'auto',
-                  width: 300,
                   textAlign:'center',
-                  backgroundColor: (theme) =>
-                    theme.palette.mode === 'dark' ? '#003366' : '#003366',
+                    width: 650, 
                 }}
               >
-              <div style={{padding:'0px 20px 5px 20px'}}>
-                  <h3 style={{color:'white'}}>Approche Incremental</h3>
+              <div style={{padding:'10px 20px 5px 20px'}}>
+                 <img src={Infographie} width={100} height={80}/>
+                  <h3 style={{color:'white'}}>Developpement des application Mobile </h3>
                   <p style={{color:'white'}}> 
                        Très pratique pour composer des documents complexes, beaucoup
+                        d’automatisation : références croisées, notes de bas de page, table des
                         d’automatisation : références croisées, notes de bas de page, table des
                         matières, des figures, bibliographie, index, mélange de plusieurs
                         langues, équations mathématiques, présentations.
                   </p>
                </div>
-             </Paper>
+               <Button variant="contained" endIcon={<RocketIcon />}>
+                  En savoir Plus
+               </Button>
             </Grid>
 
         </Grid>
       </Grid>
 
       <Grid style={{paddingBottom:'100px'}} item xs={12}>
-        <Grid container justifyContent="center"  spacing={0}>
-            <Grid item>
-              <Paper
+        <Grid container justifyContent="center"  spacing={spacing}>
+              <Grid
+              item
                 sx={{
-                  borderRight:'1px solid #96b3d1',
                   height: 'auto',
-                  width: 300,
+                  width: 650,
                   textAlign:'center',
-                  backgroundColor: (theme) =>
-                    theme.palette.mode === 'dark' ? '#003366' : '#003366',
+                  
                 }}
               >
-              <div style={{padding:'0px 20px 5px 20px'}}>
-                  <h3 style={{color:'white'}}>ADAPTATIVE</h3>
+              <div style={{padding:'40px 20px 5px 20px'}}>
+                  <img src={Infographie} width={100} height={80}/>
+                  <h3 style={{color:'white'}}>Administration systeme</h3>
                   <p style={{color:'white'}}> 
                        Très pratique pour composer des documents complexes, beaucoup
+                        d’automatisation : références croisées, notes de bas de page, table des
                         d’automatisation : références croisées, notes de bas de page, table des
                         matières, des figures, bibliographie, index, mélange de plusieurs
                         langues, équations mathématiques, présentations.
                   </p>
                </div>
-             </Paper>
+               <Button variant="contained" endIcon={<RocketIcon />}>
+                  En savoir Plus
+               </Button>
             </Grid>
 
-            <Grid item>
-              <Paper
+              <Grid
                 sx={{
-                  borderTop:'1px solid #96b3d1',
                   height: 'auto',
                   textAlign:'center',
-                  width: 300,
-                  backgroundColor: (theme) =>
-                    theme.palette.mode === 'dark' ? '#003366' : '#003366',
+                  width: 650,
                 }}
               >
-              <div style={{padding:'0px 20px 5px 20px'}}>
-                  <h3 style={{color:'white'}}>MAIN dans la Main</h3>
+              <div style={{padding:'40px 20px 5px 20px'}}>
+                 <img src={PC} width={100} height={80}/>
+                  <h3 style={{color:'white'}}>Infographie</h3>
                   <p style={{color:'white'}}> 
                        Très pratique pour composer des documents complexes, beaucoup
+                        d’automatisation : références croisées, notes de bas de page, table des
                         d’automatisation : références croisées, notes de bas de page, table des
                         matières, des figures, bibliographie, index, mélange de plusieurs
                         langues, équations mathématiques, présentations.
                   </p>
                </div>
-             </Paper>
-            </Grid>
+               <Button variant="contained" endIcon={<RocketIcon />}>
+                  En savoir Plus
+               </Button>
+             </Grid>
 
         </Grid>
       </Grid>
 
+  </Grid>
     </Grid>
+
+
+
+    </div>
   );
 }

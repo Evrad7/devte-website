@@ -17,8 +17,8 @@
     text-align: center;
     margin: auto;
     text-decoration: line-through;
-    text-decoration-color: black;
-    text-decoration-thickness:2px ;
+    text-decoration-color: #003366;
+    text-decoration-thickness:4px ;
   }
 
 .circle{
@@ -33,4 +33,4 @@
   right: -50px;
 }
   
-  
+ 
