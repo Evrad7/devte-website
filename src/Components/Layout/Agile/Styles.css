@@ -1,0 +1,36 @@
+.back{
+    background: black; /* Fallback color */
+    background: linear-gradient(to bottom, black, #003366); /* Dégradé de couleur */
+    height: 'auto';
+  }
+
+  .back-img{
+   background-image: url('../../../assets/img/fume.png');
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   height: 'auto';
+  }
+
+  .txt-agile{
+    color: white;
+    text-align: center;
+    margin: auto;
+    text-decoration: line-through;
+    text-decoration-color: #003366;
+    text-decoration-thickness:4px ;
+  }
+
+.circle{
+  position: absolute;
+  background-color: rgb(49, 68, 84);
+  border-radius: 100%;
+  border: 10px solid rgba(255, 255, 255, 0.406);
+  align-content: center;
+  width: 70px;
+  height: 70px;
+  bottom: -50px;
+  right: -50px;
+}
+  
+ 

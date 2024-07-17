@@ -1,0 +1,42 @@
+.main{
+    background-color: #003366;
+    width: auto;
+    height: auto;
+}
+.txt-title{
+    text-align: center;
+    padding: 15px 0px 25px 0px;
+    color: white;
+    font-size: 20px;
+}
+.txt-item{
+    color: white;
+    text-decoration: line-through;
+    text-decoration-color: #003366;
+    text-decoration-thickness:5px ;
+}
+
+.txt-description{
+    padding: 0px 0px 30px 0px;
+    color: white;
+    line-height: 30px;
+}
+.content{
+    width: 80%;
+    margin: auto;
+}
+
+.root{
+ position: relative;
+}
+
+.astro{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.etoile{
+    position: absolute;
+    right: 0;
+  }
