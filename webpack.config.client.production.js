@@ -1,5 +1,5 @@
 const path = require('path')
-const { plugins } = require('./webpack.config.client')
+const webpack=require("webpack")
 const CURRENT_WORKING_DIR = process.cwd()
 
 
