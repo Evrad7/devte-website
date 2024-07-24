@@ -1,3 +1,4 @@
 import app from "./express";
+import config from "../config/config"
 
-app.listen(3000,  ()=>{console.log("SERVER STARTED  ..................")})
+app.listen(config.port,  ()=>{console.log("SERVER STARTED  ..................")})

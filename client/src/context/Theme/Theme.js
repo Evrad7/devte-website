@@ -23,6 +23,7 @@ const theme=createTheme({
         },
         info:{
             "main":"#1d82bb",
+            "dark":"#10355B"
         },
         dark:{
             main:"#0f0f0f"

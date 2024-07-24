@@ -51,7 +51,7 @@ const StyledGridItem=styled(Grid, {shouldForwardProp:prop=>prop!=="matchesMd" &&
             transition:".5s 0s linear",
             opacity:0,
             transform:leftEdge?"translateX(-25%)":"translateX(25%)",
-            "&.animate":{
+            "&.animate-intersection-observer":{
                 transform:matchesMd?(topEdge?"translateY(0)":"translateY(0)"):leftEdge?"translateX(0)":"translateX(0)",
                 opacity:1
             }

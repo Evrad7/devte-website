@@ -10,7 +10,7 @@ const PageContainer=({children})=>{
     }, [])
     return(
         <>
-            <MouseFollower/>
+            {/* <MouseFollower/> */}
             <Header/>
             {children}
         </>

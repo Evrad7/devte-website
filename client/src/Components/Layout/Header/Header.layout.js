@@ -23,7 +23,7 @@ import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import { StyledDrawer } from './Header.style';
 import ButtonMouseFollower from '../ButtonMouseFollower/ButtonMouseFollower.layout';
 import IconLInkMouseFollower from '../IconLinkMouseFollower/IconLinkMouseFollower.layout';
-import LogoMouseFollower from '../LogoMouseFollower/LogoMouseFollower.layout';
+import FocusMouseFollower from '../FocusMouseFollower/FocusMouseFollower.layout';
 import { HeaderContext } from '../../../context/HeaderContext';
 import { UpdateFollower } from 'react-mouse-follower';
 
@@ -177,7 +177,7 @@ function Header(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <UpdateFollower className="update-follower" mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}} >
+    <UpdateFollower className="update-follower" mouseOptions={{zIndex:10000, backgroundColor:color}} >
       <Box sx={{ display: 'flex', position:"relative"}}>
         <Box sx={{
                 position:"absolute",
@@ -253,11 +253,11 @@ function Header(props) {
             
             {/* Logo */}
             {/* <Box sx={{transition:"all .5s 0s linear",position:"absolute", top:{xs:0, md:backgroundColor==="transparent"?0:0}, left:"50%", transform:"translateX(-50%)" }}>
-              <LogoMouseFollower>
+              <FocusMouseFollower scale={6}>
                 <Link to="/">
                   <img src={background==="light"?require("../../../assets/img/dark_logo_devte.png"):require("../../../assets/img/white_logo_devte.png")} alt="devte" style={{width:matchesMd?100:85}} />
                 </Link>
-              </LogoMouseFollower>
+              </FocusMouseFollower>
 
             </Box> */}
 

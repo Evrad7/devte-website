@@ -8,6 +8,7 @@ import HomePageTest from "./Pages/Home/HomePage.test";
 import { IntersectionObserverContextComponent } from "./context/IntersectionObserverContext";
 import { HeaderContextComponent } from "./context/HeaderContext";
 import AboutPage from "./Pages/About/About.page";
+import HomePureTest from "./Pages/Home/Home.pure.test";
 
 
   
@@ -20,7 +21,7 @@ const  App=()=>(
                     <Route  path="/services" element={<HomePage/>}/>
                     <Route  path="/about" element={<AboutPage/>}/>
                     <Route  path="/contact" element={<HomePageTest/>}/>
-                    <Route  path="/test" element={<HomePageTest/>}/>         
+                    <Route  path="/test" element={<HomePureTest/>}/>         
                 </Routes>
           </IntersectionObserverContextComponent>
         </HeaderContextComponent>

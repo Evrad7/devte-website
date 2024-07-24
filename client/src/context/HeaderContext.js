@@ -14,23 +14,26 @@ const HeaderContextComponent=({children})=>{
 
         entries.forEach((entry,index) => {
             const fromTop=entry.intersectionRect.top
-            const fromBottom=entry.rootBounds.height-entry.intersectionRect.bottom
-            if(entry.isIntersecting && fromTop>=fromBottom){
-                const currentBackground=entry.target.getAttribute("header-background")
-                setBackground(currentBackground)
-                entries.forEach(elt=>elt.target.classList.remove("active"))
-                entry.target.classList.add("active")
-                prevBackground.current=currentBackground
-            }
-            else if(entry.intersectionRatio<=0 && fromTop<=fromBottom) {
-                if(entry.target.classList.contains("active")){
-                    setBackground(prevBackground)
+            if(entry.rootBounds){
+                const fromBottom=entry.rootBounds.height-entry.intersectionRect.bottom
+                if(entry.isIntersecting && fromTop>=fromBottom){
+                    const currentBackground=entry.target.getAttribute("header-background")
+                    setBackground(currentBackground)
+                    entries.forEach(elt=>elt.target.classList.remove("active"))
+                    entry.target.classList.add("active")
+                    prevBackground.current=currentBackground
+                }
+                else if(entry.intersectionRatio<=0 && fromTop<=fromBottom) {
+                    if(entry.target.classList.contains("active")){
+                        setBackground(prevBackground)
+                    }
                 }
             }
+            
         });
     }
 
-    const observer= typeof window!=="undefined"?useRef(new IntersectionObserver(callback, {threshold:0, rootMargin:`-0px 0px -${height}px 0px`,})):useRef(null)
+    const observer= (typeof window!=="undefined")&&(height!=undefined)?useRef(new IntersectionObserver(callback, {threshold:0, rootMargin:`-0px 0px -${height}px 0px`,})):useRef(null)
 
     useEffect(()=>{
         const currentObserver=observer
@@ -38,11 +41,11 @@ const HeaderContextComponent=({children})=>{
     }, [])
     const observe=(target, background)=>{
         target.setAttribute("header-background", background)
-        observer.current.observe(target)
+        // observer.current.observe(target)
     }
     const unObserve=(target)=>{
         if(target){
-            observer.current.unobserve(target)
+            // observer.current.unobserve(target)
         }
     }
     return (

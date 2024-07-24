@@ -7,16 +7,16 @@ import { IntersectionObserverContext } from "../../../context/IntersectionObserv
 const ServiceDetail=({title, photo, description})=>{
     const theme=useTheme()
     const ref=useRef(null)
-    const {observe, unobserve}=useContext(IntersectionObserverContext)
+    const {observe, unObserve}=useContext(IntersectionObserverContext)
     useEffect(()=>{
         observe(ref.current)
         const currentRef=ref.current
-        return ()=>unobserve(currentRef)
-    }, [observe, unobserve])
+        return ()=>unObserve(currentRef)
+    }, [observe, unObserve])
 
     return (
         <Box  className="item-detail" sx={{background:theme.palette.light.main, px:5, pt:5, pb:{xs:5, md:1}, height:{md:300}}} >
-            <Box ref={ref} className="animate">
+            <Box ref={ref} className="animate intersection-observer">
                 <Box sx={{display:"flex", alignItems:"center", flexDirection:{xs:"column", sm:"row"}}}>
                     <img src={require(`../../../assets/img/services/${photo}`)} alt={title} style={{width:100, height:"auto"}}/>
                     <Typography variant="h4" 

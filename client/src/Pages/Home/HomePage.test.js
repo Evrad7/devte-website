@@ -10,6 +10,8 @@ import ServiceDetails from '../../Components/Layout/ServiceDetails/ServiceDetail
 import { useTheme } from '@emotion/react';
 import HomeCrew from '../../Components/Layout/HomeCrew/HomeCrew.layout';
 import PageContainer from '../../Components/Layout/PageContainer/PageContainer.layout';
+import Agile from '../../Components/Layout/Agile/Agile.layout';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 
 
@@ -18,7 +20,7 @@ const HomePageTest = (props) => {
   const allTechnoligies=technoligies.filter(item=>item.all)
   const allFonctionalities=fonctionalities.filter(item=>item.all)
   const theme=useTheme();
-
+  const {height, disableIntersectionObserver}=useWindowDimensions()
   // on filtre toutes les technoligies utilisées pour le developpement web
   // const allTechnoligies=technoligies.filter(item=>item.web)
 
@@ -67,10 +69,15 @@ const HomePageTest = (props) => {
     return (
       <PageContainer>
         <Box maxWidth="xxl" sx={{backgroundColor:theme.palette.light.main, px:0, py:10}}>
-          <Header/>
+          <Box sx={{ height:200, background:theme.palette.light.main}}></Box>
+          <h1>{height}--{disableIntersectionObserver?"true":"false"}</h1>
+
           <Box sx={{ height:1000, background:theme.palette.light.main}}></Box>
 
-            <GridHexagon items={allTechnoligies}/>         
+            <Agile/>
+            <Box sx={{ height:1000, background:theme.palette.light.main}}></Box>
+
+            {/* <GridHexagon items={allTechnoligies}/>          */}
             <GridDrowned items={allFonctionalities}/>
             <Box sx={{mt:5}}></Box>
 
@@ -78,17 +85,18 @@ const HomePageTest = (props) => {
             <HomeCrew/>
             <Box sx={{ height:1000, background:theme.palette.light.main}}></Box>
 
-            <Quote 
+            {/* <Quote 
               name="TSOATA Evrad" 
               role="CO-FONDATEUR DEVTE"
               // name="TIOJIO Romain" 
               // role="CEO DEVTE"
               photo="dev.png" 
               text="Fugiat do nisi do irure nulla amet sint Lorem occaecat laboris exercitation deserunt. 
-                Ut ad non aute aute eiusmod elit voluptate laboris ipsum elit exercitation amet sunt." />
-              <Box sx={{height:10, width:"100%", background:"red"}}></Box>
-              <ServiceDetails data={serviceData}/>
-              <Box sx={{ height:1000, background:theme.palette.light.main}}></Box>
+                Ut ad non aute aute eiusmod elit voluptate laboris ipsum elit exercitation amet sunt."
+               /> */}
+            <Box sx={{height:10, width:"100%", background:"red"}}></Box>
+            <ServiceDetails data={serviceData}/>
+            {/* <Box sx={{ height:1000, background:theme.palette.light.main}}></Box> */}
 
         </Box>   
       </PageContainer> 

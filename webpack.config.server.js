@@ -46,7 +46,11 @@ const config = {
             {
                 test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/,
                 type: 'asset/resource'
-            }
+            },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+              },
         ]
     },
     resolve: {

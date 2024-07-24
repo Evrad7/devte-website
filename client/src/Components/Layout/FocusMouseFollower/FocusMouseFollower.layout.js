@@ -4,14 +4,14 @@ import { useRef } from "react"
 import { UpdateFollower } from "react-mouse-follower"
 
 
-const LogoMouseFollower=({children})=>{
+const FocusMouseFollower=({scale, children})=>{
     const theme=useTheme()
     return  <UpdateFollower className="update-follower" style={{"display":"inline"}} 
-                mouseOptions={{scale:6, mixBlendMode:"difference", backgroundColor:"white"
+                mouseOptions={{scale:scale, mixBlendMode:"difference", backgroundColor:"white"
                 }}>
                 {children}
         </UpdateFollower>
 
 }
 
-export default LogoMouseFollower
+export default FocusMouseFollower

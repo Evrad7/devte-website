@@ -1,32 +1,36 @@
 import express from "express"
 import cors from "cors"
 import compression from "compression"
-import helmet from "helmet"
+import helmet, { contentSecurityPolicy } from "helmet"
 import path from "path"
-// import { renderToString } from "react-dom/server"
 import { renderToPipeableStream } from 'react-dom/server';
 import App from "../client/src/App"
 import {StaticRouter }from "react-router-dom/server"
 import compile from "./devBundle"
 import Template from "../Template"
-import createEmotionCache from "../client/src/context/createEmotionCache"
-import { CacheProvider } from "@emotion/react"
-// import createEmotionServer from '@emotion/server/create-instance';
-
+import  config from "../config/config"
 
 
 const app=express()
 compile(app)
 app.use(cors())
 app.use(compression())
-app.use(helmet({
-    contentSecurityPolicy: {
-        directives: {
-          ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-          "script-src": ["'self'", "'unsafe-eval'",],
-        },
-      },
-}))
+console.log(config.env, config.env==="production", "-------------------")
+
+
+if(config.env==="production"){
+  // app.use(helmet())
+}
+else{
+  app.use(helmet({
+    contentSecurityPolicy:false,
+    strictTransportSecurity:false,
+    crossOriginOpenerPolicy:false
+
+  }))
+  
+}
+
 app.use("/dist", express.static(path.join(__dirname, "../dist")))
 app.get("*", (req, res)=>{
     const context={}

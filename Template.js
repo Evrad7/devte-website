@@ -1,9 +1,10 @@
 
 
+import { Visibility } from "@mui/icons-material";
 import React from "react";
-  
+
 const  Template=({children})=>(
-      <html lang="fr">
+      <html lang="fr" sx={{Visibility:"hidden"}}>
         <head>
           <meta charSet="utf-8" />
           <link rel="icon" href="/favicon.ico" />
@@ -18,8 +19,9 @@ const  Template=({children})=>(
           <link href="https://fonts.cdnfonts.com/css/lucida-handwriting-std" rel="stylesheet" />
           <title>DEVTE</title>
         </head>
-      <body style={{overflowX:"hidden", margin:0, height:"100%"}}>
-        <div id="root">{children}</div>
+        <body style={{overflowX:"hidden", margin:0, padding:0, background:"red"}}>
+        <div style={{background:"blue"}}
+               id="root">{children}</div>
       </body>
     </html>    
     
