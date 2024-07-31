@@ -1,4 +1,3 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -17,30 +16,39 @@ import LindedInIcon from "@mui/icons-material/LinkedIn"
 import WhatsAppIcon from "@mui/icons-material/WhatsApp"
 import InstagramIcon from "@mui/icons-material/Instagram"
 import { NavLink , Link} from 'react-router-dom';
-import { useMediaQuery } from '@mui/material';
+import { Drawer, useMediaQuery } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
-import { StyledDrawer } from './Header.style';
 import ButtonMouseFollower from '../ButtonMouseFollower/ButtonMouseFollower.layout';
 import IconLInkMouseFollower from '../IconLinkMouseFollower/IconLinkMouseFollower.layout';
 import FocusMouseFollower from '../FocusMouseFollower/FocusMouseFollower.layout';
 import { HeaderContext } from '../../../context/HeaderContext';
 import { UpdateFollower } from 'react-mouse-follower';
+import { useContext, useRef, useState } from 'react';
+import CurtainDrawer from './CurtainDrawer.layout';
+import CurtainListItemButton from './CurtainListItemButtom.layout';
+import DesktopNavLink from './DesktopNavLink/DesktopNavLink.layout';
+import MobileNavLink from './MobileNavLink/MobileNavLink.layout';
 
 
 
 const navItems = [
   {name:"Accueil", link:"/"},
-  {name:"Services", link:"/services"},
+  {name:"Services", link:"/services", items: [
+      {name:"Developpement web", link:"/services/developpement-web"},
+      {name:"Developpement mobile", link:"/services/developpement-mobile"},
+      {name:"Cloud et Deops", link:"/services/cloud-devops"},
+      {name:"Infographie", link:"/services/inphographie"},
+  ]},
   {name:"A propos", link:"/about"},
   {name:"Contact", link:"/contact"}];
 
 
 function Header(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] =useState(false);
   const {width}=useWindowDimensions()
-  const {background}=React.useContext(HeaderContext)
+  const {background, elevation}=useContext(HeaderContext)
   const drawerWidth = width;
   const curtainTransitionTime=550 
   const theme=useTheme()
@@ -48,7 +56,6 @@ function Header(props) {
   var backgroundColor="transparent"
   var color=theme.palette.light.main
   var activeColor=theme.palette.primary.main
-  // console.log(background, "***********")
   if (background==="light"){
     backgroundColor=theme.palette.light.main
     color=theme.palette.primary.main
@@ -62,25 +69,14 @@ function Header(props) {
 
   }
   // else{
-  //   console.log("ICICICICICCCCCCCCCCCCCCCCCCCCCCc")
   //   backgroundColor="transparent"
   //   color=theme.palette.light.main
   // }
-
+  
  
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => {
-      if(prevState){
-        setTimeout(()=>setMobileOpen(()=>false), curtainTransitionTime)
-        closeCurtain()
-        return prevState
-      }
-      return !prevState
-    });
-    if(!mobileOpen){
-      openCurtain()
-    }
-    
+  const handleDrawerToggle =() => {
+   setMobileOpen(!mobileOpen);
+   
   };
 
   const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
@@ -106,7 +102,7 @@ function Header(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{textAlign:"center"}}>
         {/* Lien reseaux sociaux mobile */}
-        <Box sx={{px:{sm:5, md:15, lg:25}, display:{xs:"flex", md:"none"}, position:"absolute", top:21, left:7}}>
+        <Box onClick={handleDrawerToggle} sx={{px:{sm:5, md:15, lg:25}, display:{xs:"flex", md:"none"}, position:"absolute", top:21, left:7}}>
           {socialLinks}
         </Box>
 
@@ -131,50 +127,19 @@ function Header(props) {
       <Divider />
       <List>
       {navItems.map((item, index) => (
-            <ListItem key={index} disablePadding>
-              <ListItemButton   sx={{ textAlign: 'center', display:"flex", justifyContent:"center"}}>
-                <ButtonMouseFollower>
-                  <NavLink to={item.link}  
-                          style={({ isActive, isPending, isTransitioning }) => {
-                          return {
-                            color:isActive?theme.palette.primary.main:theme.palette.light.main,
-                            textDecoration:"none",
-                            backgroundColor:isActive?theme.palette.light.main:"transparent",
-                            paddingLeft:15,
-                            paddingRight:15,
-                            paddingTop:5,
-                            paddingBottom:5,
-                            borderRadius:10
-                          };
-                        }}>
-                        {item.name}
-                    </NavLink>
-                </ButtonMouseFollower>
-              </ListItemButton>
-            </ListItem>
-             
-             
+                item.items?item.items.map((elt, i)=><MobileNavLink key={`${index}-${i}`} navItem={elt} index={`${index}-${i}`} />):
+                    <MobileNavLink  key={index} navItem={item} index={index}/>
             ))}
       </List>
     </Box>
   );
 
 
-  //Fonctions qui ouvrent les deux compartiments du menu
-  const openCurtain=()=>{
-     document.querySelectorAll(".MuiDrawer-paper .curtain-left, .MuiDrawer-paper .curtain-right").forEach(function(elt){
-      elt.classList.add("open")
-     })
-  }
-  const closeCurtain=()=>{
-    document.querySelectorAll(".MuiDrawer-paper .curtain-left, .MuiDrawer-paper .curtain-right").forEach(function(elt){
-     elt.classList.remove("open")
-    })
- }
 
 
+ const container = window !== undefined ? () => window().document.body : undefined;
 
-  const container = window !== undefined ? () => window().document.body : undefined;
+
 
   return (
     <UpdateFollower className="update-follower" mouseOptions={{zIndex:10000, backgroundColor:color}} >
@@ -195,103 +160,67 @@ function Header(props) {
                   color:theme.palette.light.main}} >La base du developpement et de l'innovation</Typography>
         </Box>
         <CssBaseline />
-        <AppBar component="nav" sx={{backgroundColor:backgroundColor, boxShadow:"none", transition:"all .5s 0s ease"}} position="fixed" >
-          <Toolbar sx={{pt:2, pb:{xs:0, md:2}}} style={{paddingLeft:0, paddingRight:0}}>
+          <AppBar component="nav" sx={{backgroundColor:backgroundColor, transition:"all .5s 0s ease", boxShadow:theme.shadows[elevation]}} position="fixed" >
+            <Toolbar sx={{height:75}} style={{paddingLeft:0, paddingRight:0}}>
 
-            {/* Liens du site en mode pc */}
-            <Box sx={{flexGrow:1}} style={{paddingLeft:10}} >
-              <Box sx={{display: { xs: 'none', md: 'block'}}}>
-                {navItems.map((item, index) => (
-                <Button  key={index}>
-                <ButtonMouseFollower>
-                    <NavLink to={item.link}  
-                          style={({ isActive, isPending, isTransitioning }) => {
-                          return {
-                            color:isActive?activeColor:color,
-                            textDecoration:"none",
-                            backgroundColor:isActive?color:"transparent",
-                            paddingLeft:15,
-                            paddingRight:15,
-                            paddingTop:5,
-                            paddingBottom:5,
-                            borderRadius:10,
-                            transition:"all .5s 0s ease",
-                          };
-                        }}>
-                        {item.name}
-                    </NavLink>
-                  </ButtonMouseFollower>
+              {/* Liens du site en mode pc */}
+              <Box sx={{flexGrow:1, height:"100%", display:"flex", flexDirection:"column", justifyContent:"center", pl:1}}  >
+                <Box sx={{display: { xs: 'none', md: 'block'}, height:"100%"}}>
+                  {navItems.map((item, index) => (
+                    <DesktopNavLink key={index} navItem={item} color={color} activeColor={activeColor} backgroundColor={backgroundColor}/>
                 
-                </Button>
+                ))}
+                </Box>
+                <Box sx={{px:{sm:5, md:15, lg:25}, display:{xs:"flex", md:"none"}}}>
+                  {socialLinks}
+                </Box>
+                <Divider sx={{display:backgroundColor==="transparent"?"inline":"none", backgroundColor:"light.main", opacity:".5",  width:"calc(50vw - 50vw / 3)", position:"absolute", bottom:0, left:0}}/>
+              </Box>
+
+              {/* Liens des reseau sociaux en mode pc */}
+              <Box>
+                <Box sx={{px:{sm:5, md:15, lg:25}, display:{xs:"none", md:"flex"}}}>
+                  {socialLinks}
+                </Box>
+                <IconButton
+                  size="large"
+                  color={background==="light"?"primary":"light"}
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  sx={{display: { md: 'none' }, position:"absolute", top:12, right:12}}
+                  >
+                  <MenuIcon />
+                </IconButton>
+                <Divider sx={{display:backgroundColor==="transparent"?"inline":"none", backgroundColor:"light.main", opacity:.5,width:"calc(50vw - 50vw / 3)", position:"absolute", bottom:0, right:0}}/>     
+              </Box>
               
-              
-              ))}
-              </Box>
-              <Box sx={{px:{sm:5, md:15, lg:25}, display:{xs:"flex", md:"none"}}}>
-                {socialLinks}
-              </Box>
-              <Divider sx={{backgroundColor:"light.main", opacity:".5",  width:"calc(50vw - 50vw / 3)", position:"absolute", bottom:0, left:0}}/>
-            </Box>
+              {/* Logo */}
+              {/* <Box sx={{transition:"all .5s 0s linear",position:"absolute", top:{xs:0, md:backgroundColor==="transparent"?0:0}, left:"50%", transform:"translateX(-50%)" }}>
+                <FocusMouseFollower scale={6}>
+                  <Link to="/">
+                    <img src={background==="light"?require("../../../assets/img/dark_logo_devte.png"):require("../../../assets/img/white_logo_devte.png")} alt="devte" style={{width:matchesMd?100:85}} />
+                  </Link>
+                </FocusMouseFollower>
 
-            {/* Liens des reseau sociaux en mode pc */}
-            <Box>
-              <Box sx={{px:{sm:5, md:15, lg:25}, display:{xs:"none", md:"flex"}}}>
-                {socialLinks}
-              </Box>
-              <IconButton
-                size="large"
-                color={background==="light"?"primary":"light"}
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{display: { md: 'none' }, position:"absolute", top:12, right:0}}
-                >
-                <MenuIcon />
-              </IconButton>
-              <Divider sx={{backgroundColor:"light.main", opacity:.5,width:"calc(50vw - 50vw / 3)", position:"absolute", bottom:0, right:0}}/>     
-            </Box>
-            
-            {/* Logo */}
-            {/* <Box sx={{transition:"all .5s 0s linear",position:"absolute", top:{xs:0, md:backgroundColor==="transparent"?0:0}, left:"50%", transform:"translateX(-50%)" }}>
-              <FocusMouseFollower scale={6}>
-                <Link to="/">
-                  <img src={background==="light"?require("../../../assets/img/dark_logo_devte.png"):require("../../../assets/img/white_logo_devte.png")} alt="devte" style={{width:matchesMd?100:85}} />
-                </Link>
-              </FocusMouseFollower>
+              </Box> */}
 
-            </Box> */}
-
-          </Toolbar>
-        </AppBar>
+            </Toolbar>
+          </AppBar>
+       
 
         {/* Menu en mode mobile */}
         <nav>
-          <StyledDrawer
-            anchor="left"
-            container={container}
-            variant="temporary"
+          <CurtainDrawer
             open={mobileOpen}
-            onClose={handleDrawerToggle}
-            transitionDuration={0}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-            curtainTransitionTime={curtainTransitionTime/1000}
-            sx={{
-              display: { xs: 'block', md: 'none' },
-              '& .MuiDrawer-paper':
-              { boxSizing: 'border-box', width: drawerWidth, overflow:"hidden",  backgroundColor:"transparent",
-              position:"relative",
-              },
-            }}
-            >
-            <Box className="curtain-left" sx={{position:"absolute", top:0, height:"100%", width:"100%", left:"-50%", backgroundImage:theme.palette.primary.gradientToBottom, backgroundColor:theme.palette.primary.main}}>
-              {drawer}
-            </Box>
-            <Box className="curtain-right" sx={{position:"absolute", top:0, height:"100%", width:"100%", right:"-50%", backgroundImage:theme.palette.primary.gradientToBottom, backgroundColor:theme.palette.primary.main}}>
-              {drawer}
-            </Box>
-          </StyledDrawer>
+            transitionDuration={0.6}>
+
+                {drawer}
+          </CurtainDrawer>
+
+          {/* <Drawer container={container} open={open} onClose={handleDrawerToggle}>
+            {drawer}
+          </Drawer> */}
         </nav>
 
       </Box>

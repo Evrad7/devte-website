@@ -15,7 +15,6 @@ const app=express()
 compile(app)
 app.use(cors())
 app.use(compression())
-console.log(config.env, config.env==="production", "-------------------")
 
 
 if(config.env==="production"){

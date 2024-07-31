@@ -10,7 +10,7 @@ import maskAgileTopBottom from "../../../assets/img/mask_agile_top_bottom.svg"
 
 
 import AgileImg from "../../../assets/img/agile.svg"
-import { useContext, useEffect, useRef } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { IntersectionObserverContext } from "../../../context/IntersectionObserverContext"
 
 
@@ -19,29 +19,30 @@ const AgileItem=({title, body, positionHole})=>{
     // le prop `positionHole` définit la position du creu circulaire sur large écran: `top left` `top right` `bottom left` ou `bottomright`
     const theme=useTheme()
     const matchesMd=useMediaQuery((theme=>theme.breakpoints.up("md")))
-    const {observe, unObserve}=useContext(IntersectionObserverContext)
     const ref=useRef(null)
     const imgAgileRef=useRef(null)
+    // const scrollReveal =useContext(ScrollRevealContext)
+    const {observe, unObserve} =useContext(IntersectionObserverContext)
+
 
     useEffect(()=>{
+        // scrollReveal.reveal(ref.current)
         observe(ref.current)
-        observe(imgAgileRef.current)
         return ()=>{
-            const currentRef=ref
-            const currentImgAgileRef=imgAgileRef
-            unObserve(currentRef.current)
-            unObserve(currentImgAgileRef.current)
+            const currentRef=ref.current
+            unObserve(currentRef)
         }
-    }, [observe, unObserve])
+    }, [])
 
     let maskAgile=matchesMd?maskAgileTopLeft:maskAgileTop
     let pt=!matchesMd?5:8
     let pb=3
     const translateDistance=60
+    const transition=".7s 0s  cubic-bezier(0.5, 0, 0, 1)"
     let translateValue=`translateX(${translateDistance}px) translateY(${translateDistance}px)`
     if(positionHole=="top right"){
         maskAgile=matchesMd?maskAgileTopRight:maskAgileTopBottom
-        translateValue=`translateX(-${translateDistance}px) translateY(${translateDistance}px)`
+        translateValue=`translateX(-${translateDistance}px) translateY(${translateDistance}px) `
     }
     else if(positionHole==="bottom right"){
         maskAgile=matchesMd?maskAgileBottomRight:maskAgileBottom
@@ -60,11 +61,11 @@ const AgileItem=({title, body, positionHole})=>{
         <Box ref={ref} id={positionHole==="bottom right"?"tml":null} className="intersection-observer"
             sx={{
                 position:"relative",
-                transition:".5s 0S linear",
+                transition:transition,
                 opacity:0,
-                transform:{xs:`translateX(-${translateDistance}px)`, md:translateValue},
+                transform:{xs:`translateY(-${translateDistance}px)`, md:translateValue},
                 "&.animate":{
-                    transform:{xs:"translateX(0)", md:"translateX(0) translateY(0)"},
+                    transform:{xs:"translateY(0)", md:"translateX(0) translateY(0)"},
                     opacity:1,
                 }
                 }}>
@@ -73,7 +74,7 @@ const AgileItem=({title, body, positionHole})=>{
                  md:"none"}, position:"absolute", left:"50%", bottom: "0",
                  p:0,
                  transform:"translateX(-50%) translateY(75%)",
-                 transition: "1s 0s ease",
+                 transition: transition,
                  "&.animate":{
                     transform:"translateX(-50%) translateY(75%) rotate(360deg)"
                 }}}>

@@ -12,26 +12,21 @@ import { useContext, useEffect, useRef } from 'react';
 import { HeaderContext } from '../../../context/HeaderContext';
 import { UpdateFollower } from 'react-mouse-follower';
 import FocusMouseFollower from '../FocusMouseFollower/FocusMouseFollower.layout';
-import { IntersectionObserverContext } from '../../../context/IntersectionObserverContext';
 
 export default function SpacingGrid() {
   const theme=useTheme()
   const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
   const {observe:observeHeader, unObserve:unObserveHeader}=useContext(HeaderContext)
-  const {observe, unObserve}=useContext(IntersectionObserverContext)
 
   const ref=useRef(null)
   const imgAgileRef=useRef(null)
   useEffect(()=>{
       observeHeader(ref.current, "light")
-      observe(imgAgileRef.current)
       return ()=>{
         const currentRef=ref
-        const currentImgAgileRef=imgAgileRef
         unObserveHeader(currentRef.current)
-        currentImgAgileRef?unObserve(currentImgAgileRef.current):null
       }
-  }, [observeHeader, unObserveHeader, observe, unObserve])
+  }, [observeHeader, unObserveHeader])
   return (
     <UpdateFollower mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
       <StyledContainer ref={ref}  component="section" matchesMd={matchesMd}>

@@ -23,8 +23,6 @@ export default function SpacingGrid() {
   
   const {width, height } = useWindowDimensions();
 
-  /*console.log(height);
-  console.log(width);*/
 
   const handleChange = (event) => {
     setSpacing(Number(event.target.value));

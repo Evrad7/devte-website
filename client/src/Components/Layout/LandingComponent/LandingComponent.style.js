@@ -21,7 +21,7 @@ const starAnimation=keyframes`
  }
 `
 
-const StyledLandingContainerBox=styled(Box)(({theme})=>({
+const StyledLandingContainerBox=styled(Box, {shouldForwardProp:prop=>prop!=="isDesktop"})(({theme, isDesktop})=>({
   backgroundcolor:theme.palette.primary.main,
   backgroundImage:`radial-gradient(circle at bottom, ${theme.palette.primary.main} -2%, black 100%)`,
   top:0,
@@ -74,7 +74,8 @@ const StyledLandingContainerBox=styled(Box)(({theme})=>({
           white, 
           rgba(255, 255, 255, 0)
         )`,
-        animation:`${starAnimation} 130s 0s forwards linear infinite`
+        animation:isDesktop?`${starAnimation} 130s 0s forwards linear infinite`:"none"
+        // animation:true?`${starAnimation} 130s 0s forwards linear infinite`:"none"
     },
     "& .land":{
         position:"absolute",

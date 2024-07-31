@@ -7,14 +7,12 @@ export default function useWindowDimensions() {
 
       // Cette variable va permettre d'annuler les IntersectionObserver pour les appareils mobiles  dont la barre de navigation
       //cause toujours problème malgré la définition d'un containeur personnalisé
-      const [disableIntersectionObserver, setDisableIntersectionObserver]=useState(false)
 
 
       const getWindowDimensions=()=>{
         if (typeof window!=="undefined"){
           const { innerWidth: width, innerHeight: height } = window;
           // document.documentElement.style.setProperty("--vh", `${vh.current*0.01}px`)
-          // console.log(!disableIntersectionObserver,  prevHeight.current!==0, height>prevHeight.current, "*************")
           // if(!disableIntersectionObserver && prevHeight.current!==0 && height>prevHeight.current){
           //     setDisableIntersectionObserver(true)
           // }
@@ -43,5 +41,5 @@ export default function useWindowDimensions() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return {...windowDimensions, disableIntersectionObserver};
+  return {...windowDimensions};
 }

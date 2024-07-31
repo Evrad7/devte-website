@@ -12,6 +12,7 @@ import HomeCrew from '../../Components/Layout/HomeCrew/HomeCrew.layout';
 import PageContainer from '../../Components/Layout/PageContainer/PageContainer.layout';
 import Agile from '../../Components/Layout/Agile/Agile.layout';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
+import { isMobile } from '../../utils/helpers/device';
 
 
 
@@ -20,7 +21,7 @@ const HomePageTest = (props) => {
   const allTechnoligies=technoligies.filter(item=>item.all)
   const allFonctionalities=fonctionalities.filter(item=>item.all)
   const theme=useTheme();
-  const {height, disableIntersectionObserver}=useWindowDimensions()
+  const {height}=useWindowDimensions()
   // on filtre toutes les technoligies utilisées pour le developpement web
   // const allTechnoligies=technoligies.filter(item=>item.web)
 
@@ -70,9 +71,11 @@ const HomePageTest = (props) => {
       <PageContainer>
         <Box maxWidth="xxl" sx={{backgroundColor:theme.palette.light.main, px:0, py:10}}>
           <Box sx={{ height:200, background:theme.palette.light.main}}></Box>
-          <h1>{height}--{disableIntersectionObserver?"true":"false"}</h1>
+          <h1>{height}--{isMobile()?"true":"false"}</h1>
+           
 
           <Box sx={{ height:1000, background:theme.palette.light.main}}></Box>
+          <ServiceDetails data={serviceData}/>
 
             <Agile/>
             <Box sx={{ height:1000, background:theme.palette.light.main}}></Box>
@@ -95,7 +98,6 @@ const HomePageTest = (props) => {
                 Ut ad non aute aute eiusmod elit voluptate laboris ipsum elit exercitation amet sunt."
                /> */}
             <Box sx={{height:10, width:"100%", background:"red"}}></Box>
-            <ServiceDetails data={serviceData}/>
             {/* <Box sx={{ height:1000, background:theme.palette.light.main}}></Box> */}
 
         </Box>   

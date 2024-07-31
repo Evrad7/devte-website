@@ -4,6 +4,7 @@ import { useTheme } from "@emotion/react"
 import { StyledGridItem, StyledHorizontalBar, StyledVerticalBar } from "./ServiceDetails.style"
 import { useEffect, useRef } from "react"
 import useWindowDimensions from "../../../hooks/useWindowDimensions"
+import { isMobile } from "../../../utils/helpers/device"
 
 
 const ServiceDetails=({data})=>{
@@ -122,26 +123,38 @@ const ServiceDetails=({data})=>{
             animation()
             rendered.current=true
         }
-        const intersectionRatioTop=matchesMd?0.1:0.1
+        const isDesktop=!isMobile()
+        const intersectionRatioTop=0.1
         const intersectionRatioMiddle=matchesMd?0.5:0.3
-        const observer=new IntersectionObserver(([entry])=>{
+        const threshold=isDesktop?[intersectionRatioTop, intersectionRatioMiddle]:[intersectionRatioMiddle]
+        const observer=new IntersectionObserver(([entry], ob)=>{
             let fromTop=entry.intersectionRect.top
             let fromBottom=entry.rootBounds.height-entry.intersectionRect.bottom
-            if(fromTop>fromBottom){
-                if(entry.intersectionRatio>=intersectionRatioMiddle){
-                    resetAnimation()
-                }
-                else{
-                    if(entry.intersectionRatio<=intersectionRatioTop){
-                        resetAnimation(false)
+            if(isDesktop){
+                if(fromTop>fromBottom){
+                    if(entry.intersectionRatio>=intersectionRatioMiddle){
+                        resetAnimation()
                     }
-                } 
+                    else{
+                        if(entry.intersectionRatio<=intersectionRatioTop){
+                            resetAnimation(false)
+                        }
+                    } 
+                }
+                else if(entry.boundingClientRect.top > height){
+                        resetAnimation(false)
+                }
+       
             }
-            else if(entry.boundingClientRect.top > height){
-                    resetAnimation(false)
+            else{
+                if(entry.isIntersecting){
+                    resetAnimation()
+                    ob.unobserve(entry.target)
+
+                }
             }
-   
-        }, {threshold:[0, intersectionRatioMiddle]})
+           
+        }, {threshold:threshold})
 
         observer.observe(ref.current)
        

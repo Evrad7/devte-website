@@ -9,6 +9,7 @@ import useWindowDimensions from '../../hooks/useWindowDimensions';
 import { HeaderContext } from '../../context/HeaderContext';
 import PageContainer from '../../Components/Layout/PageContainer/PageContainer.layout';
 import { UpdateFollower } from 'react-mouse-follower';
+import { isMobile } from '../../utils/helpers/device';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -20,23 +21,36 @@ const Img = styled('img')({
 const HomePage = () => {
   const {height}=useWindowDimensions()
     const theme=useTheme()
-    const {observe, unObserve}=useContext(HeaderContext)
+    const {observe, unObserve, observeMobile}=useContext(HeaderContext)
     const bodyRef=useRef(null)
     const footerRef=useRef(null)
     const serviceRef=useRef(null)
+    const isDesktop=!isMobile()
 
     useEffect(()=>{
-      observe(bodyRef.current, "primary")
-      observe(footerRef.current, "light")     
-      observe(serviceRef.current, "light")     
-
+      if(isDesktop){
+        observe(bodyRef.current, "primary")
+        observe(footerRef.current, "light")     
+        observe(serviceRef.current, "light")   
+      }
+      else{
+         observeMobile(bodyRef.current)
+      }
       return ()=>{
-        const currentBodyRef=bodyRef
-        const currentFooterRef=footerRef
-        const currentSericeRef=serviceRef
-        unObserve(currentBodyRef.current)
-        unObserve(currentFooterRef.current)
-        unObserve(currentSericeRef.current)
+        if(isDesktop){
+          const currentBodyRef=bodyRef
+          const currentFooterRef=footerRef
+          const currentSericeRef=serviceRef
+          unObserve(currentBodyRef.current)
+          unObserve(currentFooterRef.current)
+          unObserve(currentSericeRef.current)
+        }
+        else{
+          const currentBodyRef=bodyRef
+          unObserve(currentBodyRef.current)
+
+        }
+
 
       }
     }, [observe, unObserve])
@@ -53,7 +67,9 @@ const HomePage = () => {
             overflowY:"auto", 
             perspective:50,
             transformStyle:"preserve-3d",
-            }}>
+            }}
+            id="container"
+            >
             
             <LandingComponent/> 
             <UpdateFollower className="update-follower" style={{ position:"relative", zIndex:10000}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
@@ -74,8 +90,6 @@ const HomePage = () => {
                     <Box ref={footerRef}>
                       <Footer/>
                     </Box>
-
-                  
                     <Box sx={{height:200}}></Box>
 
                     <Box sx={{marginTop:"200px", height:400, backgroundColor:theme.palette.primary.main, display:"flex", flexDirection:"column", justifyContent:"space-between"}}>

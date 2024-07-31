@@ -1,29 +1,34 @@
-import { Drawer, keyframes, styled } from "@mui/material";
+import { Box, styled } from "@mui/material";
+import { styled } from "@mui/material";
 
-
-const StyledDrawer=styled(Drawer, {shouldForwardProp:prop=>prop!=="curtainTransitionTime"})(({theme, curtainTransitionTime})=>({
+const StyledDrawer=styled(Box, {shouldForwardProp:prop=>prop!=="transitionDuration"})(({theme, transitionDuration})=>({
     "& .curtain-left":{
         clipPath:"inset(0 50% 0 0)",
-        transition:`all ${curtainTransitionTime}s 0s ease`
+        transition:`all ${transitionDuration}s 0s ease`
 
 
     },
-    "& .curtain-left.open":{
+    "&.open .curtain-left":{
         left:0
     },
 
     "& .curtain-right":{
         clipPath:"inset(0 0 0 50%)",
-        transition:`all ${curtainTransitionTime}s 0s ease`
+        transition:`all ${transitionDuration}s 0s ease`
 
     },
-    "& .curtain-right.open":{
-        // animation:`${curtainRightAnimation} .65s 0s linear forwards`
-        right:0
+    "&.open .curtain-right":{
+        // animation:`${curtainRightAnimation} .65s 0s linear forwards`,
+        right:0,
 
     }
 
 
 }))
+
+
+
+
+
 
 export {StyledDrawer}

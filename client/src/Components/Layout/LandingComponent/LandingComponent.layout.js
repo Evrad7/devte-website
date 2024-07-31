@@ -4,6 +4,7 @@ import { StyledLandingContainerBox } from "./LandingComponent.style"
 import AnimatedWaveButton from "../AnimatedWaveButton/AnimatedWaveButton.layout"
 import TypingText from "../TypingText/TypingText.layout"
 import { UpdateFollower } from "react-mouse-follower"
+import { isMobile } from "../../../utils/helpers/device"
 
 const LandingComponent=()=>{
 
@@ -12,9 +13,9 @@ const LandingComponent=()=>{
 
 
     return (
-        <StyledLandingContainerBox sx={{
+        <StyledLandingContainerBox isDesktop={!isMobile()} sx={{
               }}>
-            <UpdateFollower className="mouse-follower"   style={{height:"100%", position:"relative", transformStyle:"preserve-3d", zIndex:-1}}  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}} >
+            <UpdateFollower className="mouse-follower"    style={{height:"100%", position:"relative", transformStyle:"preserve-3d", zIndex:-1}}  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}} >
               <div className="stars"></div>
               <div className="land">
                {/* Drapeau */}

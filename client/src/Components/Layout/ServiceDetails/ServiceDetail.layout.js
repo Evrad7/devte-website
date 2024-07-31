@@ -4,19 +4,23 @@ import { useContext, useEffect, useRef } from "react"
 import { IntersectionObserverContext } from "../../../context/IntersectionObserverContext"
 
 
+
 const ServiceDetail=({title, photo, description})=>{
     const theme=useTheme()
     const ref=useRef(null)
     const {observe, unObserve}=useContext(IntersectionObserverContext)
+
     useEffect(()=>{
         observe(ref.current)
-        const currentRef=ref.current
-        return ()=>unObserve(currentRef)
-    }, [observe, unObserve])
+        return ()=>{
+            const currentRef=ref.current
+            unObserve(currentRef)
+        }
+    })
 
     return (
         <Box  className="item-detail" sx={{background:theme.palette.light.main, px:5, pt:5, pb:{xs:5, md:1}, height:{md:300}}} >
-            <Box ref={ref} className="animate intersection-observer">
+            <Box ref={ref} className="intersection-observer">
                 <Box sx={{display:"flex", alignItems:"center", flexDirection:{xs:"column", sm:"row"}}}>
                     <img src={require(`../../../assets/img/services/${photo}`)} alt={title} style={{width:100, height:"auto"}}/>
                     <Typography variant="h4" 
