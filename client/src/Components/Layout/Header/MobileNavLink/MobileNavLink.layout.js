@@ -38,7 +38,7 @@ const MobileNavLink=({navItem, index})=>{
     return(
         <ListItem disablePadding sx={{ justifyContent:"center", marginTop:2}}>
             <Box  sx={{ textAlign: 'center', display:"flex", justifyContent:"center", width:"100%"}}>
-                <StyledMobileNavLink ref={ref} index={`menu-item-${index}`}  to={navItem.link} isTouchScreen={isTouchScreen} matchesSm={matchesSm} >
+                <StyledMobileNavLink ref={ref} index={`menu-item-${index}`}  to={navItem.link}  isTouchScreen={isTouchScreen} matchesSm={matchesSm} >
                     {navItem.name}
                 </StyledMobileNavLink>
             </Box>

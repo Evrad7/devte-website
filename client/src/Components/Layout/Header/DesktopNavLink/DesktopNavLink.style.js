@@ -3,7 +3,7 @@ import { styled } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 
-const StyledSubMenuNavLink=styled(NavLink)(({theme})=>({
+const StyledSubMenuNavLink=styled(NavLink, {shouldForwardProp:prop=>prop!=="color"})(({theme, color})=>({
     display:"flex",
     alignItems:"center",
     width:"100%",
@@ -13,6 +13,8 @@ const StyledSubMenuNavLink=styled(NavLink)(({theme})=>({
     paddingBottom:5,
     borderRadius:10,
     textDecoration:"none",
+    color:color,
+    transformOrigin:"100%",
     
     "&:hover, &.active":{
         "&:before":{
@@ -31,7 +33,7 @@ const StyledSubMenuNavLink=styled(NavLink)(({theme})=>({
     "&:before, &:after":{
         width:0,
         height:2,
-        background:theme.palette.light.main,
+        background:color,
         content:"''",
         transition:"all .5s 0s ease",
         opacity:0

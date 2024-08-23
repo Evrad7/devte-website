@@ -1,16 +1,14 @@
 import { useTheme } from "@emotion/react"
-import { Box } from "@mui/material"
-import { useRef } from "react"
-import { UpdateFollower } from "react-mouse-follower"
+import CustomUpdateFollower from "../CustomUpdateFollower/CustomUpdateFollower.layout"
 
 
 const FocusMouseFollower=({scale, children})=>{
     const theme=useTheme()
-    return  <UpdateFollower className="update-follower" style={{"display":"inline"}} 
+    return  <CustomUpdateFollower className="update-follower" style={{"display":"inline"}} 
                 mouseOptions={{scale:scale, mixBlendMode:"difference", backgroundColor:"white"
                 }}>
                 {children}
-        </UpdateFollower>
+        </CustomUpdateFollower>
 
 }
 

@@ -8,8 +8,9 @@ import Separator from '../../Components/Layout/Separator/Separator.layout';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import { HeaderContext } from '../../context/HeaderContext';
 import PageContainer from '../../Components/Layout/PageContainer/PageContainer.layout';
-import { UpdateFollower } from 'react-mouse-follower';
-import { isMobile } from '../../utils/helpers/device';
+import CustomUpdateFollower from '../../Components/Layout/CustomUpdateFollower/CustomUpdateFollower.layout';
+import Header from '../../Components/Layout/Header/Header.layout';
+
 
 const Img = styled('img')({
   margin: 'auto',
@@ -19,13 +20,12 @@ const Img = styled('img')({
 });
 
 const HomePage = () => {
-  const {height}=useWindowDimensions()
+  const {isDesktop}=useWindowDimensions()
     const theme=useTheme()
     const {observe, unObserve, observeMobile}=useContext(HeaderContext)
     const bodyRef=useRef(null)
     const footerRef=useRef(null)
     const serviceRef=useRef(null)
-    const isDesktop=!isMobile()
 
     useEffect(()=>{
       if(isDesktop){
@@ -50,59 +50,56 @@ const HomePage = () => {
           unObserve(currentBodyRef.current)
 
         }
-
-
       }
-    }, [observe, unObserve])
+    }, [observe, unObserve, isDesktop])
 
     return (
-      <PageContainer>
+      <PageContainer hideHeader={isDesktop?true:false}>
           <Box   sx={{
             top:0,
             left:0,
             right:0,
             bottom:0,
-            position:"absolute",
-            overflowX:"hidden",
-            overflowY:"auto", 
-            perspective:50,
-            transformStyle:"preserve-3d",
+            position:isDesktop?"absolute":"static",
+            overflowX:isDesktop?"hidden":"unset",
+            overflowY:isDesktop?"auto":"unset", 
+            perspective:isDesktop?50:"none",
             }}
-            id="container"
             >
-            
+            {isDesktop&&<Header position="sticky"/>}
             <LandingComponent/> 
-            <UpdateFollower className="update-follower" style={{ position:"relative", zIndex:10000}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
-              <Box  ref={bodyRef} >
-                <Separator direction="top"/>
-                <Box sx={{background:theme.palette.light.main}}>
-                    <Typography sx={{mx:{xs:1, md:10, lg:20}, py:15, textAlign:"center"}} variant="body1" component="p">
-                        In ipsum voluptate deserunt ad magna eiusmod sint do. Ea occaecat ea esse dolor minim non duis Lorem consequat qui pariatur. Dolor exercitation id quis culpa ullamco esse incididunt sint mollit sint nostrud consequat. Deserunt magna labore duis enim. Laboris officia nulla velit consequat excepteur. Sunt elit enim commodo duis minim sint irure dolor adipisicing minim cillum qui proident.
-                    </Typography>
-                    <Box sx={{height:300,  opacity:.2}} ></Box>
+  
+            <CustomUpdateFollower className="update-follower" style={{ position:"relative", zIndex:theme.zIndex.fab}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
+              <Box className="main"  ref={bodyRef} >
+                  {isDesktop && <Separator direction="top" translate/>}
+                  <Box sx={{background:theme.palette.light.main}}>
+                      <Typography sx={{mx:{xs:1, md:10, lg:20}, py:15, textAlign:"center"}} variant="body1" component="p">
+                          In ipsum voluptate deserunt ad magna eiusmod sint do. Ea occaecat ea esse dolor minim non duis Lorem consequat qui pariatur. Dolor exercitation id quis culpa ullamco esse incididunt sint mollit sint nostrud consequat. Deserunt magna labore duis enim. Laboris officia nulla velit consequat excepteur. Sunt elit enim commodo duis minim sint irure dolor adipisicing minim cillum qui proident.
+                      </Typography>
+                      <Box sx={{height:300,  opacity:.2}} ></Box>
 
-                    <UpdateFollower className="update-follower" style={{ position:"relative", zIndex:10000}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
-                      <Box ref={serviceRef} sx={{height:800, background:theme.palette.primary.gradientToTop, mb:10}} >
-                        <Typography color="light" variant="h1">Les Services BIG</Typography>   
+                      <CustomUpdateFollower className="update-follower" style={{ position:"relative", zIndex:10000}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
+                        <Box ref={serviceRef} sx={{height:800, background:theme.palette.primary.gradientToTop, mb:10}} >
+                          <Typography color="light" variant="h1">Les Services BIG</Typography>   
+                        </Box>
+                      </CustomUpdateFollower>
+
+                      <Box ref={footerRef}>
+                        <Footer/>
                       </Box>
-                    </UpdateFollower>
+                      <Box sx={{height:200}}></Box>
 
-                    <Box ref={footerRef}>
-                      <Footer/>
-                    </Box>
-                    <Box sx={{height:200}}></Box>
-
-                    <Box sx={{marginTop:"200px", height:400, backgroundColor:theme.palette.primary.main, display:"flex", flexDirection:"column", justifyContent:"space-between"}}>
-                      <Separator direction="bottom"/>
-                      <Separator direction="top"/>
-                    </Box>
-                
-                
+                      <Box sx={{marginTop:"200px", height:400, backgroundColor:theme.palette.primary.main, display:"flex", flexDirection:"column", justifyContent:"space-between"}}>
+                        <Separator direction="bottom"/>
+                        <Separator direction="top"/>
+                      </Box>
+                  
+                  
+                  </Box>
                 </Box>
-              </Box>
-           
-            </UpdateFollower>
-          </Box>
+            
+              </CustomUpdateFollower>
+            </Box>
     </PageContainer>
      
     );

@@ -1,7 +1,6 @@
 import { createContext, useEffect, useRef } from "react";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { useMediaQuery } from "@mui/material";
-import { isMobile } from "../utils/helpers/device";
 
 const IntersectionObserverContext=createContext()
 
@@ -9,34 +8,33 @@ const IntersectionObserverContext=createContext()
     const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
     const intersectionRatioTop=0.1
     const intersectionRatioMiddle=matchesMd?0.5:0.2
-    const isDesktop=!isMobile()
+    const {isDesktop}=useWindowDimensions()
     const callback=(entries, ob)=>{
         entries.forEach(entry=>{
             const fromTop=entry.intersectionRect.top
             if(entry.rootBounds){
                 const fromBottom=entry.rootBounds.height-entry.intersectionRect.bottom
-                if(isDesktop){
-                    if(fromTop>fromBottom){
-                        if(entry.intersectionRatio>=intersectionRatioMiddle){
-                            entry.target.classList.add("animate")
-                        }
-                        else if(entry.intersectionRatio<=intersectionRatioTop){
-                            entry.target.classList.remove("animate")
-                        }
-                    }
-                    else if(entry.boundingClientRect.top > entry.rootBounds.height){
-                        //Premier chargement de la page
-                        // else if(entry.intersectionRatio<=intersectionRatioTop && fromTop<=fromBottom) {
-                        entry.target.classList.remove("animate") 
+                // if(isDesktop){
+                //     if(fromTop>fromBottom){
+                //         if(entry.intersectionRatio>=intersectionRatioMiddle){
+                //             setTimeout(()=>entry.target.classList.add("animate"), 0)
+                //         }
+                //         else if(entry.intersectionRatio<=intersectionRatioTop){
+                //             setTimeout(()=>entry.target.classList.remove("animate"), 0)
+                //         }
+                //     }
+                //     else if(entry.boundingClientRect.top > entry.rootBounds.height){
+                //         //Premier chargement de la page
+                //         // else if(entry.intersectionRatio<=intersectionRatioTop && fromTop<=fromBottom) {
+                //         entry.target.classList.remove("animate") 
         
-                    }
-                }
+                //     }
+                // }
                 
-                else{
-                    if(entry.isIntersecting){
-                        entry.target.classList.add("animate")
-                        ob.unobserve(entry.target)
-                    }
+           
+                if(entry.isIntersecting){
+                    entry.target.classList.add("animate")
+                    ob.unobserve(entry.target)
                 }
             }
            

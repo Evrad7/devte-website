@@ -252,26 +252,31 @@ const GridDrowned=({items})=>{
             drownedAnimation()
             rendered.current=true
         }
-        const intersectionRatioTop=matchesMd?0.1:0.02
+        // const intersectionRatioTop=matchesMd?0.1:0.02
         const intersectionRatioMiddle=matchesMd?0.5:0.3
-        const observer=new IntersectionObserver(([entry])=>{
-            let fromTop=entry.intersectionRect.top
-            let fromBottom=entry.rootBounds.height-entry.intersectionRect.bottom
-            if(fromTop>fromBottom){
-                if(entry.intersectionRatio>=intersectionRatioMiddle){
-                    resetAnimation()
-                }
-                else{
-                    if(entry.intersectionRatio<=intersectionRatioTop){
-                        resetAnimation(false)
-                    }
-                } 
-            }
-            else if(entry.boundingClientRect.top > height){
-                    resetAnimation(false)
+        const observer=new IntersectionObserver(([entry], ob)=>{
+            // let fromTop=entry.intersectionRect.top
+            // let fromBottom=entry.rootBounds.height-entry.intersectionRect.bottom
+            // if(fromTop>fromBottom){
+            //     if(entry.intersectionRatio>=intersectionRatioMiddle){
+            //         resetAnimation()
+            //     }
+            //     else{
+            //         if(entry.intersectionRatio<=intersectionRatioTop){
+            //             resetAnimation(false)
+            //         }
+            //     } 
+            // }
+            // else if(entry.boundingClientRect.top > height){
+            //         resetAnimation(false)
+            // }
+            if(entry.isIntersecting){
+                resetAnimation()
+                ob.unobserve(entry.target)
+
             }
    
-        }, {threshold:[0, intersectionRatioMiddle]})
+        }, {threshold:[intersectionRatioMiddle]})
 
         observer.observe(ref.current)
        
@@ -299,8 +304,6 @@ const GridDrowned=({items})=>{
                             <><img src={require("../../../assets/img/devte.png")} alt="Devte"/><Typography variant="subtitle1" component="span">DEVTE</Typography></>
                         }
                         </StyledPaper>
-                    
-
                     </StyledGridItem>
                 })}
             </StyledGridContainer>

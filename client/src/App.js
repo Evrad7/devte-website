@@ -14,29 +14,38 @@ import MobileDevlopmentPage from "./Pages/Services/MobileDevlopment/MobileDevelo
 import CloudSolutionsPage from "./Pages/Services/CloudSolutions/CloudSolutions.page";
 import InfographyPage from "./Pages/Services/Inphography/Inphography.page";
 import ServicesPage from "./Pages/Services/Services.page";
+import {MouseFollower} from "react-mouse-follower"
+import { ServerContextProvider } from "./context/ServerContext";
 
 
   
-const  App=()=>(
-    <ThemeProvider theme={theme}>
+const  App=({data})=>{
+  const deserializedData=typeof data ==="object"?data:eval(`(${data})`)
+
+  return (
+    <ServerContextProvider isMobile={deserializedData.isMobile}>
+      <ThemeProvider theme={theme} >
       <HeaderContextComponent>
           <IntersectionObserverContextProvider>
                 <Routes>
-                    <Route  path="/" element={<HomePage/>}/>
-                    <Route  path="/services" element={<ServicesPage/>}>
-                        <Route path="/services/developpement-web" element={<WebDevlopmentPage/>}/>
-                        <Route path="/services/developpement-mobile" element={<MobileDevlopmentPage/>}/>
-                        <Route path="/services/solutions-cloud" element={<CloudSolutionsPage/>}/>
-                        <Route path="/services/infographie" element={<InfographyPage/>}/>
-                    </Route>
-                    <Route  path="/about" element={<AboutPage/>}/>
-                    <Route  path="/contact" element={<HomePageTest/>}/>
-                    <Route  path="/test" element={<HomePureTest/>}/>         
-                </Routes>
+                      <Route  path="/" element={<HomePage/>}/>
+                      <Route  path="/services" element={<ServicesPage/>}>
+                          <Route path="/services/developpement-web" element={<HomePage/>}/>
+                          <Route path="/services/developpement-mobile" element={<HomePureTest/>}/>
+                          <Route path="/services/solutions-cloud" element={<CloudSolutionsPage/>}/>
+                          <Route path="/services/infographie" element={<InfographyPage/>}/>
+                      </Route>
+                      <Route  path="/about" element={<AboutPage/>}/>
+                      <Route  path="/contact" element={<HomePageTest/>}/>
+                      <Route  path="/test" element={<HomePureTest/>}/>         
+                  </Routes>
           </IntersectionObserverContextProvider>
         </HeaderContextComponent>
     </ThemeProvider>
+    </ServerContextProvider>
+    
   )
+}
   
 export default App;
 

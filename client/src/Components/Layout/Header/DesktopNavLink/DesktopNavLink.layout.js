@@ -1,19 +1,30 @@
 import { useTheme } from "@emotion/react";
-import { Box, Button, List, ListItem } from "@mui/material";
-import { useEffect, useRef } from "react";
-import { createPortal } from "react-dom";
-import { NavLink } from "react-router-dom";
+import { Box, Button, List, ListItem, Typography } from "@mui/material";
+import {useRef } from "react";
+import { matchPath, NavLink, useLocation, useMatch } from "react-router-dom";
 import { StyledSubMenuNavLink } from "./DesktopNavLink.style";
+import { ExpandMore } from "@mui/icons-material";
+import SimpleLinkFollower from "../../SimpleLinkFollower/SimpleLinkFollower.layout";
+import ButtonLinkMouseFollower from "../../ButtonLinkMouseFollower/ButtonLinkMouseFollower.layout";
+import ButtonMouseFollower from "../../ButtonMouseFollower/ButtonMouseFollower.layout";
 
 
-const DesktopNavLink=({navItem, color, activeColor, backgroundColor})=>{
-
+const DesktopNavLink=({navItem, color, activeColor, background})=>{
+    const ref=useRef(null)
+    const location = useLocation();
+    const match=matchPath({ path: navItem.link, end: false }, location.pathname)
+    const isActive =navItem.items?match:match&&(navItem.link===location.pathname)
     const theme=useTheme()
         return (
-                <Button  sx={{
-                   height:"100%",
-                   "&:hover":{
-                    backgroundClor:"red",
+            <Box sx={{
+                height:"100%",
+                display:"flex",
+                alignItems:"center",
+                marginRight:2.5,
+                "&:hover":{
+                    "& .MuiSvgIcon-root":{
+                        transform:"rotate(-180deg)",
+                    },
                     "& .submenu":{
                         opacity:1,
                         left:0,
@@ -22,24 +33,41 @@ const DesktopNavLink=({navItem, color, activeColor, backgroundColor})=>{
                             py:2,
                     }
                     }
-                }
+                },
+                "& .MuiSvgIcon-root":{
+                        transition:"all .5s 0s ease",
+                   },
                 }}>
-                    <NavLink ref={navItem} to={navItem.link}  
-                            style={({ isActive, isPending, isTransitioning }) => {
-                            return {
-                            color:isActive?activeColor:color,
-                            textDecoration:"none",
-                            backgroundColor:isActive?color:"transparent",
-                            paddingLeft:15,
-                            paddingRight:15,
-                            paddingTop:5,
-                            paddingBottom:5,
-                            borderRadius:10,
-                            transition:"all .5s 0s ease",
-                            };
-                        }}>
-                        {navItem.name}
-                    </NavLink>
+                <Button ref={ref} disableTouchRipple color={ background==="light"?"primary":"light"}
+                 sx={{
+                    p:0,
+                    borderRadius:3
+                 }} >
+        <NavLink  to={navItem.link}  
+            style={({ isActive, isPending, isTransitioning }) => {
+            return {
+            color:isActive?activeColor:color,
+            textDecoration:"none",
+            backgroundColor:isActive?color:"transparent",
+            paddingLeft:10,
+            paddingRight:10,
+            paddingTop:5,
+            paddingBottom:5,
+            borderRadius:12,
+            transition:"all .5s 0s ease",
+            position:"relative",
+            display:"flex",
+            
+            };}}
+             onClick={navItem.items?(e)=>e.preventDefault():null}>
+            {isActive?
+                <ButtonMouseFollower><Typography variant="title1" component="span" sx={{marginLeft:.5,marginRight:.5}}>{navItem.name}</Typography></ButtonMouseFollower>:
+                <ButtonLinkMouseFollower><Typography variant="title1" component="span" sx={{marginLeft:.5,marginRight:.5}}>{navItem.name}</Typography></ButtonLinkMouseFollower>
+
+            }
+            {navItem.items?<ExpandMore />:null} 
+        </NavLink>
+                    
 
                     {navItem.items && <Box className="submenu"
                         sx={{
@@ -47,15 +75,18 @@ const DesktopNavLink=({navItem, color, activeColor, backgroundColor})=>{
                             width:0,
                             position:"absolute",
                             m:0,
-                            top:74,
+                            top:54,
                             left:-200,
                             height:"auto",
                             opacity:0,
                             overflow:"hidden",
-                            "& a":{
-                                color:`${backgroundColor!=="transparent"?activeColor:color} !important`,
-                            },
+                            borderRadius:1,
+                            // "& a":{
+                            //     color:`${backgroundColor!=="transparent"?activeColor:color} !important`,
+                            // },
                             transition:"opacity .4s 0s ease, left .4s 0s ease",
+                            borderBottomRightRadius:10,
+                            borderBottomLeftRadius:10,
                         }}
                         >
                         <List  sx={{
@@ -67,13 +98,9 @@ const DesktopNavLink=({navItem, color, activeColor, backgroundColor})=>{
                                 right:0,
                                 bottom:0,
                                 left:0,
-                                // background:backgroundColor==="transparent"?color:activeColor,
-                                background:theme.palette.primary.main,
+                                background:activeColor,
                                 boxShadow:theme.shadows[15],
-                                borderBottomRightRadius:10,
-                                borderBottomLeftRadius:10,
                                 opacity:.99
-
                             },
                             py:0,
                             px:2,
@@ -83,13 +110,18 @@ const DesktopNavLink=({navItem, color, activeColor, backgroundColor})=>{
                            
                             }}>
                                 {navItem.items.map((elt, index)=>(
-                                    <ListItem key={index}>
-                                        <StyledSubMenuNavLink  to={elt.link}>{elt.name}</StyledSubMenuNavLink>
-                                    </ListItem>
+                                    <SimpleLinkFollower key={index}>
+                                        <ListItem >
+                                            <StyledSubMenuNavLink color={color}  to={elt.link}>{elt.name}</StyledSubMenuNavLink>
+                                        </ListItem>
+                                    </SimpleLinkFollower>
+
                                 ))}
                         </List>
                     </Box> }
                      </Button>
+            </Box>
+               
         )
        
     }

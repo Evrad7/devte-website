@@ -1,13 +1,12 @@
 
-import { Box } from "@mui/material"
-import { UpdateFollower } from "react-mouse-follower"
+import CustomUpdateFollower from "../CustomUpdateFollower/CustomUpdateFollower.layout"
 
 const SimpleLinkFollower=({children})=>{
-    return  <UpdateFollower className="update-follower" style={{"display":"inline"}} 
+    return  <CustomUpdateFollower className="update-follower" style={{"display":"inline"}} 
                 mouseOptions={{visible:false
                 }}>
                 {children}
-        </UpdateFollower>
+        </CustomUpdateFollower>
 
 }
 

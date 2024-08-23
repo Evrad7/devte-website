@@ -1,24 +1,26 @@
 import { useTheme } from "@emotion/react"
 import { Box } from "@mui/material"
 import { useRef } from "react"
-import { UpdateFollower } from "react-mouse-follower"
+import CustomUpdateFollower from "../CustomUpdateFollower/CustomUpdateFollower.layout"
 
 
-const IconLInkMouseFollower=({children})=>{
+const ButtonLinkMouseFollower=({scale=2.7, children})=>{
     const theme=useTheme()
     const ref=useRef(null)
-    return <UpdateFollower className="mouse-follower" 
+
+    return <CustomUpdateFollower className="mouse-follower" 
                 style={{display:"inline"}}
                 mouseOptions={{customPosition:ref,
                 mixBlendMode: 'difference',
                 backgroundColor:theme.palette.light.main,
-                scale:2.7,
-                }}>
+                scale:scale,
+                }}
+                >
             <Box ref={ref}  sx={{position:"relative"}}>
             {children}
         </Box>
-    </UpdateFollower>
+    </CustomUpdateFollower>
 
 }
 
-export default IconLInkMouseFollower
+export default ButtonLinkMouseFollower

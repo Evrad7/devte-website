@@ -10,7 +10,6 @@ import { Typography, useMediaQuery } from '@mui/material';
 import FlashIcon from "../../../assets/img/icon_flash.svg"
 import { useContext, useEffect, useRef } from 'react';
 import { HeaderContext } from '../../../context/HeaderContext';
-import { UpdateFollower } from 'react-mouse-follower';
 import FocusMouseFollower from '../FocusMouseFollower/FocusMouseFollower.layout';
 
 export default function SpacingGrid() {
@@ -28,7 +27,7 @@ export default function SpacingGrid() {
       }
   }, [observeHeader, unObserveHeader])
   return (
-    <UpdateFollower mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
+    <Box mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
       <StyledContainer ref={ref}  component="section" matchesMd={matchesMd}>
         <Box sx={{display:"flex", justifyContent:"center"}}>
             <Box sx={{width:{xs:30, md:50}, marginRight:1.5}}>
@@ -127,7 +126,7 @@ export default function SpacingGrid() {
             </Grid>
         </Grid>
       </StyledContainer>
-    </UpdateFollower>
+    </Box>
 
 
   );

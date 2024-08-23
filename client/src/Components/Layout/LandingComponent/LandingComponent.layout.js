@@ -3,19 +3,25 @@ import { Box, Typography, useMediaQuery } from "@mui/material"
 import { StyledLandingContainerBox } from "./LandingComponent.style"
 import AnimatedWaveButton from "../AnimatedWaveButton/AnimatedWaveButton.layout"
 import TypingText from "../TypingText/TypingText.layout"
-import { UpdateFollower } from "react-mouse-follower"
-import { isMobile } from "../../../utils/helpers/device"
+import useWindowDimensions from "../../../hooks/useWindowDimensions"
+import CustomUpdateFollower from "../CustomUpdateFollower/CustomUpdateFollower.layout"
+import Slogan from "../Slogan/Slogan.layout"
+
 
 const LandingComponent=()=>{
 
-    const theme=useTheme()
+  const theme=useTheme()
   const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
+  const {height, isDesktop}=useWindowDimensions()
+  
+  
+  
 
 
     return (
-        <StyledLandingContainerBox isDesktop={!isMobile()} sx={{
+        <StyledLandingContainerBox isDesktop={isDesktop} matchesMd={matchesMd}  height={height} sx={{
               }}>
-            <UpdateFollower className="mouse-follower"    style={{height:"100%", position:"relative", transformStyle:"preserve-3d", zIndex:-1}}  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}} >
+            <CustomUpdateFollower className="mouse-follower"    style={{height:"100%", position:"relative", transformStyle:"preserve-3d", zIndex:-1}}  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}} >
               <div className="stars"></div>
               <div className="land">
                {/* Drapeau */}
@@ -28,7 +34,7 @@ const LandingComponent=()=>{
                             content:"''",
                             width:2,
                             background:theme.palette.light.main,
-                            height:{xs:"15vh", md:"25vh"},
+                            height:{xs:"20vh", md:"25vh"},
                         }}>
 
                           {/* Tête */}
@@ -169,6 +175,7 @@ const LandingComponent=()=>{
                 delay={60}
                 />
               </Box> */}
+              {!isDesktop && <Slogan/>}
               <Box sx={{
                 position:"absolute",
                 top:{xs:"25%", lg:"25%"},
@@ -180,8 +187,8 @@ const LandingComponent=()=>{
                 <Typography sx={{fontSize:{xs:"1.5rem", lg:"2rem",
                  textWrap:{lg:"nowrap"}}}} variant="h3" component="h1"  >
                 FAITES
-                <UpdateFollower className="mouse-follower" style={{"display":"inline"}} 
-                mouseOptions={{scale:matchesMd?5:3, mixBlendMode:"exclusion", backgroundElement:(
+                <CustomUpdateFollower className="mouse-follower" style={{"display":"inline"}} 
+                mouseOptions={{scale:matchesMd?4:3, mixBlendMode:"exclusion", backgroundElement:(
                 <div style={{ width: '100%', height:"100%", background:"white" }}>
                 {/* <img src="..." alt="..." /> */}
                 </div>)
@@ -192,16 +199,16 @@ const LandingComponent=()=>{
                         component="span"
                     > DECOLLER
                     </Typography> 
-                </UpdateFollower>
+                </CustomUpdateFollower>
                  VOS PROJETS 
                  <TypingText
                     texts={["D'APPLICATIONS WEB", "D'APPLICATIONS MOBILES", "D'INFOGRAPHIE", "D'ADMINSTRATION SYSTEME"]}
                     delay={125}
                  />
                  </Typography>
-               <AnimatedWaveButton text="ICI ET MAINTENANT" color="light" size="large" rounded={true}/>
+               <AnimatedWaveButton text="ICI ET MAINTENANT" color="light" size="large"  rounded />
               </Box>
-            </UpdateFollower>
+            </CustomUpdateFollower>
              
         </StyledLandingContainerBox>
     )

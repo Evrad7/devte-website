@@ -9,6 +9,8 @@ import {StaticRouter }from "react-router-dom/server"
 import compile from "./devBundle"
 import Template from "../Template"
 import  config from "../config/config"
+import serializeJavascript from "serialize-javascript"
+var useragent = require('express-useragent');
 
 
 const app=express()
@@ -29,18 +31,20 @@ else{
   }))
   
 }
-
 app.use("/dist", express.static(path.join(__dirname, "../dist")))
+app.use(useragent.express())
 app.get("*", (req, res)=>{
     const context={}
+    const initialData=serializeJavascript({isMobile:req.useragent.isMobile})
    const {pipe}=renderToPipeableStream(
     <Template>
       <StaticRouter location={req.url} context={context}>
-          <App/>
+          <App data={initialData} />
       </StaticRouter>
     </Template>,
     {
       bootstrapScripts:["/dist/bundle.js"],
+      bootstrapScriptContent:`window.__INITIAL_DATA__ = ${initialData}`,
       onShellReady(){
         res.status(200)
         res.header("Content-Type", "text/html")

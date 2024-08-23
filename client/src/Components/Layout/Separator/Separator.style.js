@@ -6,12 +6,13 @@ import squareSeparatorBottom from "../../../assets/img/carre_separateur_bottom.s
 
 
 
-const ContainerSeparatorStyled=styled(Box, {direction:prop=>prop!=="curtainTransitionTime"})(({theme, direction})=>({
+const ContainerSeparatorStyled=styled(Box, {shouldForwardProp:prop=>prop!=="direction" && prop!="translate"})(({theme, direction, translate})=>({
     position:"relative",
     zIndex:99,
     display:"flex",
     flex:"colmun",
     justifyContent:"end",
+    // transform:translate?`translateY(${direction==="top"?"-":""}35px)`:"none",
     "&:after":{
         position:"absolute",
         content:"''",

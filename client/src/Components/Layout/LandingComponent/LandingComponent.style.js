@@ -21,27 +21,32 @@ const starAnimation=keyframes`
  }
 `
 
-const StyledLandingContainerBox=styled(Box, {shouldForwardProp:prop=>prop!=="isDesktop"})(({theme, isDesktop})=>({
-  backgroundcolor:theme.palette.primary.main,
+const StyledLandingContainerBox=styled(Box, {shouldForwardProp:prop=>prop!=="isDesktop" && prop!=="height" && prop!=="height"})(({theme, isDesktop, matchesMd, height})=>({
+  backgroundColor:theme.palette.primary.main,
   backgroundImage:`radial-gradient(circle at bottom, ${theme.palette.primary.main} -2%, black 100%)`,
-  top:0,
+  top:-75,
   width:"calc(100% + 20px)",
   left:0,
-  position:"relative",
-  height:"100%",
+  position:isDesktop?"relative":"static",
+  // position:"relative",
+
+  // position:"relative",
+  height:isDesktop?`calc(100vh)`:(height?`${height}px`:`calc(100vh - 40px)`),
   overflow:"hidden",
-  transform:"translateZ(-300px) scale(7)",
+  transform:isDesktop?"translateZ(-400px) scale(9.02)":"none",
+  // transform:"translateZ(-400px) scale(9.02)",
+
   // transform:"translateZ(-10px) scale(2)",
-  zIndex:10000,
+  zIndex:theme.zIndex.fab,
   transformStyle:"preserve-3d",
-  perspectiveOriginX:"100%",
+  perspectiveOrigin:"100%",
 
   "& .stars":{
         background:"rgba(128, 0, 128, 0) center / 200px 200px round",
-        left: "-25vh",
-        right:"-25vh",
-        top:"-25vw",
-        bottom:"-25vw",
+        left: isDesktop?"-25vh":0,
+        right:isDesktop?"-25vh":0,
+        top:isDesktop?"-25vw":0,
+        bottom:isDesktop?"-25vw":0,
         position: "absolute",
         backgroundImage:
         `radial-gradient(
@@ -92,7 +97,7 @@ const StyledLandingContainerBox=styled(Box, {shouldForwardProp:prop=>prop!=="isD
         
     },
     "& .spaceship":{
-        animation:`${spaceAnimation} .7s 0s  forwards linear running infinite alternate`,
+        animation:isDesktop?`${spaceAnimation} .7s 0s  forwards linear running infinite alternate`:"none",
     }
     
 }))

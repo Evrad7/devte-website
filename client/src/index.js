@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom"
+import 'mouse-follower/src/scss/index.scss';
+
 
 
 if(__PRODUCTION__){
   hydrateRoot(document.getElementById("root"), 
       <BrowserRouter>
-        <App/>
+        <App data={window.__INITIAL_DATA__}/>
       </BrowserRouter>
 )
 }
@@ -18,7 +20,7 @@ else{
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App/>
+        <App data={window.__INITIAL_DATA__}/>
       </BrowserRouter>
   </React.StrictMode>
   );

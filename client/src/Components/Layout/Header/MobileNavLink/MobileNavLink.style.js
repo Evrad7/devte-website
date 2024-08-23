@@ -18,7 +18,6 @@ const StyledMobileNavLink=styled(NavLink, {shouldForwardProp:prop=>prop!=="isTou
     marginRight:10,
     marginLeft:10,
     
-    
     "&.hover, &.active":{
         border:`0.01px solid ${theme.palette.light.main}`,
         "&:before":{

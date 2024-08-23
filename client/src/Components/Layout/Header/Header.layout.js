@@ -4,31 +4,27 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import FacebookIcon from "@mui/icons-material/Facebook"
 import LindedInIcon from "@mui/icons-material/LinkedIn"
 import WhatsAppIcon from "@mui/icons-material/WhatsApp"
 import InstagramIcon from "@mui/icons-material/Instagram"
-import { NavLink , Link} from 'react-router-dom';
-import { Drawer, useMediaQuery } from '@mui/material';
+import { Link} from 'react-router-dom';
+import {useMediaQuery } from '@mui/material';
 import { useTheme } from '@emotion/react';
-import useWindowDimensions from '../../../hooks/useWindowDimensions';
-import ButtonMouseFollower from '../ButtonMouseFollower/ButtonMouseFollower.layout';
-import IconLInkMouseFollower from '../IconLinkMouseFollower/IconLinkMouseFollower.layout';
-import FocusMouseFollower from '../FocusMouseFollower/FocusMouseFollower.layout';
 import { HeaderContext } from '../../../context/HeaderContext';
-import { UpdateFollower } from 'react-mouse-follower';
-import { useContext, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CurtainDrawer from './CurtainDrawer.layout';
-import CurtainListItemButton from './CurtainListItemButtom.layout';
 import DesktopNavLink from './DesktopNavLink/DesktopNavLink.layout';
 import MobileNavLink from './MobileNavLink/MobileNavLink.layout';
+import ButtonLinkMouseFollower from '../ButtonLinkMouseFollower/ButtonLinkMouseFollower.layout';
+import CustomUpdateFollower from '../CustomUpdateFollower/CustomUpdateFollower.layout';
+import FocusMouseFollower from "../FocusMouseFollower/FocusMouseFollower.layout"
+import Slogan from '../Slogan/Slogan.layout';
+import useWindowDimensions from '../../../hooks/useWindowDimensions';
+import Logo from '../Logo/Logo.layout';
 
 
 
@@ -43,31 +39,32 @@ const navItems = [
   {name:"A propos", link:"/about"},
   {name:"Contact", link:"/contact"}];
 
-
 function Header(props) {
   const { window } = props;
+  const position=props.position?props.position:"fixed"
   const [mobileOpen, setMobileOpen] =useState(false);
-  const {width}=useWindowDimensions()
   const {background, elevation}=useContext(HeaderContext)
-  const drawerWidth = width;
-  const curtainTransitionTime=550 
   const theme=useTheme()
+  const {isDesktop} =useWindowDimensions()
+  
+  
 
   var backgroundColor="transparent"
   var color=theme.palette.light.main
   var activeColor=theme.palette.primary.main
-  if (background==="light"){
+
+  if (background==="light" || !isDesktop){
     backgroundColor=theme.palette.light.main
     color=theme.palette.primary.main
     activeColor=theme.palette.light.main
-
   }
-  else if (background==="primary"){
+  else if (background==="primary" ){
     backgroundColor=theme.palette.primary.main
     color=theme.palette.light.main
     activeColor=theme.palette.primary.main
-
   }
+  
+  useEffect(()=>{})
   // else{
   //   backgroundColor="transparent"
   //   color=theme.palette.light.main
@@ -80,6 +77,7 @@ function Header(props) {
   };
 
   const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
+  const matchesLg=useMediaQuery(theme=>theme.breakpoints.up("lg"))
   
   const socialLinkItems=[
     {name:"facebook", link:"https://fecabook.com", icon:<FacebookIcon fontSize={matchesMd?"medium":"small"}/>},
@@ -87,29 +85,29 @@ function Header(props) {
     {name:"whatsapp", link:"https://whatsapp.com", icon:<WhatsAppIcon fontSize={matchesMd?"medium":"small"}/>},
     {name:"instagram", link:"https://instagram.com", icon:<InstagramIcon fontSize={matchesMd?"medium":"small"}/>},
   ]
-  const socialLinks=(
+  const socialLinks=(_background)=>(
     socialLinkItems.map((item, index)=>(
-      <IconLInkMouseFollower key={index} >
+      <ButtonLinkMouseFollower key={index} >
         <Link to={item.link} >
-          <IconButton aria-label={item.name} color={background==="light"?"primary":"light"} sx={{px:{xs:.4, sm:1}, transition:"all .5s 0s ease"}} >
+          <IconButton aria-label={item.name} color={_background==="primary"?"light":(_background==="light"?"primary":"light")} sx={{px:{xs:.4, sm:1}, transition:{md:"all .5s 0s ease"}}} >
             {item.icon}
           </IconButton>
         </Link>
-      </IconLInkMouseFollower>
+      </ButtonLinkMouseFollower>
       
     ))
 )
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{textAlign:"center"}}>
         {/* Lien reseaux sociaux mobile */}
-        <Box onClick={handleDrawerToggle} sx={{px:{sm:5, md:15, lg:25}, display:{xs:"flex", md:"none"}, position:"absolute", top:21, left:7}}>
-          {socialLinks}
+        <Box  sx={{px:{sm:5, md:15, lg:25}, display:{xs:"flex", md:"none"}, position:"absolute", top:21, left:7}}>
+          {socialLinks("primary")}
         </Box>
 
         {/* Logo en mode Mobile */}
         <Box>
           <Link to="/">
-            <img src={require("../../../assets/img/white_logo_devte.png")} alt="devte" style={{width:matchesMd?100:85}} />
+            <Logo color={theme.palette.light.main}/>
           </Link>
         </Box>
         
@@ -120,7 +118,7 @@ function Header(props) {
               aria-label="close drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{display: { md: 'none' }, position:"absolute", top:12, right:0}}
+              sx={{display: { lg: 'none' }, position:"absolute", top:12, right:11}}
               >
               <CloseIcon color="light" />
             </IconButton>
@@ -142,89 +140,90 @@ function Header(props) {
 
 
   return (
-    <UpdateFollower className="update-follower" mouseOptions={{zIndex:10000, backgroundColor:color}} >
-      <Box sx={{ display: 'flex', position:"relative"}}>
-        <Box sx={{
-                position:"absolute",
-                width:"100%",
-                textAlign:{xs:"center", md:"start"},
-                top:{xs:73, md:80},
-                zIndex:1000,
-                opacity:.8,
-                px:3,
-                display:background!=="light" && background!=="primary"?"block":"none"
-            }}>
-                <Typography variant="subtitle1"
-                 sx={{
-                  fontSize:".9rem",
-                  color:theme.palette.light.main}} >La base du developpement et de l'innovation</Typography>
-        </Box>
+       <>
         <CssBaseline />
-          <AppBar component="nav" sx={{backgroundColor:backgroundColor, transition:"all .5s 0s ease", boxShadow:theme.shadows[elevation]}} position="fixed" >
-            <Toolbar sx={{height:75}} style={{paddingLeft:0, paddingRight:0}}>
+            <AppBar component="nav" 
+              sx={{
+                backgroundColor:"transparent",
+                transition:{md:"all .3s 0s linear"},
+                boxShadow:theme.shadows[!isDesktop?4:elevation],
+                transform:"translateY(-2px)",
+                "&:before":{
+                  position:"absolute",
+                  content:"''",
+                  top:0,
+                  right:0,
+                  bottom:0,
+                  left:0,
+                  background:backgroundColor,
+                  opacity:!isDesktop?.875:1,
 
-              {/* Liens du site en mode pc */}
-              <Box sx={{flexGrow:1, height:"100%", display:"flex", flexDirection:"column", justifyContent:"center", pl:1}}  >
-                <Box sx={{display: { xs: 'none', md: 'block'}, height:"100%"}}>
-                  {navItems.map((item, index) => (
-                    <DesktopNavLink key={index} navItem={item} color={color} activeColor={activeColor} backgroundColor={backgroundColor}/>
+                }
                 
-                ))}
-                </Box>
-                <Box sx={{px:{sm:5, md:15, lg:25}, display:{xs:"flex", md:"none"}}}>
-                  {socialLinks}
-                </Box>
-                <Divider sx={{display:backgroundColor==="transparent"?"inline":"none", backgroundColor:"light.main", opacity:".5",  width:"calc(50vw - 50vw / 3)", position:"absolute", bottom:0, left:0}}/>
-              </Box>
+                }}
+                position={position}
+               
+                 >
+              <CustomUpdateFollower className="update-follower" mouseOptions={{zIndex:10000, backgroundColor:color}} >
 
-              {/* Liens des reseau sociaux en mode pc */}
-              <Box>
-                <Box sx={{px:{sm:5, md:15, lg:25}, display:{xs:"none", md:"flex"}}}>
-                  {socialLinks}
+              {isDesktop&&<Slogan background={background}/>}
+              <Toolbar sx={{height:{xs:56, md:75}}} style={{paddingLeft:0, paddingRight:0}}>
+
+                {/* Liens du site en mode pc */}
+                <Box sx={{flexGrow:1, height:"100%", display:"flex", flexDirection:"column", justifyContent:"center", pl:{xs:1, md:4}}}  >
+                  <Box sx={{display: { xs: 'none', lg: 'flex'}, height:"100%"}}>
+                    {navItems.map((item, index) => (
+                      <DesktopNavLink key={index} navItem={item} color={color} activeColor={activeColor} background={background}/>
+                  ))}
+                  </Box>
+                  <Box sx={{px:{sm:5, md:15, lg:25}, display:{xs:"flex", lg:"none"}}}>
+                    {socialLinks(!isDesktop?"light":background)}
+                  </Box>
+                  <Divider sx={{display:backgroundColor==="transparent"?"inline":"none", backgroundColor:"light.main", opacity:".5",  width:"calc(50vw - 50vw / 3)", position:"absolute", bottom:0, left:0}}/>
                 </Box>
-                <IconButton
-                  size="large"
-                  color={background==="light"?"primary":"light"}
-                  aria-label="open drawer"
-                  edge="start"
-                  onClick={handleDrawerToggle}
-                  sx={{display: { md: 'none' }, position:"absolute", top:12, right:12}}
-                  >
-                  <MenuIcon />
-                </IconButton>
-                <Divider sx={{display:backgroundColor==="transparent"?"inline":"none", backgroundColor:"light.main", opacity:.5,width:"calc(50vw - 50vw / 3)", position:"absolute", bottom:0, right:0}}/>     
-              </Box>
-              
-              {/* Logo */}
-              {/* <Box sx={{transition:"all .5s 0s linear",position:"absolute", top:{xs:0, md:backgroundColor==="transparent"?0:0}, left:"50%", transform:"translateX(-50%)" }}>
-                <FocusMouseFollower scale={6}>
-                  <Link to="/">
-                    <img src={background==="light"?require("../../../assets/img/dark_logo_devte.png"):require("../../../assets/img/white_logo_devte.png")} alt="devte" style={{width:matchesMd?100:85}} />
-                  </Link>
-                </FocusMouseFollower>
 
-              </Box> */}
+                {/* Liens des reseau sociaux en mode pc */}
+                <Box>
+                  <Box sx={{px:{sm:5, md:15, lg:25}, display:{xs:"none", lg:"flex"}}}>
+                    {socialLinks(!isDesktop?"light":background)}
+                  </Box>
+                  <IconButton
+                    size="large"
+                    color={(background==="light" || !isDesktop)?"primary":"light"}
+                    aria-label="open drawer"
+                    edge="start"
+                    onClick={handleDrawerToggle}
+                    sx={{display: { lg: 'none' }, position:"absolute", top:6, right:12}}
+                    >
+                    <MenuIcon />
+                  </IconButton>
+                  <Divider sx={{display:backgroundColor==="transparent"?"inline":"none", backgroundColor:"light.main", opacity:.5,width:"calc(50vw - 50vw / 3)", position:"absolute", bottom:0, right:0}}/>     
+                </Box>
+                
+                {/* Logo */}
+                <Box sx={{transition:"all .3s 0s linear",position:"absolute", top:{xs:"50%", md:background==="transparent"?"calc(50% + 8px)":"50%"}, left:"50%", transform:"translate(-50%, -50%)" }}>
+                  <FocusMouseFollower scale={6}>
+                    <Link to="/">
+                      <Logo color={color}/>
+                    </Link>
+                  </FocusMouseFollower>
 
-            </Toolbar>
+                </Box>
+
+              </Toolbar>
+            </CustomUpdateFollower>
           </AppBar>
-       
 
         {/* Menu en mode mobile */}
         <nav>
           <CurtainDrawer
             open={mobileOpen}
             transitionDuration={0.6}>
-
-                {drawer}
-          </CurtainDrawer>
-
-          {/* <Drawer container={container} open={open} onClose={handleDrawerToggle}>
             {drawer}
-          </Drawer> */}
+          </CurtainDrawer>
         </nav>
+        </>
 
-      </Box>
-    </UpdateFollower>
 
   );
 }

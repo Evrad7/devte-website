@@ -5,11 +5,13 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 // Contexte utilisé pour changer le background du header en fonction de la couleur du contenu visible
 const HeaderContext=createContext()
 
-const HeaderContextComponent=({children})=>{
 
-    const {height}=useWindowDimensions()
+const HeaderContextComponent=({children})=>{
+    
+    const {height, isDesktop}=useWindowDimensions()
     const [background, setBackground]=useState("transparent")
     const [elevation, setElevation]=useState(0)
+
     const callback=(entries)=>{
 
         entries.forEach((entry,index) => {
@@ -23,10 +25,9 @@ const HeaderContextComponent=({children})=>{
                     setElevation(currentElevation?currentElevation:elevation)
                     entries.forEach(elt=>elt.target.classList.remove("active"))
                     entry.target.classList.add("active")
-
                 }
                 else if(entry.intersectionRatio<=0 && fromTop<=fromBottom) {
-                    if(entry.target.classList.contains("active")){
+                    if(entry.target.classList.contains("main")){
                         setBackground("transparent")
                         setElevation(0)
                     }
@@ -35,27 +36,40 @@ const HeaderContextComponent=({children})=>{
             
         });
     }
-
-    const observer= (typeof window!=="undefined")&&(height!=undefined)?useRef(new IntersectionObserver(callback, {threshold:0, rootMargin:`-0px 0px -${height}px 0px`,})):useRef(null)
+   
+    const observer=useRef((typeof window!=="undefined") && (isDesktop)?new IntersectionObserver(callback, {threshold:0, rootMargin:`-0px 0px -${height}px 0px`,}):null)
 
     useEffect(()=>{
-        const currentObserver=observer
-        return ()=>currentObserver.current.disconnect()
-    }, [])
+            return ()=>{
+                if(observer.current){
+                    const currentObserver=observer
+                    currentObserver.current.disconnect()
+                }
+
+            }
+
+    }, [isDesktop])
     const observe=(target, background)=>{
-        target.setAttribute("header-background", background)
-        target.setAttribute("elevation", 10)
-        observer.current.observe(target)
+        if(observer.current){
+            target.setAttribute("header-background", background)
+            target.setAttribute("elevation", 10)
+            observer.current.observe(target)
+        }
+
     }
     const unObserve=(target)=>{
-        if(target){
-            observer.current.unobserve(target)
+        if(observer.current){
+            if(target){
+                observer.current.unobserve(target)
+            }
         }
     }
     const observeMobile=(target)=>{
-        target.setAttribute("header-background", "light")
-        target.setAttribute("elevation", 1)
-        observer.current.observe(target)
+        if(observer.current){
+            target.setAttribute("header-background", "light")
+            target.setAttribute("elevation", 1)
+            observer.current.observe(target)
+        }
     }
     return (
         <HeaderContext.Provider value={{background, setBackground, elevation, setElevation, observe, observeMobile, unObserve}}>

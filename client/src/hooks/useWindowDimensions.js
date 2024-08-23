@@ -1,31 +1,24 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
+import { isMobile as isMobileHelper} from '../utils/helpers/device';
+import { ServerContext } from '../context/ServerContext';
 
 
 export default function useWindowDimensions() {
 
-      const prevHeight=useRef(0)
-
-      // Cette variable va permettre d'annuler les IntersectionObserver pour les appareils mobiles  dont la barre de navigation
-      //cause toujours problème malgré la définition d'un containeur personnalisé
-
-
+      const {isMobile}=useContext(ServerContext)
       const getWindowDimensions=()=>{
         if (typeof window!=="undefined"){
           const { innerWidth: width, innerHeight: height } = window;
-          // document.documentElement.style.setProperty("--vh", `${vh.current*0.01}px`)
-          // if(!disableIntersectionObserver && prevHeight.current!==0 && height>prevHeight.current){
-          //     setDisableIntersectionObserver(true)
-          // }
-          // else{
-          //   prevHeight.current=height
-          // }
+          const isDesktop=!isMobileHelper()
           return {
-            width,
-            height
+            width:width,
+            height:height,
+            isDesktop,
+            isMobile:!isDesktop
           };
         }
         else{
-          return {width:0, height:0}
+          return {width:null, height:null, isMobile:isMobile, isDesktop:!isMobile}
         }
       
       }
@@ -36,9 +29,14 @@ export default function useWindowDimensions() {
     function handleResize() {
       setWindowDimensions(getWindowDimensions());
     }
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    if(!isMobile){
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+    else{
+      handleResize()
+    }
+    
   }, []);
 
   return {...windowDimensions};
