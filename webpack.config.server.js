@@ -13,7 +13,8 @@ const config = {
             /^@mui\//,
             /^react-hexgrid/,
             /^react-mouse-follower/,
-            /^@babel\/runtime/]})],
+            /^@babel\/runtime/,
+        ]})],
     // experiments: {
     //     outputModule: true // Activez cette option pour permettre la sortie de type ESM
     //   },

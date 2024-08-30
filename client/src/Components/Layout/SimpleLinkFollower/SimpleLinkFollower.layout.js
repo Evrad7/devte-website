@@ -3,8 +3,8 @@ import CustomUpdateFollower from "../CustomUpdateFollower/CustomUpdateFollower.l
 
 const SimpleLinkFollower=({children})=>{
     return  <CustomUpdateFollower className="update-follower" style={{"display":"inline"}} 
-                mouseOptions={{visible:false
-                }}>
+                mouseOptions={{visible:false}}
+                >
                 {children}
         </CustomUpdateFollower>
 

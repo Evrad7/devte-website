@@ -7,7 +7,8 @@ const StyledHexagon=styled(Hexagon)(({theme})=>({
     fill:"#ffffff",
     stroke:theme.palette.primary.main,
     strokeWidth:0.6,
-    transition:".3s 0s ease",
+    transition:"fill .3s 0s ease, opacity 1.5s 0s cubic-bezier(0.5, 0, 0, 1)",
+    opacity:0,
     "&:hover":{
         fill:theme.palette.primary.main,
         cursor:"pointer"

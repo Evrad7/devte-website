@@ -148,6 +148,8 @@ function Header(props) {
                 transition:{md:"all .3s 0s linear"},
                 boxShadow:theme.shadows[!isDesktop?4:elevation],
                 transform:"translateY(-2px)",
+                top:1,
+
                 "&:before":{
                   position:"absolute",
                   content:"''",
@@ -156,7 +158,8 @@ function Header(props) {
                   bottom:0,
                   left:0,
                   background:backgroundColor,
-                  opacity:!isDesktop?.875:1,
+                  opacity:!isDesktop?.875:.9,
+
 
                 }
                 

@@ -11,7 +11,7 @@ import HomePureTest from "./Pages/Home/Home.pure.test";
 import { IntersectionObserverContextProvider } from "./context/IntersectionObserverContext";
 import WebDevlopmentPage from "./Pages/Services/WebDevelopment/WebDevelopment.page";
 import MobileDevlopmentPage from "./Pages/Services/MobileDevlopment/MobileDevelopment.page";
-import CloudSolutionsPage from "./Pages/Services/CloudSolutions/CloudSolutions.page";
+import SystemAdministrationPage from "./Pages/Services/SystemAdministration/SystemAdministration.page";
 import InfographyPage from "./Pages/Services/Inphography/Inphography.page";
 import ServicesPage from "./Pages/Services/Services.page";
 import {MouseFollower} from "react-mouse-follower"
@@ -32,7 +32,7 @@ const  App=({data})=>{
                       <Route  path="/services" element={<ServicesPage/>}>
                           <Route path="/services/developpement-web" element={<HomePage/>}/>
                           <Route path="/services/developpement-mobile" element={<HomePureTest/>}/>
-                          <Route path="/services/solutions-cloud" element={<CloudSolutionsPage/>}/>
+                          <Route path="/services/administration-systeme" element={<SystemAdministrationPage/>}/>
                           <Route path="/services/infographie" element={<InfographyPage/>}/>
                       </Route>
                       <Route  path="/about" element={<AboutPage/>}/>
@@ -43,8 +43,8 @@ const  App=({data})=>{
         </HeaderContextComponent>
     </ThemeProvider>
     </ServerContextProvider>
-    
   )
+    
 }
   
 export default App;

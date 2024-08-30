@@ -12,7 +12,7 @@ const ContainerSeparatorStyled=styled(Box, {shouldForwardProp:prop=>prop!=="dire
     display:"flex",
     flex:"colmun",
     justifyContent:"end",
-    // transform:translate?`translateY(${direction==="top"?"-":""}35px)`:"none",
+    transform:translate?`translateY(${direction==="top"?"-":""}35px)`:"none",
     "&:after":{
         position:"absolute",
         content:"''",
@@ -25,7 +25,7 @@ const ContainerSeparatorStyled=styled(Box, {shouldForwardProp:prop=>prop!=="dire
         backgroundImage:direction==="top"?`url(${squareSeparatorTop})`:`url(${squareSeparatorBottom})`,
         backgroundRepeat:"repeat-x",
         backgroundPosition:direction==="top"?"center bottom":"center top",
-        height:50,
+        height:45,
         backgroundColor:"transparent",
         width:"100%",
     },

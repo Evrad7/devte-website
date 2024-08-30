@@ -1,11 +1,9 @@
-import { useTheme } from "@emotion/react"
 import CustomUpdateFollower from "../CustomUpdateFollower/CustomUpdateFollower.layout"
 
 
-const FocusMouseFollower=({scale, children})=>{
-    const theme=useTheme()
+const FocusMouseFollower=({scale, backgroundColor="white", children})=>{
     return  <CustomUpdateFollower className="update-follower" style={{"display":"inline"}} 
-                mouseOptions={{scale:scale, mixBlendMode:"difference", backgroundColor:"white"
+                mouseOptions={{scale:scale, mixBlendMode:"difference", backgroundColor:backgroundColor
                 }}>
                 {children}
         </CustomUpdateFollower>

@@ -1,27 +1,28 @@
 import { Button } from "@mui/material"
 import SimpleLinkFollower from "../SimpleLinkFollower/SimpleLinkFollower.layout"
 import { useTheme } from "@emotion/react"
+import { Link } from "react-router-dom"
 
 
-const AnimatedWaveButton=({text, color, rounded, size})=>{
+const AnimatedWaveButton=({text, color, rounded, size, href, onClick})=>{
     const theme=useTheme()
+    const backgroundColor=theme.palette[color].main
     return (
         <SimpleLinkFollower>
-            <Button
+            <Button onClick={onClick} component={href?Link:null} to={href}
             variant="contained"
             sx={{
-                background:color==="light"?theme.palette.light.main:theme.palette.primary.main,
+                background:backgroundColor,
                 // color:theme.palette.getContrastText(theme.palette.light.main)
                 color:color==="light"?theme.palette.primary.main:theme.palette.light.main,
                 marginTop:{xs:1, md:2},
-                minWidth:{xs:150, md:250},
+                width:{xs:250, md:250},
                 fontWeight:"600",
                 borderRadius:rounded?15:1,
                 height:size==="large"?{xs:35, md:50}:{xs:35, lg:40},
                 position:"relative",
                 overflow:"hidden",
                 boxShadow:"none",
-                borderColor:"light"?theme.palette.primary.main:theme.palette.light.main,
                 "&:after":{
                     position:"absolute",
                     content:`"${text}"`,
@@ -52,7 +53,7 @@ const AnimatedWaveButton=({text, color, rounded, size})=>{
                     width:"100%",
                     height:"100%",
                     transition:"top .5s 0s ease",
-                    background:color==="light"?theme.palette.light.main:theme.palette.primary.main,
+                    background:backgroundColor,
 
 
                 },

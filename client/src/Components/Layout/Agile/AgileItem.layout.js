@@ -21,12 +21,10 @@ const AgileItem=({title, body, positionHole})=>{
     const matchesMd=useMediaQuery((theme=>theme.breakpoints.up("md")))
     const ref=useRef(null)
     const imgAgileRef=useRef(null)
-    // const scrollReveal =useContext(ScrollRevealContext)
     const {observe, unObserve} =useContext(IntersectionObserverContext)
 
 
     useEffect(()=>{
-        // scrollReveal.reveal(ref.current)
         observe(ref.current)
         return ()=>{
             const currentRef=ref.current

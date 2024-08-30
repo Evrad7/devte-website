@@ -7,7 +7,7 @@ import { useMediaQuery } from "@mui/material"
 
 const PageContainer=({hideHeader=false, children})=>{
     const {setBackground, setElevation}=useContext(HeaderContext)
-    const {clearLayers, removePreviousLayer} = useControlOptions();
+    const {clearLayers, removePreviousLayer, addOptionLayer} = useControlOptions();
     const {isDesktop}=useWindowDimensions()
     const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
 
@@ -17,11 +17,8 @@ const PageContainer=({hideHeader=false, children})=>{
             setBackground("transparent")
             setElevation(0)
             clearLayers();
-            
         }
-        else if(!matchesMd){
-            window.scrollTo(0, 0)
-        }
+        window.scrollTo(0, 0)
 
     }, [])
     return(

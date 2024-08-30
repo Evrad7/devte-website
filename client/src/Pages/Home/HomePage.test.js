@@ -1,5 +1,5 @@
 import React from 'react';
-import { technoligies, fonctionalities } from '../../services/data';
+import { technoligies, fonctionalities, qualities } from '../../services/data';
 import { Box } from '@mui/material';
 import GridDrowned from '../../Components/Layout/GridDrowned/GridDrowned.layout';
 import GridHexagon from "../../Components/Layout/GridHexagon/GridHexagon.layout"
@@ -9,6 +9,14 @@ import HomeCrew from '../../Components/Layout/HomeCrew/HomeCrew.layout';
 import PageContainer from '../../Components/Layout/PageContainer/PageContainer.layout';
 import Agile from '../../Components/Layout/Agile/Agile.layout';
 import { UpdateFollower } from 'react-mouse-follower';
+import Quality from '../../Components/Layout/Quality/Quality.layout';
+import Services from '../../Components/Layout/Services/Services.layout';
+import SecondaryLandingComponent from '../../Components/Layout/SecondaryLandingComponent/SecondaryLandingComponent';
+import Separator from '../../Components/Layout/Separator/Separator.layout';
+import Experiences from '../../Components/Layout/Experiences/Experiences.layout';
+import Contact from '../../Components/Layout/Contact/Contact.layout';
+import ProjectForm from '../../Components/Layout/ProjectForm/PojectForm.layout';
+import Quote from "../../Components/Layout/Quote/Quote.layout"
 
 
 
@@ -28,7 +36,7 @@ const HomePageTest = (props) => {
 
   // on filtre toutes les technoligies utilisées pour l'inphographie'
   // const allTechnoligies=technoligies.filter(item=>item.infogaphy)
-    const serviceData=[
+    const detailsServiceData=[
       {
         title:"Analyse et Conception",
         photo:"analyse_et_conception.png",
@@ -65,12 +73,26 @@ const HomePageTest = (props) => {
     return (
       <PageContainer>
         <UpdateFollower mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
-          <Box maxWidth="xxl" sx={{backgroundColor:theme.palette.light.main, px:0, }}>
-            <Box sx={{ height:1000, background:theme.palette.primary.main}}></Box>
+          <SecondaryLandingComponent 
+            title="DEVELOPPEMENT DES SITES ET  APPLICATIONS WEB"
+            description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, maxime. Autem tempore, minus sequi debitis eligendi
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+          />
+          <Box className="main" sx={{background:theme.palette.light.main}}>
+            <Separator direction="top" translate/>
+          </Box>
+          
+          <Box component="section" sx={{mb:15, mt:40}}>
+            <ProjectForm/>
+          </Box>
+          {/* <HomeCrew/> */}
+
+          <Box maxWidth="xxl" sx={{backgroundColor:theme.palette.light.main, }}>
+            {/* <Box sx={{ height:1000, background:theme.palette.primary.main}}></Box> */}
             
 
             <Box sx={{ height:1000, background:theme.palette.light.main}}></Box>
-            <ServiceDetails data={serviceData}/>
+            <ServiceDetails data={detailsServiceData}/>
 
               <Agile/>
               <Box sx={{ height:1000, background:theme.palette.light.main}}></Box>
@@ -82,8 +104,9 @@ const HomePageTest = (props) => {
               
               <HomeCrew/>
               <Box sx={{ height:1000, background:theme.palette.light.main}}></Box>
+              <Services/>
 
-              {/* <Quote 
+              <Quote 
                 name="TSOATA Evrad" 
                 role="CO-FONDATEUR DEVTE"
                 // name="TIOJIO Romain" 
@@ -91,11 +114,12 @@ const HomePageTest = (props) => {
                 photo="dev.png" 
                 text="Fugiat do nisi do irure nulla amet sint Lorem occaecat laboris exercitation deserunt. 
                   Ut ad non aute aute eiusmod elit voluptate laboris ipsum elit exercitation amet sunt."
-                /> */}
-              <Box sx={{height:10, width:"100%", background:"red"}}></Box>
-              {/* <Box sx={{ height:1000, background:theme.palette.light.main}}></Box> */}
+                />
+              {/* <Box sx={{height:10, width:"100%", background:"red"}}></Box> */}
+              <Box sx={{ height:1000, background:theme.palette.light.main}}></Box>
 
-          </Box>   
+          </Box> 
+            
         </UpdateFollower>
         
       </PageContainer> 

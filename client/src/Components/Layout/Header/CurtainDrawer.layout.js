@@ -6,28 +6,30 @@ import { StyledCurtainDrawer } from "./CurtainDrawer.style"
 
 
 const CurtainDrawer =({open, transitionDuration, children})=>{
-   const ref=useRef(null)
    const curtainLeftRef=useRef(null)
    const curtainRightRef=useRef(null)
    
    let openDrawerId, closeDrawerId
 
     const openDrawer=()=>{
-        if(ref.current){
             clearTimeout(closeDrawerId)
             openDrawerId=setTimeout(()=>{
-                curtainLeftRef.current.classList.add("animate")
-                curtainRightRef.current.classList.add("animate")
+                    if(curtainLeftRef.current && curtainRightRef.current){
+                            curtainLeftRef.current.classList.add("animate")
+                            curtainRightRef.current.classList.add("animate")
+                    }
+
             }, 0)
            
-        }
     }
     const closeDrawer=()=>{
-        if(ref.current){
             clearTimeout(openDrawerId)
             closeDrawerId=setTimeout(()=>{
-                curtainLeftRef.current.classList.remove("animate")
-                curtainRightRef.current.classList.remove("animate")
+                if(curtainLeftRef.current && curtainRightRef.current){
+                    curtainLeftRef.current.classList.remove("animate")
+                    curtainRightRef.current.classList.remove("animate")
+                 }
+
             },  0)
           
 
@@ -38,7 +40,6 @@ const CurtainDrawer =({open, transitionDuration, children})=>{
 
             // curtainLeftRef.current.classList.add("animate")
             // curtainRightRef.current.classList.add("animate")
-        }
     }
    
     const toggleDrawer=()=>{
@@ -55,7 +56,7 @@ const CurtainDrawer =({open, transitionDuration, children})=>{
     const container = typeof window !=="undefined"?window.document.body:undefined
     if(container){
         return createPortal(
-            <StyledCurtainDrawer ref={ref}
+            <StyledCurtainDrawer
                 // Custom Drawer
                 // onClose={handleDrawerToggle}
                 transitionDuration={transitionDuration}

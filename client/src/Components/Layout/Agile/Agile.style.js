@@ -6,10 +6,12 @@ import verticalSmoke from "../../../assets/img/vertical_smoke.png"
 const StyledContainer=styled(Box, {shouldForwardProp:prop=>prop!=="theme" && prop!="matchesMd"})(({theme, matchesMd})=>({
  backgroundColor:theme.palette.primary.main,
  background:`${theme.palette.primary.gradientToTop}` ,
- paddingTop:100,
+ paddingTop:matchesMd?100:25,
  paddingBottom:100,
  paddingRight:10,
  paddingLeft:10,
+ borderTopLeftRadius:25,
+ borderTopRightRadius:25,
 
 "& .MuiGrid-container":{
    paddingTop:50,

@@ -40,7 +40,7 @@ const IntersectionObserverContext=createContext()
            
         })
     }
-    const threshold=isDesktop?[intersectionRatioTop, intersectionRatioMiddle]:[intersectionRatioMiddle]
+    const threshold=isDesktop?[intersectionRatioMiddle]:[intersectionRatioMiddle]
     const observer=typeof window!=="undefined"?useRef(new IntersectionObserver(callback, {threshold:threshold})):useRef(null)
 
     const observe=(target)=>{

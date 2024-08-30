@@ -31,7 +31,7 @@ const StyledLandingContainerBox=styled(Box, {shouldForwardProp:prop=>prop!=="isD
   // position:"relative",
 
   // position:"relative",
-  height:isDesktop?`calc(100vh)`:(height?`${height}px`:`calc(100vh - 40px)`),
+  height:isDesktop?`calc(100vh)`:(height?`${height+50}px`:`calc(100vh - 40px)`),
   overflow:"hidden",
   transform:isDesktop?"translateZ(-400px) scale(9.02)":"none",
   // transform:"translateZ(-400px) scale(9.02)",
@@ -92,7 +92,7 @@ const StyledLandingContainerBox=styled(Box, {shouldForwardProp:prop=>prop!=="isD
         backgroundImage:`url(${landSpace})`,
         backgroundRepeat:"no-repeat",
         backgroundSize:"cover",
-        backgroundPosition:"center",
+        backgroundPosition:"0px 0px",
 
         
     },

@@ -3,6 +3,7 @@ import {Button, Typography, useMediaQuery } from "@mui/material"
 import { StyledGridContainer, StyledGridItem, StyledHorizontalBar, StyledPaper, StyledVerticalBar } from "./GridDrowned.style"
 import {Box} from "@mui/material";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import Title from "../Title/Title.layout";
 
 
 const GridDrowned=({items})=>{
@@ -285,6 +286,7 @@ const GridDrowned=({items})=>{
 
     return (
         <Box ref={ref}>
+            <Title text="plus de 100 fonctionnalités" icon="icon_fonctionnalities.svg" color="primary" mb={{xs:5, md:13}}/>
             <StyledGridContainer  sx={{p:0}} container spacing={{xs:.7, sm:1, md:1.5}}>
                 {widths.map((width, index)=>{
                     const leftEdge=currentWidth%12===0?true:false

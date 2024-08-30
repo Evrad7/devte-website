@@ -15,6 +15,9 @@ const theme=createTheme({
     palette:{
         primary:{
             main:"#10355b",
+            // gradientToBottom:"#10355b",
+            // gradientToTop:"#10355b",
+
             gradientToBottom:"linear-gradient(to bottom, #10355B, #030b12)",
             gradientToTop:"linear-gradient(to top, #10355B, #030b12)",
         },
@@ -32,7 +35,7 @@ const theme=createTheme({
             main:"#f9f9f9",
         },
         darkSpace:{
-            main:"#1d212d"
+            main:"#0B253F"
         },
         
     }

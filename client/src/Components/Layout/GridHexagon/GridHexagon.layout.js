@@ -1,14 +1,32 @@
 import { Box } from "@mui/material";
-import React from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import {  Layout } from 'react-hexgrid';
 import { StyledHexGrid, StyledHexagon, StyledText} from "./GridHexagon.style";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import Title from "../Title/Title.layout";
+import { IntersectionObserverContext } from "../../../context/IntersectionObserverContext";
+
+
+
+
 
 
 
 const GridHexagon=({items})=>{
     const {width}=useWindowDimensions()
+    const ref=useRef(null)
+    const {observe, unObserve} =useContext(IntersectionObserverContext)
+
+
+    useEffect(()=>{
+        observe(ref.current)
+        return ()=>{
+            const currentRef=ref.current
+            unObserve(currentRef)
+        }
+    }, [])
+    
     const matchesBreakpoint1=useMediaQuery("(max-width:700px)")
     const matchesBreakpoint2=useMediaQuery("(max-width:500px)")
     const matchesBreakpoint3=useMediaQuery("(max-width:428px)")
@@ -86,14 +104,23 @@ const GridHexagon=({items})=>{
     }   
 ) 
     return (
-        <Box>
-            <h1>{width}</h1>
-          <StyledHexGrid size={xSize}  width="100%"  height={ySize*((r+1)*2.1)} viewBox={`0 0 100 ${ySize*((r+1)*2.1)}`}>
-          <Layout style={{transform:"translateX(50%)"}} size={{ x:xSize , y:ySize }} flat={false} spacing={1.025} origin={{ x:startWithEvenItems?35:0, y: ySize+4}}>
-            {Hexagons}
-          </Layout>
-        </StyledHexGrid>
-        </Box>
+        <>
+          <Title text="Nos technologies" icon="icon_technologies.svg" color="primary" />
+          <Box ref={ref} 
+           sx={{
+             "&.animate svg > g > g":{
+                opacity:1,
+             }
+           }}
+           >
+            <StyledHexGrid size={xSize}  width="100%"  height={ySize*((r+1)*2.1)} viewBox={`0 0 100 ${ySize*((r+1)*2.1)}`}>
+                <Layout style={{transform:"translateX(50%)"}} size={{ x:xSize , y:ySize }} flat={false} spacing={1.025} origin={{ x:startWithEvenItems?35:0, y: ySize+4}}>
+                    {Hexagons}
+                </Layout>
+            </StyledHexGrid>
+          </Box>
+          
+        </>
           
     )
 }

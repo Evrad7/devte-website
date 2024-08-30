@@ -7,12 +7,13 @@ import { StyledContainer } from './Agile.style';
 import AgileItem from './AgileItem.layout';
 import AgileImg from "../../../assets/img/agile.svg"
 import { Typography, useMediaQuery } from '@mui/material';
-import FlashIcon from "../../../assets/img/icon_flash.svg"
 import { useContext, useEffect, useRef } from 'react';
 import { HeaderContext } from '../../../context/HeaderContext';
 import FocusMouseFollower from '../FocusMouseFollower/FocusMouseFollower.layout';
+import Title from "../Title/Title.layout";
 
-export default function SpacingGrid() {
+
+export default function Agile() {
   const theme=useTheme()
   const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
   const {observe:observeHeader, unObserve:unObserveHeader}=useContext(HeaderContext)
@@ -27,17 +28,8 @@ export default function SpacingGrid() {
       }
   }, [observeHeader, unObserveHeader])
   return (
-    <Box mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
-      <StyledContainer ref={ref}  component="section" matchesMd={matchesMd}>
-        <Box sx={{display:"flex", justifyContent:"center"}}>
-            <Box sx={{width:{xs:30, md:50}, marginRight:1.5}}>
-              <img src={FlashIcon} alt="approche agile" style={{width:"100%"}}/>
-            </Box>
-          <Typography 
-          sx={{color:theme.palette.light.main, fontSize:{xs:"1.7rem", md:"3rem"}, display:"inline"}}
-          variant="h3" component="h2">UNE APPROCHE AGILE</Typography>
-        </Box>
-      
+      <StyledContainer ref={ref}  matchesMd={matchesMd}>
+        <Title text="Une approche agile" icon="icon_flash.svg" color="light" textDecorationColor="dark"/>
         <Grid container justifyContent="center" columnSpacing={{xs:3, md:12}} rowSpacing={{xs:4, md:12}} position="relative">
         <FocusMouseFollower scale={18}>
           <Box ref={imgAgileRef} className="intersection-observer"
@@ -126,8 +118,5 @@ export default function SpacingGrid() {
             </Grid>
         </Grid>
       </StyledContainer>
-    </Box>
-
-
   );
 }
