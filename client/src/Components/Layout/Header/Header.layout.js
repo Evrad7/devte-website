@@ -33,7 +33,7 @@ const navItems = [
   {name:"Services", link:"/services", items: [
       {name:"Developpement web", link:"/services/developpement-web"},
       {name:"Developpement mobile", link:"/services/developpement-mobile"},
-      {name:"Cloud et Deops", link:"/services/cloud-devops"},
+      {name:"Administration système", link:"/services/administration-systeme"},
       {name:"Infographie", link:"/services/inphographie"},
   ]},
   {name:"A propos", link:"/about"},

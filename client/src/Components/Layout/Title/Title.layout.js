@@ -6,7 +6,7 @@ import FocusMouseFollower from '../FocusMouseFollower/FocusMouseFollower.layout'
 
 
 
-const Title=({text, icon, color, textDecorationColor, mt=5, mb=5, animationTextDirection="left", textAlign="left"})=>{
+const Title=({text, icon, color, textDecorationColor, mt=5, mb=5, animationTextDirection="left", textAlign="left", justifyContent={xs:"flex-start", sm:"center"}})=>{
     // `color props take `light` or `primary`,
     // `animationTextDirection` takes `right` or `left`
     const theme=useTheme()
@@ -24,7 +24,7 @@ const Title=({text, icon, color, textDecorationColor, mt=5, mb=5, animationTextD
         <Box ref={ref} 
             sx={{
                 display:"flex",
-                justifyContent:{xs:"flex-start", sm:"center"},
+                justifyContent:justifyContent,
                 mt:mt,
                 mb:mb,
                 "&.animate":{

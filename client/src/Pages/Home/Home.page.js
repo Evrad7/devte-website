@@ -11,7 +11,7 @@ import PageContainer from '../../Components/Layout/PageContainer/PageContainer.l
 import CustomUpdateFollower from '../../Components/Layout/CustomUpdateFollower/CustomUpdateFollower.layout';
 import Header from '../../Components/Layout/Header/Header.layout';
 import Quality from '../../Components/Layout/Quality/Quality.layout';
-import { fonctionalities, qualities, technoligies } from '../../services/data';
+import { fonctionalities, qualities, technologies } from '../../services/data';
 import Services from '../../Components/Layout/Services/Services.layout';
 import GridDrowned from '../../Components/Layout/GridDrowned/GridDrowned.layout';
 import GridHexagon from '../../Components/Layout/GridHexagon/GridHexagon.layout';
@@ -29,7 +29,7 @@ const HomePage = () => {
   const {isDesktop}=useWindowDimensions()
     const theme=useTheme()
     const {observe, unObserve, observeMobile}=useContext(HeaderContext)
-    const bodyRef=useRef(null)
+    const descriptionRef=useRef(null)
     const footerRef=useRef(null)
     const serviceRef=useRef(null)
     const fonctionalitiesRef=useRef(null)
@@ -37,15 +37,15 @@ const HomePage = () => {
     const agileRef=useRef(null)
     const homeCrewRef=useRef(null)
 
-    const allFonctionalities=fonctionalities.filter(item=>item.all)
-  const allTechnoligies=technoligies.filter(item=>item.all)
+   const allFonctionalities=fonctionalities.filter(item=>item.all)
+   const allTechnoligies=technologies.filter(item=>item.all)
 
 
 
 
     useEffect(()=>{
       if(isDesktop){
-        observe(bodyRef.current, "primary")
+        observe(descriptionRef.current, "primary")
         observe(footerRef.current, "light")     
         observe(serviceRef.current, "light")  
         observe(technologiesRef.current, "primary")
@@ -54,11 +54,11 @@ const HomePage = () => {
         observe(homeCrewRef.current, "primary")
       }
       else{
-         observeMobile(bodyRef.current)
+         observeMobile(descriptionRef.current)
       }
       return ()=>{
         if(isDesktop){
-          const currentBodyRef=bodyRef
+          const currentdescriptionRef=descriptionRef
           const currentFooterRef=footerRef
           const currentSericeRef=serviceRef
           const currentTechnologiesRef=technologiesRef
@@ -66,7 +66,7 @@ const HomePage = () => {
           const currentAgileRef=agileRef
           const currentHomeCrewRef=homeCrewRef
 
-          unObserve(currentBodyRef.current)
+          unObserve(currentdescriptionRef.current)
           unObserve(currentFooterRef.current)
           unObserve(currentSericeRef.current)
           unObserve(currentTechnologiesRef.current)
@@ -75,8 +75,8 @@ const HomePage = () => {
           unObserve(currentHomeCrewRef.current)
         }
         else{
-          const currentBodyRef=bodyRef
-          unObserve(currentBodyRef.current)
+          const currentdescriptionRef=descriptionRef
+          unObserve(currentdescriptionRef.current)
 
         }
       }
@@ -98,23 +98,17 @@ const HomePage = () => {
             {isDesktop&&<Header position="sticky"/>}
             <LandingComponent/> 
   
-            <CustomUpdateFollower className="update-follower" style={{ position:"relative", zIndex:theme.zIndex.fab}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
-              <Box className="main"  ref={bodyRef} sx={{background:theme.palette.light.main}} >
+            <CustomUpdateFollower className="update-follower" style={{ position:"relative", zIndex:theme.zIndex.fab, background:theme.palette.light.main}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
+                <Box className="first-section"  ref={descriptionRef} sx={{background:theme.palette.light.main}} >
                   {isDesktop&&<Separator direction="top" translate />}
-                  <Box sx={{background:theme.palette.light.main}}>
                       <Typography sx={{mx:{xs:1, md:10, lg:20}, py:15, textAlign:"center"}} variant="body1" component="p">
                           In ipsum voluptate deserunt ad magna eiusmod sint do. Ea occaecat ea esse dolor minim non duis Lorem consequat qui pariatur. Dolor exercitation id quis culpa ullamco esse incididunt sint mollit sint nostrud consequat. Deserunt magna labore duis enim. Laboris officia nulla velit consequat excepteur. Sunt elit enim commodo duis minim sint irure dolor adipisicing minim cillum qui proident.
                       </Typography>
-              {/* {qualities[0].svg} */}
-                    
-                  
-
-
-                      <Grid sx={{pl:{xs:2, md:5}, pr:1, my:10}} container columnSpacing={{xs:10, lg:10}} rowSpacing={{xs:7, md:5}} justifyContent="center" alignItems="center">
+                      <Grid component="section" sx={{pl:{xs:2, md:5}, pr:1, my:10}} container columnSpacing={{xs:10, lg:10}} rowSpacing={{xs:7, md:5}} justifyContent="center" alignItems="center">
                           <Grid item xs={12} sm={5} lg={4} sx={{display:"flex", justifyContent:"center"}}>
                             <Quality
                               title="Digitalisation"
-                              icon="digitalization"
+                              icon="digitalization.svg"
                               body="Très pratique pour composer des documents complexes, beaucoup
                                       d’automatisation : références croisées, notes de bas de page, table des" />
                           </Grid>
@@ -126,7 +120,7 @@ const HomePage = () => {
                                     }}>
                             <Quality
                                 title="Innovation"
-                                icon="innovation"
+                                icon="innovation.svg"
                               body="Très pratique pour composer des documents complexes, beaucoup
                                       d’automatisation : références croisées, notes de bas de page, table des" />
                           </Grid>
@@ -134,66 +128,58 @@ const HomePage = () => {
                             
                           <Quality
                             title="Flexibilité"
-                            icon="flexibility"
+                            icon="flexibility.svg"
                             body="Très pratique pour composer des documents complexes, beaucoup
                                     d’automatisation : références croisées, notes de bas de page, table des" />
                           </Grid>
                       </Grid>
-
-                      <Box ref={serviceRef} component={"section"} sx={{mt:15, mb:{xs:10, md:20}}}>
-                        <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
-                          <Services/>
-                        </CustomUpdateFollower>
-                      </Box>  
-
-                  
-
-                      <Box ref={fonctionalitiesRef} component={"section"} sx={{mt:0, mb:{xs:10, md:20}}}>
-                        <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
-                          <GridDrowned items={allFonctionalities}/>
-                        </CustomUpdateFollower>
-                      </Box>
-
-                      <Action/>
-
-                     <Box ref={technologiesRef} component={"section"} sx={{mt:{xs:10, md:15}, mb:0}}>
-                        <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
-                          <GridHexagon items={allTechnoligies}/>         
-                        </CustomUpdateFollower>
-                      </Box>    
-
-
-                      <Box ref={agileRef} component={"section"} sx={{my:15}}>
-                        <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
-                          <Agile/>
-                        </CustomUpdateFollower>
-                      </Box>
-
-
-                       <Box ref={homeCrewRef} component={"section"} sx={{my:15}}>
-                        <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
-                          <HomeCrew/>
-                        </CustomUpdateFollower>
-                      </Box>
-                      
-                      <RocketFlying/>
-                      
-                      <ProjectForm/>
-
-                      <Box component="section" sx={{mb:15, mt:15}}>
-                        <Experiences/>
-                      </Box>
-
-                      <Box ref={footerRef}>
-                        <Footer/>
-                      </Box>
-                      <Box sx={{height:200}}></Box>
-
-                  
-                  
-                  </Box>
                 </Box>
-            
+
+                <Box ref={serviceRef} component={"section"} sx={{mt:15, mb:{xs:10, md:20}}}>
+                  <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
+                    <Services/>
+                  </CustomUpdateFollower>
+                </Box>  
+
+                <Box ref={fonctionalitiesRef} component={"section"} sx={{mt:0, mb:{xs:10, md:20}}}>
+                  <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
+                    <GridDrowned items={allFonctionalities}/>
+                  </CustomUpdateFollower>
+                </Box>
+
+                <Action/>
+
+                <Box ref={technologiesRef} component={"section"} sx={{mt:{xs:10, md:15}, mb:0}}>
+                  <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
+                    <GridHexagon items={allTechnoligies}/>         
+                  </CustomUpdateFollower>
+                </Box>    
+
+
+                <Box ref={agileRef} component={"section"} sx={{my:15}}>
+                  <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
+                    <Agile/>
+                  </CustomUpdateFollower>
+                </Box>
+
+
+                  <Box ref={homeCrewRef} component={"section"} sx={{my:15}}>
+                  <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
+                    <HomeCrew/>
+                  </CustomUpdateFollower>
+                </Box>
+                
+                <RocketFlying/>
+                
+                <ProjectForm/>
+
+                <Box component="section" sx={{mb:15, mt:15}}>
+                  <Experiences/>
+                </Box>
+
+                <Box ref={footerRef}>
+                  <Footer/>
+                </Box>
               </CustomUpdateFollower>
             </Box>
     </PageContainer>

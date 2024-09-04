@@ -3,13 +3,11 @@ import { HeaderContext } from "../../../context/HeaderContext"
 import {MouseFollower, useControlOptions } from "react-mouse-follower"
 import useWindowDimensions from "../../../hooks/useWindowDimensions"
 import Header from "../Header/Header.layout"
-import { useMediaQuery } from "@mui/material"
 
 const PageContainer=({hideHeader=false, children})=>{
     const {setBackground, setElevation}=useContext(HeaderContext)
-    const {clearLayers, removePreviousLayer, addOptionLayer} = useControlOptions();
+    const {clearLayers} = useControlOptions();
     const {isDesktop}=useWindowDimensions()
-    const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
 
 
     useEffect(()=>{

@@ -7,8 +7,6 @@ import Paper from '@mui/material/Paper';
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import { IntersectionObserverContext } from "../../../context/IntersectionObserverContext";
-import { qualities } from "../../../services/data";
-import SimpleLinkFollower from "../SimpleLinkFollower/SimpleLinkFollower.layout";
 import FocusMouseFollower from "../FocusMouseFollower/FocusMouseFollower.layout";
 
 
@@ -69,7 +67,11 @@ const Quality =({title, icon, body})=>{
                     width:{xs:40, md:70},
                   }
                  }}>
-                    {qualities.filter(elt=>elt.name===icon)[0].svg}
+                    <Box component="img" 
+                       src={require(`../../../assets/img/${icon}`)}
+                       alt={title}
+                       sx={{width:{xs:40, md:60}}} 
+                       />
                     <Typography sx={{ml:2, textTransform:"uppercase", fontSize:{xs:"1.25rem", md:"1.5rem"}}} variant="h5" component="h3" color="primary">{title}</Typography>
                 </Box>
               <Paper  className="body"  sx={{

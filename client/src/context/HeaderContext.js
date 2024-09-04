@@ -11,6 +11,7 @@ const HeaderContextComponent=({children})=>{
     const {height, isDesktop}=useWindowDimensions()
     const [background, setBackground]=useState("transparent")
     const [elevation, setElevation]=useState(0)
+   
 
     const callback=(entries)=>{
 
@@ -25,12 +26,14 @@ const HeaderContextComponent=({children})=>{
                     setElevation(currentElevation?currentElevation:elevation)
                     entries.forEach(elt=>elt.target.classList.remove("active"))
                     entry.target.classList.add("active")
+              
                 }
                 else if(entry.intersectionRatio<=0 && fromTop<=fromBottom) {
-                    if(entry.target.classList.contains("main")){
+                    if(entry.target.classList.contains("first-section")){
                         setBackground("transparent")
                         setElevation(0)
                     }
+                    
                 }
             }
             
