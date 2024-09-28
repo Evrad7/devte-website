@@ -1,142 +1,114 @@
 import React from 'react';
-import { useTheme } from '@mui/material';
+import { Box, Link, Typography, useMediaQuery, useTheme } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LocationOn from '@mui/icons-material/LocationOn';
-import { Phone ,Mail ,MailOutline , MailLockOutlined ,} from '@mui/icons-material';
-import FacebookInIcon from '@mui/icons-material/Facebook';
-import Logo from '../../../assets/img/logo_white.png'
-import Divider  from '@mui/material/Divider';
+import { Phone ,MailOutline, WhatsApp} from '@mui/icons-material';
 import Maps from '../Maps/Maps.layout'
-import Globe from '../../../assets/img/globe.svg'
-import { Margin } from '@mui/icons-material';
+import AnimatedWaveButton from '../AnimatedWaveButton/AnimatedWaveButton.layout';
+import CustomUpdateFollower from '../CustomUpdateFollower/CustomUpdateFollower.layout';
 
 const Contact = () => {
 
-    const theme=useTheme()
+  const theme=useTheme()
+  const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
   const classes = {
-    root: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
-      position: 'relative',
-      margin:'auto',
-      width:'90%'
-    },
-    globe:{
-      position: 'absolute',
-      bottom: 0,
-      left: '35%',
-      width:'300px',
-      height:'300px'
-    },
-    logo: {
-      maxWidth: 200,
-      maxHeight: 200,
-    },
-    tite: {
-      fontWeight:'bold',
-      color:'white'
-    },
-    des: {
-        color:'white'
-      },
-    btn: {
-        fontWeight:'bold'
-      },
+
     items: {
         margin:'auto',
         display:'flex',
-        backgroundColor:'#003366',
+        backgroundColor:theme.palette.primary.main,
         borderRadius:'5px',
         alignItems:'center',
-        paddingLeft:'10px'
+        px:2,
+        py:.5,
+        height:100,
       }
   }
-
   return (
-    <div>
-          <h1 style={{textAlign:'center',color:'#003366'}} >Contact Us </h1>
-          <h3 style={{textAlign:'center'}} > Le train du developpement et de l'innovation technologique a votre porter. pour vos projet.et de </h3>
+    <>
+      <Box px={{xs:1, md:10}} >
+        <Grid container spacing={3} justifyContent="center" alignItems="flex-start" >
+          <Grid container item xs={12}   lg={6} columnSpacing={4} rowSpacing={{xs:2, md:4,}}> 
+              <Grid item  xs={12} md={6}>
+                  <Box  sx={classes.items}>
+                    <Phone color="light" fontSize={matchesMd?"large":"small"} /> 
+                    <Box sx={{ml:1}}>
+                        <Typography component="span"  display="block" mb={1} variant="body1" color="light.main">+33 664 45 59 49</Typography>
+                        <Typography component="span" display="block"   variant="body1" color="light.main"> +237 698 74 57 89</Typography>
+                    </Box>
+                  </Box>
+              </Grid>
+
+              <Grid item  xs={12} md={6}>
+                <Box  sx={classes.items}>
+                  <MailOutline color="light" fontSize={matchesMd?"large":"small"} />
+                  <Box sx={{ml:1}}>
+                        <Link href="mailto:devte.startup@gmail.com"  display="block"   variant="body1" color="light.main">devte.startup@gmail.com</Link>
+                  </Box>
+                </Box>
+              </Grid>
+
+              <Grid item  xs={12} md={6}>
+                <Box  sx={classes.items}>
+                  <LocationOn color="light"  fontSize={matchesMd?"large":"small"} />
+                  <Box sx={{ml:1}}>
+                        <Typography display="block" mb={1} component="span" variant="body1" color="light.main">Douala / Cameroun</Typography>
+                        <Typography display="block"  component="span" variant="body1" color="light.main"> Paris / France</Typography>
+                    </Box>
+                </Box>
+              </Grid>
+
+              <Grid item xs={12} md={6}>
+                  <Box  sx={classes.items}>
+                    <Box >
+                        <Box sx={{display:"flex"}}>
+                            <GitHubIcon color="light" fontSize="small"/>
+                            <Link  aria-label="Github Whatsapp" href="https://github.com/DevteCommunity"  target="_blank" ml={1} display="block" mb={1}  variant="body1" color="light.main">Github community</Link>
+                        </Box>
+                        <Box sx={{display:"flex"}}>
+                            <WhatsApp color="light" fontSize="small"/>
+                            <Link aria-label="Groupe Devte Whatsapp" href="https://chat.whatsapp.com/K0sKhzks8Qk26eowWxsNOq" target="_blank" ml={1} display="block" mb={1}  variant="body1" color="light.main">Whatsapp community</Link>
+                        </Box>
+                    </Box>
+                  </Box>
+                  
+              </Grid>
+             
+             
+           
+
+          </Grid>
         
-       
-       <Grid sx={classes.root} square>
-       <br/>
-       <Typography variant="h6">Contactez-nous</Typography>
-
-      <Grid container spacing={3}>
-        {/* Deuxième bloc avec titre, texte et lien */}
-        <Grid item xs={12} sm={6}  md={3}> 
-            <br />
-            <Grid sx={classes.items}>
-                <GitHubIcon style={{color:'white',fontSize:'40px' }} /> &nbsp;&nbsp;
-                <div>
-                    <p style={classes.tite}> Web Service</p>
-                    <p style={classes.des}> Fast services</p>
-                </div>
-            </Grid>
-
-            <br />
-            <Grid sx={classes.items}>
-                <Phone style={{color:'white',fontSize:'40px' }} /> &nbsp;&nbsp;
-                <div>
-                    <p style={classes.tite}> Phone</p>
-                    <p style={classes.des}> +237 698745789/698745874</p>
-                </div>
-            </Grid>
-
-
-        </Grid>
-
-        {/* Troisième bloc avec titre, texte et lien */}
-        <Grid item xs={12} sm={6}  md={3}> 
-            <br />
-            <Grid sx={classes.items}>
-                <LocationOn style={{color:'white',fontSize:'40px' }} /> &nbsp;&nbsp;
-                <div>
-                    <p style={classes.tite}> Location</p>
-                    <p style={classes.des}> Douala-Cameroun</p>
-                </div>
-            </Grid>
-
-            <br />
-            <Grid sx={classes.items}>
-                <MailOutline style={{color:'white',fontSize:'40px' }} /> &nbsp;&nbsp;
-                <div>
-                    <p style={classes.tite}> Email</p>
-                    <p style={classes.des}> devte.startup@gmail.com</p>
-                </div>
-            </Grid>
-
-
-        </Grid>
-
-        <Grid item xs={12} sx={{paddingRight:'20px'}} backgroundColor='white' sm={12} md={6}>
-          <form>
-            <TextField  style={{backgroundColor:'white',borderRadius:'10px',marginTop:'10px'}}label="Username" fullWidth />
-            <TextField  style={{backgroundColor:'white',borderRadius:'10px',marginTop:'10px'}}label="Email" fullWidth />
-            <TextField style={{backgroundColor:'white',borderRadius:'10px',marginTop:'10px'}} label="Message" multiline rows={4} fullWidth />
-            <Button style={{marginTop:'10px',width:'100%'}} variant="contained"  >
-              Envoyer
-            </Button>
-          </form>
+          <Grid item xs={12} sx={{
+            paddingRight:'20px',
+            "& .MuiFormControl-root":{
+              borderRadius:6,
+              mb:1
+            }
           
+          }}  sm={12} lg={6}
+          >
+            <form>
+              
+              <TextField variant="filled"  label="Nom et prénom" fullWidth />
+              <TextField variant="filled" label="Adresse email" fullWidth />
+              <TextField variant="filled" label="Message" multiline rows={4} fullWidth />
+              <Box sx={{display:"flex", justifyContent:"center"}}>
+                <AnimatedWaveButton text="Envoyer"  color="primary" size="large" />
+              </Box>
+            </form>
+            
+          </Grid>
         </Grid>
-      </Grid>
-                 
-       <br></br>
-
-
-    </Grid>
-
-    <Grid style={{width:'100%',height:'500px'}} >
+      </Box>
+{/* 
+      <Grid style={{width:'100%',height:'500px'}} >
           <Maps/>
-        </Grid>
-    </div>
+      </Grid> */}
+    </>
   );
 };
 
