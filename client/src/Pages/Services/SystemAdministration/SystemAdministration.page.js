@@ -35,31 +35,32 @@ const SystemAdministration = () => {
       {
         title:"Installation et configuration des systèmes",
         photo:"installation_et_configuration_des_systemes.png",
-        description:`Irure laborum nisi exercitation cillum eiusmod consequat eu consectetur duis incididunt
-        cillum in elit. Minim ad deserunt duis Lorem qui pariatur ex aliqua. Ad ea est laborum duis ipsum id. `,
+        description:`Notre équipe d'experts se charge de l'installation et de la configuration de vos systèmes 
+        d'exploitation, serveurs et applications. Nous veillons à ce que votre infrastructure soit parfaitement 
+        adaptée à vos besoins, garantissant ainsi une performance optimale et une intégration fluide avec vos outils existants. `,
       
       },
       {
         title:"Sauvegarde et restauration des données",
         photo:"sauvegarde_et_restauration.png",
-        description:`Irure laborum nisi exercitation cillum eiusmod consequat eu consectetur duis incididunt
-        cillum in elit. Minim ad deserunt duis Lorem qui pariatur ex aliqua. Ad ea est laborum duis ipsum id. 
+        description:`Ne laissez pas la perte de données compromettre votre activité. Nous mettons en place des solutions de 
+        sauvegarde robustes pour protéger vos informations critiques. En cas de problème, notre service de restauration des 
+        données vous assure un retour rapide à la normale, minimisant ainsi les interruptions de service
         `, 
     
       },
       {
         title:"Assistance technique et resolution des pannes serveur",
         photo:"assistance_technique.png",
-        description:`Irure laborum nisi exercitation cillum eiusmod consequat eu consectetur duis incididunt
-        cillum in elit. Minim ad deserunt duis Lorem qui pariatur ex aliqua. Ad ea est laborum duis ipsum id. 
-        Sit veniam amet Lorem enim ad nisi aute et minim. Officia incididunt cupidatat.`,
+        description:`En cas de défaillance, notre équipe est disponible pour fournir une assistance technique rapide 
+        et efficace. Nous diagnostiquons et résolvons les pannes serveurs pour garantir la continuité de vos opérations. Grâce à notre support 24/7, vous pouvez compter sur nous à tout moment.`,
       },
       {
         title:"Sécurité",
         photo:"securite.png",
-        description:`Irure laborum nisi exercitation cillum eiusmod consequat eu consectetur duis incididunt
-        cillum in elit. Minim ad deserunt duis Lorem qui pariatur ex aliqua. Ad ea est laborum duis ipsum id. 
-        Sit veniam amet Lorem enim ad nisi aute et minim. Officia incididunt cupidatat`,
+        description:`Protégez vos systèmes contre les menaces informatiques avec nos solutions de sécurité avancées. 
+        Nous mettons en œuvre des mesures proactives, telles que des pare-feu, des antivirus et des audits de sécurité, 
+        pour protéger vos données et assurer la conformité avec les normes de sécurité.`,
       }
     ]
 
@@ -92,8 +93,7 @@ const SystemAdministration = () => {
             <CustomUpdateFollower className="update-follower" style={{background:theme.palette.light.main}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
                 <SecondaryLandingComponent 
                     title="ADMINISTRATION SYSTEME"
-                    description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, maxime. Autem tempore, minus sequi debitis eligendi
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+                    description="Optimisez la performance de votre infrastructure avec nos solutions d'administration système sur mesure. Confiez-nous la gestion de vos systèmes, pour vous concentrer sur l'innovation."
                 />
                   <Box  ref={mainBodyRef}>
                     <Box className="main" sx={{background:theme.palette.light.main}}>
@@ -114,8 +114,7 @@ const SystemAdministration = () => {
                               <Quality
                                 title="Formation et sensibilisations"
                                 icon="training.svg"
-                                body="Très pratique pour composer des documents complexes, beaucoup
-                                        d’automatisation : références croisées, notes de bas de page, table des" />
+                                body="Développez les compétences de votre équipe grâce à nos sessions de formation personnalisées. Sensibilisez vos collaborateurs aux enjeux de la sécurité informatique pour une meilleure protection de vos données." />
                             </Grid>
                             <Grid 
                                 item xs={12}  sm={6}
@@ -123,8 +122,7 @@ const SystemAdministration = () => {
                               <Quality
                                   title="Gestion du support technique"
                                   icon="technical_support_management.svg"
-                                body="Très pratique pour composer des documents complexes, beaucoup
-                                        d’automatisation : références croisées, notes de bas de page, table des" />
+                                body="Assurez la continuité de votre activité avec notre service de support technique réactif et efficace. Bénéficiez d'une assistance dédiée pour résoudre rapidement tous vos problèmes informatiques." />
                             </Grid>
                          
                       </Grid>
@@ -132,11 +130,10 @@ const SystemAdministration = () => {
                     
                     <Box component="section" sx={{mt:15,  mb:{xs:10, md:15}}}>
                       <Quote 
-                        name="TSOATA Evrad" 
-                        role="CO-FONDATEUR DEVTE"
-                        photo="dev.png" 
-                        text="Fugiat do nisi do irure nulla amet sint Lorem occaecat laboris exercitation deserunt. 
-                          Ut ad non aute aute eiusmod elit voluptate laboris ipsum elit exercitation amet sunt."
+                        name="TIOJIO ROMAIN" 
+                        role="FONDATEUR DEVTE"
+                        photo="tiojio.jpg" 
+                        text="Transformez votre vision en réalité avec notre expertise en solutions numériques. Nous sommes déterminés à propulser votre entreprise vers l’avenir grâce à des technologies innovantes et sur mesure."
                       />
                     </Box>
 
