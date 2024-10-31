@@ -22,13 +22,13 @@ const HomeCrew =()=>{
 
     const itemData=[
         {
-            name:"TSOATA EVRAD",
-            role:"Developpeur fullstack",
-            photo:"dev2.png"
+            name:"TIOJIO ROMAIN JUNIOR",
+            role:"Fondateur DEVTE",
+            photo:"lead.jpg"
         },
         {
             name:"TSOATA EVRAD",
-            role:"Developpeur fullstack",
+            role:"CO-FONDATEUR DEVTE",
             photo:"dev3.png"
         },
         {
@@ -125,12 +125,13 @@ const HomeCrew =()=>{
 
                     }}>
                     <Typography sx={{px:1}} variant="body1" component="p" textAlign="center">
-                        Non magna commodo veniam pariatur veniam. Veniam voluptate amet commodo tempor
-                        labore reprehenderit magna ut velit. Ut magna eu tempor est anim non irure.
-                        Eiusmod reprehenderit nostrud laborum reprehenderit.
-                        Non magna commodo veniam pariatur veniam. Veniam voluptate amet commodo tempor
-                        labore reprehenderit magna ut velit. Ut magna eu tempor est anim non irure.
-                        Eiusmod reprehenderit nostrud laborum reprehenderit.
+                    Notre équipe est composée de passionnés du numérique, experts en développement 
+                    web et mobile, et dédiés à créer des solutions performantes et innovantes. Chaque 
+                    membre apporte son savoir-faire unique, qu'il s'agisse de développement, de gestion 
+                    de projet ou de design, pour garantir des projets réussis et adaptés aux besoins de 
+                    nos clients. Nous croyons en une collaboration étroite, une communication transparente 
+                    et une approche agile pour offrir des produits de haute qualité. Ensemble, nous transformons 
+                    vos idées en solutions concrètes et durables.
                     </Typography>
                     <Box sx={{textAlign:"center", pt:2}}>
                         <Link to="/about">

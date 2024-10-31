@@ -101,16 +101,18 @@ const HomePage = () => {
             <CustomUpdateFollower className="update-follower" style={{ position:"relative", zIndex:theme.zIndex.fab, background:theme.palette.light.main}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
                 <Box className="first-section"  ref={descriptionRef} sx={{background:theme.palette.light.main}} >
                   {isDesktop&&<Separator direction="top" translate />}
+
                       <Typography sx={{mx:{xs:1, md:10, lg:20}, py:15, textAlign:"center"}} variant="body1" component="p">
-                          In ipsum voluptate deserunt ad magna eiusmod sint do. Ea occaecat ea esse dolor minim non duis Lorem consequat qui pariatur. Dolor exercitation id quis culpa ullamco esse incididunt sint mollit sint nostrud consequat. Deserunt magna labore duis enim. Laboris officia nulla velit consequat excepteur. Sunt elit enim commodo duis minim sint irure dolor adipisicing minim cillum qui proident.
+                         Bienvenue chez DEVTE .
+                          Nous sommes spécialisés dans la conception de solution informatiques sur mesure en fonction de vos besoins . nous vous accompagnons ainsi dans la digitalisation de vos activités a l'aide des technologies de pointe. Faites décoller vos projet ici et maintenant .
                       </Typography>
                       <Grid component="section" sx={{pl:{xs:2, md:5}, pr:1, my:10}} container columnSpacing={{xs:10, lg:10}} rowSpacing={{xs:7, md:5}} justifyContent="center" alignItems="center">
                           <Grid item xs={12} sm={5} lg={4} sx={{display:"flex", justifyContent:"center"}}>
                             <Quality
                               title="Digitalisation"
                               icon="digitalization.svg"
-                              body="Très pratique pour composer des documents complexes, beaucoup
-                                      d’automatisation : références croisées, notes de bas de page, table des" />
+                              body="Piler important pour rester competitif dans le monde du numerique,
+                                      il vous facilite l'acces au données et et a pour but d'automatisation  vos processus" />
                           </Grid>
                           <Grid 
                               item xs={12}  sm={5} lg={4}
@@ -121,16 +123,16 @@ const HomePage = () => {
                             <Quality
                                 title="Innovation"
                                 icon="innovation.svg"
-                              body="Très pratique pour composer des documents complexes, beaucoup
-                                      d’automatisation : références croisées, notes de bas de page, table des" />
+                              body="C'est le coeur de tous ce que nous faisons . Innover Pour
+                                      anticipé les besoins futur , dans un monde en constante évolution technologique  " />
                           </Grid>
                           <Grid item xs={12}  sm={5} lg={4} sx={{display:"flex", justifyContent:"center"}}>
                             
                           <Quality
                             title="Flexibilité"
                             icon="flexibility.svg"
-                            body="Très pratique pour composer des documents complexes, beaucoup
-                                    d’automatisation : références croisées, notes de bas de page, table des" />
+                            body="Le flexibilité est essentielle dans un monde ou les besoins evolue rapidement ,
+                                    chez DEVTE , vous adaptons nos services et solutions a vos besoins spécifiques" />
                           </Grid>
                       </Grid>
                 </Box>

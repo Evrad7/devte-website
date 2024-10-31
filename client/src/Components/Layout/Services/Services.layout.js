@@ -15,40 +15,39 @@ export default function Services() {
       link:"/services/developpement-web",
       title:"Developpement des sites et applications web",
       image:"developpement_web.svg",
-      body:`Très pratique pour composer des documents complexes, beaucoup
-              d’automatisation : références croisées, notes de bas de page, table des
-              d’automatisation : références croisées, notes de bas de page, table des
-              matières, des figures, bibliographie, index, mélange de plusieurs.`
+      body:`Un bon business necessite un bon site web.
+              gagner en visibilité en digitalisant votre business et en automatisant
+              vos processus, cetta vous fera gagner en temps. nous mettons a votre 
+              disposition des plateforme moderne et de qualité adapté a vos différente activité.`
     },
 
     {
       link:"/services/developpement-mobile",
       title:"Developpement des applications mobiles",
       image:"developpement_mobile.svg",
-      body:`Très pratique pour composer des documents complexes, beaucoup
-              d’automatisation : références croisées, notes de bas de page, table des
-              d’automatisation : références croisées, notes de bas de page, table des
-              matières, des figures, bibliographie, index, mélange de plusieurs.`
+      body:`Passer a la vitesse superieur avec nos solution moible.
+              Dans un monde ou les smartphone sont omniprésente, nous vous aidons
+              a exploiter tout le potenciel du mobile en mattant a votre disposition des applications
+              flexible , fiable , securisé , ergonomique et adapter et vos besoins.`
     },
     
     {
       link:"/services/administration-systeme",
       title:"Administration système",
       image:"administration_systeme.svg",
-      body:`Très pratique pour composer des documents complexes, beaucoup
-              d’automatisation : références croisées, notes de bas de page, table des
-              d’automatisation : références croisées, notes de bas de page, table des
-              matières, des figures, bibliographie, index, mélange de plusieurs.`
+      body:`Gerer une infrastructure informatique est crusiale pour assuser la continuité
+              de son activité .Pour cela , Nous vous proposons donc des services complet
+              d'administrations système couvrant la surveillance , la maintenace et l'optimisation 
+              de vos serveur , base de bonnées et réseaux`
     },
     
     {
       link:"/services/infographie",
       title:"Infographie",
       image:"infographie.png",
-      body:`Très pratique pour composer des documents complexes, beaucoup
-              d’automatisation : références croisées, notes de bas de page, table des
-              d’automatisation : références croisées, notes de bas de page, table des
-              matières, des figures, bibliographie, index, mélange de plusieurs`
+      body:`l'image est crusial pour une bonne communication . nous nous chargons 
+              de sublimer votre identité visuelle a travers des créations originales et professionnels. 
+              que ce soit des support publicitaires , flyers ou bien des interfaces web.  `
     },
     
   ]

@@ -74,7 +74,7 @@ const Action=()=>{
                         transition:"opacity .9s 0s cubic-bezier(0.5, 0, 0, 1), transform .9s 0s cubic-bezier(0.5, 0, 0, 1)",
                         }}>
                         <Typography sx={{mb:{xs:2, md:0}}} component="p" variant="body2" color="light.main">
-                            Officia tempor aliqua eu ut adipisicing officia non nostrud sit culpa. Proident laboris Lorem excepteur reprehenderit occaecat
+                             Transformez vos idées en solutions concrètes et Boostez votre performance digitale avec des solutions informatiques innovantes et sur-mesure : services informatiques adaptés à vos besoins
                         </Typography>
                         <AnimatedWaveButton onClick={onClickHandler} text="FAITES DECOLLER VOTRE PROJET" color="light" />
                     </Box>

@@ -37,31 +37,38 @@ const MobileDevelopmentPage = () => {
       {
         title:"Analyse et Conception",
         photo:"analyse_et_conception_mobile.svg",
-        description:`Irure laborum nisi exercitation cillum eiusmod consequat eu consectetur duis incididunt
-        cillum in elit. Minim ad deserunt duis Lorem qui pariatur ex aliqua. Ad ea est laborum duis ipsum id. `,
+        description:`Nous commençons par une analyse approfondie de vos idées et de vos objectifs. 
+        Nos experts collaborent étroitement avec vous pour définir les fonctionnalités essentielles 
+        et concevoir une architecture solide. Nous veillons à ce que chaque détail soit pris en compte 
+        afin de garantir une base solide pour votre application. `,
       
       },
       {
         title:"Expérience UI/UX",
         photo:"experience_ux_ui.png",
-        description:`Irure laborum nisi exercitation cillum eiusmod consequat eu consectetur duis incididunt
-        cillum in elit. Minim ad deserunt duis Lorem qui pariatur ex aliqua. Ad ea est laborum duis ipsum id. 
+        description:`Une fois la conception établie, nous mettons notre expertise en expérience utilisateur 
+        (UI/UX) à votre service. Nous créons des interfaces attrayantes et intuitives qui garantissent une 
+        navigation fluide et agréable. L’objectif est d’offrir une expérience utilisateur optimale qui capte 
+        l’attention de vos utilisateurs et les incite à revenir.. 
         `, 
     
       },
       {
         title:"Developpement",
         photo:"developpement.png",
-        description:`Irure laborum nisi exercitation cillum eiusmod consequat eu consectetur duis incididunt
-        cillum in elit. Minim ad deserunt duis Lorem qui pariatur ex aliqua. Ad ea est laborum duis ipsum id. 
-        Sit veniam amet Lorem enim ad nisi aute et minim. Officia incididunt cupidatat.`,
+        description:`Nos développeurs utilisent les dernières technologies et frameworks pour créer des 
+        applications mobiles robustes et performantes. Que ce soit pour iOS ou Android, nous nous assurons 
+        que votre application fonctionne parfaitement sur tous les appareils, offrant ainsi une expérience
+         homogène à vos utilisateurs.`,
       },
       {
         title:"Tests",
         photo:"tests.png",
-        description:`Irure laborum nisi exercitation cillum eiusmod consequat eu consectetur duis incididunt
-        cillum in elit. Minim ad deserunt duis Lorem qui pariatur ex aliqua. Ad ea est laborum duis ipsum id. 
-        Sit veniam amet Lorem enim ad nisi aute et minim. Officia incididunt cupidatat`,
+        description:`Avant le lancement, nous effectuons des tests rigoureux pour garantir la qualité et la 
+        fiabilité de votre application. Chaque fonctionnalité est soigneusement vérifiée pour s'assurer qu'elle 
+        fonctionne comme prévu, et nous nous engageons à corriger tout problème potentiel avant la mise en production.
+
+`,
       }
     ]
 
@@ -94,8 +101,8 @@ const MobileDevelopmentPage = () => {
             <CustomUpdateFollower className="update-follower" style={{background:theme.palette.light.main}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
                 <SecondaryLandingComponent 
                     title="DEVELOPPEMENT DES APPLICATIONS MOBILES"
-                    description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, maxime. Autem tempore, minus sequi debitis eligendi
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+                    description="nous offrons des services de développement mobile complets, adaptés à vos besoins 
+                    spécifiques. Notre approche se décline en quatre étapes clés."
                 />
                   <Box  ref={descriptionRef}>
                     <Box className="main" sx={{background:theme.palette.light.main}}>
@@ -116,8 +123,8 @@ const MobileDevelopmentPage = () => {
                               <Quality
                                 title="Hebergement"
                                 icon="hosting.svg"
-                                body="Très pratique pour composer des documents complexes, beaucoup
-                                        d’automatisation : références croisées, notes de bas de page, table des" />
+                                body="Profitez d'un hébergement fiable et sécurisé pour assurer la disponibilité optimale de 
+                                votre site web, avec une infrastructure flexible et performante adaptée à vos besoins." />
                             </Grid>
                             <Grid 
                                 item xs={12}  sm={6}
@@ -125,8 +132,8 @@ const MobileDevelopmentPage = () => {
                               <Quality
                                   title="Maintenance"
                                   icon="maintenance.svg"
-                                body="Très pratique pour composer des documents complexes, beaucoup
-                                        d’automatisation : références croisées, notes de bas de page, table des" />
+                                body="Nous assurons la maintenance régulière de vos plateformes pour garantir leur stabilité, 
+                                leur sécurité et des mises à jour en continu, tout en prévenant les risques d'interruption de service." />
                             </Grid>
                          
                       </Grid>
