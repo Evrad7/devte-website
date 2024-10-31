@@ -14,7 +14,6 @@ import Title from "../Title/Title.layout";
 
 
 export default function Agile() {
-  const theme=useTheme()
   const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
   const {observe:observeHeader, unObserve:unObserveHeader}=useContext(HeaderContext)
 

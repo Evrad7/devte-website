@@ -2,13 +2,10 @@ import React from 'react';
 import { Box, Link, Typography, useMediaQuery, useTheme } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import LocationOn from '@mui/icons-material/LocationOn';
-import { Phone ,MailOutline, WhatsApp} from '@mui/icons-material';
-import Maps from '../Maps/Maps.layout'
+import { Phone ,MailOutline, WhatsApp, GitHub, LinkedIn, Facebook, Email} from '@mui/icons-material';
 import AnimatedWaveButton from '../AnimatedWaveButton/AnimatedWaveButton.layout';
-import CustomUpdateFollower from '../CustomUpdateFollower/CustomUpdateFollower.layout';
+import { socialNetworkLinks, telPhones } from '../../../services/infos';
 
 const Contact = () => {
 
@@ -23,8 +20,9 @@ const Contact = () => {
         borderRadius:'5px',
         alignItems:'center',
         px:2,
-        py:.5,
-        height:100,
+        py:1.5,
+        minHeight:125,
+
       }
   }
   return (
@@ -36,19 +34,26 @@ const Contact = () => {
                   <Box  sx={classes.items}>
                     <Phone color="light" fontSize={matchesMd?"large":"small"} /> 
                     <Box sx={{ml:1}}>
-                        <Typography component="span"  display="block" mb={1} variant="body1" color="light.main">+33 664 45 59 49</Typography>
-                        <Typography component="span" display="block"   variant="body1" color="light.main"> +237 698 74 57 89</Typography>
+                        <Typography component="span"  display="block" mb={1} variant="body1" color="light.main">{telPhones.France}</Typography>
+                        <Typography component="span" display="block"   variant="body1" color="light.main">{telPhones.Cameroun}</Typography>
                     </Box>
                   </Box>
               </Grid>
 
               <Grid item  xs={12} md={6}>
-                <Box  sx={classes.items}>
-                  <MailOutline color="light" fontSize={matchesMd?"large":"small"} />
-                  <Box sx={{ml:1}}>
-                        <Link href="mailto:devte.startup@gmail.com"  display="block"   variant="body1" color="light.main">devte.startup@gmail.com</Link>
-                  </Box>
+                <Box  sx={{...classes.items, ml:1}}>
+                    <Box >
+                        <Box sx={{display:"flex"}}>
+                            <LinkedIn color="light" fontSize="small"/>
+                            <Link  aria-label="Github Whatsapp" href={socialNetworkLinks.linkedin}  target="_blank" ml={1} display="block" mb={1}  variant="body1" color="light.main">LinkedIn community</Link>
+                        </Box>
+                        <Box sx={{display:"flex"}}>
+                            <Facebook color="light" fontSize="small"/>
+                            <Link aria-label="Groupe Devte Whatsapp" href={socialNetworkLinks.facebook} target="_blank" ml={1} display="block" mb={1}  variant="body1" color="light.main">Facebook community</Link>
+                        </Box>
+                    </Box>
                 </Box>
+
               </Grid>
 
               <Grid item  xs={12} md={6}>
@@ -65,12 +70,16 @@ const Contact = () => {
                   <Box  sx={classes.items}>
                     <Box >
                         <Box sx={{display:"flex"}}>
-                            <GitHubIcon color="light" fontSize="small"/>
-                            <Link  aria-label="Github Whatsapp" href="https://github.com/DevteCommunity"  target="_blank" ml={1} display="block" mb={1}  variant="body1" color="light.main">Github community</Link>
+                            <GitHub color="light" fontSize="small"/>
+                            <Link  aria-label="Github Whatsapp" href={socialNetworkLinks.github}  target="_blank" ml={1} display="block" mb={1}  variant="body1" color="light.main">Github community</Link>
                         </Box>
                         <Box sx={{display:"flex"}}>
                             <WhatsApp color="light" fontSize="small"/>
-                            <Link aria-label="Groupe Devte Whatsapp" href="https://chat.whatsapp.com/K0sKhzks8Qk26eowWxsNOq" target="_blank" ml={1} display="block" mb={1}  variant="body1" color="light.main">Whatsapp community</Link>
+                            <Link aria-label="Groupe Devte Whatsapp" href={socialNetworkLinks.whatsapp} target="_blank" ml={1} display="block" mb={1}  variant="body1" color="light.main">Whatsapp community</Link>
+                        </Box>
+                        <Box sx={{display:"flex"}}>
+                            <Email color="light" fontSize="small"/>
+                            <Link aria-label="Groupe Devte Whatsapp" href={socialNetworkLinks.email} target="_blank" ml={1} display="block" mb={1}  variant="body1" color="light.main">Email</Link>
                         </Box>
                     </Box>
                   </Box>

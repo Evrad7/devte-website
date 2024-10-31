@@ -2,13 +2,14 @@
 import { useTheme } from '@emotion/react'
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import CrewImage from "../../../assets/img/crew.png"
+import CrewImage from "../../../assets/img/crew.jpg"
 
 
 const Crew = () => {
     const theme=useTheme()
   return (
-    <Box sx={{minHeight:600,
+    <Box sx={{
+         minHeight:{xs:300, md:600},
          backgroundImage:`url(${CrewImage})`,
          backgroundRepeat:"no-repeat",
          backgroundPosition:"center",
@@ -17,11 +18,12 @@ const Crew = () => {
          borderBottomLeftRadius:{xs:"15%", sm:"35%", md:"50%", lg:"50%"},
          borderBottomRightRadius:{xs:"15%", sm:"35%", md:"50%", lg:"50%"},
          overflow:"hidden",
+         py:10,
+         px:{xs:2, md:10},
+         // alignItems:"center",
          display:"flex",
-         alignItems:"center",
-         display:"flex",
-         justifyContent:"center",
-         alignItems:"center",
+         flexDirection:"column",
+         alignItems:{xs:"center", md:"flex-start"},
          "&:before":{
             content:"''",
             position:"absolute",
@@ -30,19 +32,31 @@ const Crew = () => {
             bottom:0,
             left:0,
             background:theme.palette.primary.main,
-            opacity:.6
-            
+            opacity:.7
          },
          
          }}>
       
-         <Typography sx={{
+         <Typography variant="h4" sx={{
+
             color:theme.palette.light.main,
-            fontSize:"6rem",
             textTransform:"uppercase",
             zIndex:100,
+            fontSize:{xs:"1.5rem", md:"2.125rem"},
+            lineHeight:{xs:"40px", md:"60px"},
          }}>
-            Une équipe 360°
+            Une équipe agile <br/> et performante
+        </Typography>
+
+        <Typography variant="h6" sx={{
+            color:theme.palette.light.main,
+            zIndex:100,
+            mt:15,
+            ml:25,
+            display:{xs:"none", md:"inline"}
+         }}>
+            Fugiat tempor consequat minim sint et non elit labore irure consectetur exercitation velit cillum.
+            Fugiat tempor consequat minim sint et non elit labore irure consectetur exercitation velit cillum.
         </Typography>
     </Box>
   )

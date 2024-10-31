@@ -11,7 +11,8 @@ import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
  
       useEffect(() => {
-        if(isDesktop){
+        // if(isDesktop){
+        if(true){
           if(currentIndexTexts<texts.length){
             if(currentIndex > texts[currentIndexTexts].length){
                 setCurrentIndex(prevIndex=>prevIndex-1)
@@ -45,7 +46,7 @@ import useWindowDimensions from "../../../hooks/useWindowDimensions";
       currentOpacity=0+currentText.length/texts[currentIndexTexts].length
       return (
          <>
-          {isDesktop&&<Typography variant="h3" component="span"
+          {true&&<Typography variant="h3" component="span"
           sx={{
             opacity:currentOpacity,
             fontSize:{xs:"1.5rem", lg:"2rem"}, ml:1.5,

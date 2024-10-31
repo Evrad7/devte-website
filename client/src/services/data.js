@@ -6,7 +6,7 @@ var technologies=[
         web:true,
         mobile:true,
         admin:false,
-        infogaphy:false,
+        infographic:false,
   
       },
    
@@ -17,7 +17,7 @@ var technologies=[
       web:true,
       mobile:false,
       admin:true,
-      infogaphy:false,
+      infographic:false,
     
       
   },
@@ -29,7 +29,7 @@ var technologies=[
         web:true,
         mobile:false,
         admin:false,
-        infogaphy:false,
+        infographic:false,
 
         
     },
@@ -40,7 +40,7 @@ var technologies=[
         web:true,
         mobile:false,
         admin:false,
-        infogaphy:false,
+        infographic:false,
     },
     {
         name:"Java",
@@ -67,7 +67,7 @@ var technologies=[
          web:true,
          mobile:false,
          admin:false,
-         infogaphy:false, 
+         infographic:false, 
     },
     {
         name:"React",
@@ -76,7 +76,7 @@ var technologies=[
         web:true,
         mobile:true,
         admin:false,
-        infogaphy:false,
+        infographic:false,
     },
     {
         name:"Angular",
@@ -91,7 +91,7 @@ var technologies=[
        web:true,
        mobile:false,
        admin:false,
-       infogaphy:false,
+       infographic:false,
       
         
     },
@@ -102,7 +102,7 @@ var technologies=[
         web:false,
         mobile:true,
         admin:false,
-        infogaphy:false,
+        infographic:false,
           
     },
     {
@@ -112,7 +112,7 @@ var technologies=[
         web:true,
         mobile:true,
         admin:false,
-        infogaphy:false,
+        infographic:false,
         
     },
 
@@ -123,7 +123,7 @@ var technologies=[
         web:true,
         mobile:false,
         admin:false,
-        infogaphy:false,
+        infographic:false,
       },
     {
         name:"Wordpress",
@@ -132,7 +132,7 @@ var technologies=[
         web:true,
         mobile:false,
         admin:false,
-        infogaphy:false,
+        infographic:false,
 
         
     },
@@ -143,7 +143,7 @@ var technologies=[
         web:false,
         mobile:true,
         admin:false,
-        infogaphy:false,
+        infographic:false,
   
   
       },
@@ -155,7 +155,7 @@ var technologies=[
         web:false,
         mobile:true,
         admin:false,
-        infogaphy:false,
+        infographic:false,
       },
       
       {
@@ -165,7 +165,7 @@ var technologies=[
         web:false,
         mobile:true,
         admin:false,
-        infogaphy:false,
+        infographic:false,
   
       },
   
@@ -178,7 +178,7 @@ var technologies=[
         mobile:true,
         admin:false,
         optional:true,
-        infogaphy:false,
+        infographic:false,
 
     },
     {
@@ -189,7 +189,7 @@ var technologies=[
         mobile:true,
         admin:false,
         optional:true,
-        infogaphy:false,
+        infographic:false,
         },
 
         {
@@ -199,7 +199,7 @@ var technologies=[
             web:false,
             mobile:false,
             admin:true,
-            infogaphy:false,
+            infographic:false,
       
       
           },
@@ -210,7 +210,7 @@ var technologies=[
             web:true,
             mobile:false,
             admin:true,
-            infogaphy:false,
+            infographic:false,
       
           },
           
@@ -221,7 +221,7 @@ var technologies=[
             web:false,
             mobile:false,
             admin:true,
-            infogaphy:false,
+            infographic:false,
       
             
           },
@@ -232,7 +232,7 @@ var technologies=[
             web:false,
             mobile:false,
             admin:true,
-            infogaphy:false,
+            infographic:false,
           },   
     
         {
@@ -242,7 +242,7 @@ var technologies=[
         web:false,
         mobile:false,
         admin:true,
-        infogaphy:false,
+        infographic:false,
     },
     {
         name:"Azure",
@@ -251,7 +251,7 @@ var technologies=[
         web:false,
         mobile:false,
         admin:true,
-        infogaphy:false,
+        infographic:false,
 
       
               
@@ -289,7 +289,7 @@ var technologies=[
        web:false,
        mobile:false,
        admin:true,
-       infogaphy:false,
+       infographic:false,
               
     },
     {
@@ -299,7 +299,7 @@ var technologies=[
         web:false,
         mobile:false,
         admin:true,
-        infogaphy:false,
+        infographic:false,
   
   
       },
@@ -317,7 +317,7 @@ var technologies=[
         web:true,
         mobile:true,
         admin:false,
-        infogaphy:true,
+        infographic:true,
               
     },
     {
@@ -327,7 +327,7 @@ var technologies=[
         web:true,
         mobile:true,
         admin:false,
-        infogaphy:true
+        infographic:true
 
               
     },
@@ -339,7 +339,7 @@ var technologies=[
         mobile:true,
         admin:false,
         optional:true,
-        infogaphy:true
+        infographic:true
               
     },
     {
@@ -349,7 +349,7 @@ var technologies=[
         web:true,
         mobile:true,
         admin:false,
-        infogaphy:true,
+        infographic:true,
               
     },
     {
@@ -359,7 +359,7 @@ var technologies=[
         web:true,
         mobile:true,
         admin:false,
-        infogaphy:true
+        infographic:true
 
               
     },

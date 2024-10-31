@@ -10,7 +10,7 @@ import { IntersectionObserverContextProvider } from "./context/IntersectionObser
 import WebDevlopmentPage from "./Pages/Services/WebDevelopment/WebDevelopment.page";
 import MobileDevlopmentPage from "./Pages/Services/MobileDevlopment/MobileDevelopment.page";
 import SystemAdministrationPage from "./Pages/Services/SystemAdministration/SystemAdministration.page";
-import InfographyPage from "./Pages/Services/Inphography/Inphography.page";
+import InfographicPage from "./Pages/Services/Infographic/Infographic.page";
 import ServicesPage from "./Pages/Services/Services.page";
 import { ServerContextProvider } from "./context/ServerContext";
 import ContactPage from "./Pages/Contact/Contact.page";
@@ -31,7 +31,7 @@ const  App=({data})=>{
                           <Route path="/services/developpement-web" element={<WebDevlopmentPage/>}/>
                           <Route path="/services/developpement-mobile" element={<MobileDevlopmentPage/>}/>
                           <Route path="/services/administration-systeme" element={<SystemAdministrationPage/>}/>
-                          <Route path="/services/infographie" element={<InfographyPage/>}/>
+                          <Route path="/services/infographie" element={<InfographicPage/>}/>
                       </Route>
                       <Route  path="/about" element={<AboutPage/>}/>
                       <Route  path="/contact" element={<ContactPage/>}/>

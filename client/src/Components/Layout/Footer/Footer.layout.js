@@ -1,127 +1,235 @@
-import React from 'react';
-import { useTheme } from '@mui/material';
+import React, { useContext, useEffect, useRef } from 'react';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import FacebookInIcon from '@mui/icons-material/Facebook';
-import Logo from '../../../assets/img/logo_white.png'
-import Divider  from '@mui/material/Divider';
+import FacebookIcon from "@mui/icons-material/Facebook"
+import LinkedInIcon from "@mui/icons-material/LinkedIn"
+import WhatsAppIcon from "@mui/icons-material/WhatsApp"
+import GithubIcon from "@mui/icons-material/Github"
 import Maps from '../Maps/Maps.layout'
 import Globe from '../../../assets/img/globe.svg'
-import { Margin } from '@mui/icons-material';
+import FooterItem from './FooterItem.layout';
+import Logo from '../Logo/Logo.layout';
+import { navItems} from '../Header/Header.layout';
+import { Link } from 'react-router-dom';
+import ButtonMouseFollower from '../ButtonMouseFollower/ButtonMouseFollower.layout';
+import CustomUpdateFollower from '../CustomUpdateFollower/CustomUpdateFollower.layout';
+import Separator from '../Separator/Separator.layout';
+import { socialNetworkLinks, telPhones } from '../../../services/infos';
+import { ContactPhone, Email, Phone, PhoneAndroidOutlined } from '@mui/icons-material';
+import FocusMouseFollower from '../FocusMouseFollower/FocusMouseFollower.layout';
+import { IntersectionObserverContext } from '../../../context/IntersectionObserverContext';
 
 const Footer = () => {
-
+    const ref=useRef(null)
+    const {observe, unObserve} =useContext(IntersectionObserverContext)
     const theme=useTheme()
-  const classes = {
-    root: {
-      flexGrow: 1,
-      background: '#003366',
-      color: 'white',
-      padding: theme.spacing(3),
-      position: 'relative'
-    },
-    globe:{
-      position: 'absolute',
-      bottom: 0,
-      left: '35%',
-      width:'300px',
-      height:'300px'
-    },
-    logo: {
-      maxWidth: 200,
-      maxHeight: 200,
-    },
-    socialIcons: {
-      marginTop: theme.spacing(2),
-    },
-  }
+    const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
+    const socialLinkItems=[
+      {name:"linkedin", link:socialNetworkLinks.linkedin, icon:<LinkedInIcon color="light" />},
+      {name:"github", link:socialNetworkLinks.instagram, icon:<GithubIcon color="light" />},
+      {name:"facebook", link:socialNetworkLinks.facebook, icon:<FacebookIcon color="light" />},
+      {name:"whatsapp", link:socialNetworkLinks.whatsapp, icon:<WhatsAppIcon color="light" />},
+      {name:"email", link:socialNetworkLinks.email, icon:<Email color="light" />},
+
+    ]
+
+
+    useEffect(()=>{
+      observe(ref.current)
+      return ()=>{
+          const currentRef=ref.current
+          unObserve(currentRef)
+      }
+    }, [])
 
   return (
-    <Paper sx={classes.root} square>
-       <br/>
-      <Grid container spacing={3}>
-        {/* Premier bloc avec le logo et du texte */}
-        <Grid item xs={12} sm={6} md={3}>
-          <img src={Logo} alt="Logo" style={classes.logo} />
-          <p> Le train du developpement et de l'innovation technologique a votre porter. pour vos projet.et de l'innovation technologique a votre porter et de l'innovation technologique a votre porter </p>
+    <CustomUpdateFollower mouseOptions={{backgroundColor:theme.palette.light.main}}>
+      <Box>
+     <Separator translate={true}/>
+     <Box ref={ref} sx={{
+        position:"relative",
+        overflow:"hidden",
+          backgroundColor:theme.palette.primary.main,
+          backgroundImage:theme.palette.primary.gradientToBottom,
+          pr:{xs:1, md:4},
+          pl:{xs:5, md:4},
+          pt:{xs:10, sm:20},
+          minHeight:550,
+          "&:before":{
+            content:"''",
+            position:"absolute",
+            top:0,
+            bottom:0,
+            left:0,
+            right:0,
+            textAlign:"center",
+            // background:"red",
+            opacity:".1!important",
+            backgroundImage:`url(${Globe})`,
+            backgroundRepeat:"no-repeat",
+            backgroundPosition:"center 170%",
+            backgroundSize:{xs:"70% 61%", md:"60% 60%"},
+          },
+          "& .footer-item, &:before":{
+            transition:"transform .7s 0s  cubic-bezier(0.5, 0, 0, 1), opacity .7s 0s  cubic-bezier(0.5, 0, 0, 1)",
+            opacity:0,
+            transform:"translateY(50%)",
+          },
+          "&.animate":{
+            ".footer-item, &:before":{
+              transform:{xs:"translateY(0)", md:"translateY(0)"},
+              opacity:1,
+            },
          
-          <br/>
-        </Grid>
+          },
+          // pb:30
+        }} >
+          <Grid container columnSpacing={1}>
+            
+            <Grid item xs={12}  md={3} display="flex"sx={{
+              display:{xs:"flex", sm:"none", md:"flex"},
+              justifyContent:{xs:"flex-start", sm:"center"},
+              position:"relative",
+              pb:{xs:10, sm:0}
+              
+              }}   >
+              <FooterItem column={0}>
+                  <FocusMouseFollower scale={10}>
+                    <Logo width={matchesMd?100:60} height={matchesMd?130:90} />
+                  </FocusMouseFollower>
+                  <Typography mt={2} component="p" variant="body1" color="light.main">
+                    <Typography  >
+                    Irure sunt aliqua magna exercitation nisi aute reprehenderit nostrud pariatur magna id amet elit.
+                  </Typography>
+                  </Typography>
+              </FooterItem>
+            </Grid>
+                      
+            <Grid item xs={12}  sm={4} md={3} sx={{
+               display:"flex",
+              justifyContent:{xs:"flex-start", sm:"center"},
+              position:"relative",
+              pb:{xs:10, sm:0}
+            }} >
+              <FooterItem column={1}>
+                  <Typography variant="h5" component="h4" color="info.main">
+                      SERVICES
+                    </Typography> 
+                    <Box component="ul" sx={{
+                      listStyleType:"none",
+                      pl:0,
+                    }}>
+                      {navItems[1].items.map(elt=><Box component="li" mb={2}>
+                          <ButtonMouseFollower style={{display:"inline"}}>
+                            <Link style={{
+                              color:theme.palette.light.main,
+                              textDecoration:"none",
+                              textTransform:"uppercase",
+                            }}  to={elt.link}>{elt.name}
+                            </Link>
+                          </ButtonMouseFollower>
+                        </Box>
+                        
+                        )}
+                    </Box>
+              </FooterItem>
+            </Grid>
 
-        {/* Deuxième bloc avec titre, texte et lien */}
-        <Grid item xs={12} sm={6} md={3}>
-          <Typography variant="h6">Our Services </Typography>
+            <Grid item xs={12}   sm={4} md={3} sx={{
+               display:"flex",
+              justifyContent:{xs:"flex-start", sm:"center"},
+              position:"relative",
+              pb:{xs:10, sm:0}
+            }}>
+              <FooterItem column={2}>
+                  <Typography variant="h5" component="h4" color="info.main">
+                      MENU
+                    </Typography> 
+                    <Box component="ul" sx={{
+                      listStyleType:"none",
+                      pl:0,
+                    }}>
+                      {navItems.map(elt=>
+                      (elt.name!="Services")&&<Box component="li" mb={2}>
+                          <ButtonMouseFollower  style={{display:"inline"}}>
+                            <Link style={{
+                              color:theme.palette.light.main,
+                              textDecoration:"none",
+                              textTransform:"uppercase",
+                            }}  to={elt.link}>{elt.name}
+                            </Link>
+                          </ButtonMouseFollower>
+                        </Box>
+                        
+                        )}
+                    </Box>
+              </FooterItem>
+            </Grid>
+
+            <Grid item xs={12}   sm={4} md={3} sx={{
+               display:"flex",
+              justifyContent:{xs:"flex-start", sm:"center"},
+              position:"relative",
+              pb:{xs:10, sm:0}
+            }} >
+              <FooterItem column={3}>
+                    <Typography variant="h5" component="h4" color="info.main">
+                      CONTACTS
+                      </Typography> 
+                      <Box component="ul" sx={{
+                        listStyleType:"none",
+                        pl:0,
+                      }}>
+                      {socialLinkItems.map(item=><Box component="li" mb={2}>
+                            <ButtonMouseFollower style={{display:"inline", display:"flex", alignItems:"center"}}>
+                              {item.icon}
+                              <Link style={{
+                                color:theme.palette.light.main,
+                                textDecoration:"none",
+                                textTransform:"uppercase",
+                                marginLeft:"10px"
+                              }}  to={item.link}>{item.name}
+                              </Link>
+                            </ButtonMouseFollower>
+                          </Box>
+                          )}
+                        <Box component="li" color="light.main" display="flex" alignItems="flex-start" >
+                        <ContactPhone/>:&nbsp;
+                        <Typography component="span" lineHeight={.5}>
+                          <Typography fontSize={13} variant="body1" component={"span"}>{telPhones.France}</Typography> <br/>
+                          <Typography fontSize={13}  variant="body1" component={"span"}>{telPhones.Cameroun}</Typography>
+                        </Typography>  
+                      
+                        </Box>
+
+                      </Box>
+              </FooterItem>
+            </Grid>
+
+          </Grid>
+          
+          <Typography variant="body2" sx={{
+            position:"absolute",
+            bottom:0,
+            left:0,
+            right:0,
+            display:"flex",
+            justifyContent:"flex-end",
+            color:theme.palette.light.main,
+            px:3,
+            opacity:.7,
+          }}
+          >
+            Copyright ©DEVTE 2024
+          </Typography>
+          
+        </Box>
+      </Box>
+
+     
+    </CustomUpdateFollower>
  
-            <br />
-            <p> Web Design</p>
-            <p> UX Design</p>
-            <p> Mobile Ux</p>
-            <p> Infographie</p>
-            <p> Web developpement</p>
-            <p> Mobile developpement</p>
-
-        </Grid>
-
-        {/* Troisième bloc avec titre, texte et lien */}
-        <Grid item xs={3} sm={3} md={3} >
-            <br />
-            <br />
-            <h3>Join Us </h3>
-
-            <p> 
-               <a style={{display:'flex',alignItems:'center',color:'white',textDecoration:'none'}} href=''>
-                 <GitHubIcon style={{color:'white',fontSize:'30px' }} />
-                 <label>opencollective.com/devtecommunity</label>
-               </a>
-            </p>
-
-            <p> 
-               <a style={{display:'flex',alignItems:'center',color:'white',textDecoration:'none'}} href=''>
-                 <WhatsAppIcon style={{color:'white',fontSize:'30px' }} />
-                 <label> +237 698745478/698745214</label>
-               </a>
-            </p>
-
-            <p> 
-               <a style={{display:'flex',alignItems:'center',color:'white',textDecoration:'none'}} href=''>
-                 <LinkedInIcon style={{color:'white',fontSize:'30px' }} />
-                 <label>LinkedIn/devteStartup</label>
-               </a>
-            </p>
-
-            <p> 
-               <a style={{display:'flex',alignItems:'center',color:'white',textDecoration:'none'}} href=''>
-                 <FacebookInIcon style={{color:'white',fontSize:'30px' }} />
-                 <label>facebook.com/devtecommunity</label>
-               </a>
-            </p>
-
-        </Grid>
-
-        <Grid xs={12} item sm={6} md={3} >
-          <Maps/>
-        </Grid>
-      </Grid>
-                 
-       
-       <br></br>
-       <br></br>
-       <br></br>
-       <br></br>
-       <br></br>
-       <Grid style={{width:'100%',display:'flex',justifyContent:'space-between'}}>
-         <p>copyriht ©DevTe 2023</p>
-         <p>Douala-Cameroun</p>
-       </Grid>
-       <img style={classes.globe} src={Globe}/>
-
-    </Paper>
   );
 };
 

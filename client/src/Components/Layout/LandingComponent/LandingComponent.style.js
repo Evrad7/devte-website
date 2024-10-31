@@ -80,7 +80,6 @@ const StyledLandingContainerBox=styled(Box, {shouldForwardProp:prop=>prop!=="isD
           rgba(255, 255, 255, 0)
         )`,
         animation:isDesktop?`${starAnimation} 130s 0s forwards linear infinite`:"none"
-        // animation:true?`${starAnimation} 130s 0s forwards linear infinite`:"none"
     },
     "& .land":{
         position:"absolute",

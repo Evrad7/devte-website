@@ -83,7 +83,7 @@ const HomeCrew =()=>{
                                 transform:"translateY(-50%)",
                                 transition:"opacity .9s 0s cubic-bezier(0.5, 0, 0, 1), transform .9s 0s cubic-bezier(0.5, 0, 0, 1)",
                                 }}>
-                            <img src={require(`../../../assets/img/${itemData[0].photo}`)} alt={itemData[0].name} style={{width:"100%", height:"100%"}} />
+                            <img src={require(`../../../assets/img/crew/${itemData[0].photo}`)} alt={itemData[0].name} style={{width:"100%", height:"100%"}} />
                             {descriptionDevelopper(itemData[0])} 
                         </Box>
                     </Grid>
@@ -98,7 +98,7 @@ const HomeCrew =()=>{
                                 transition:"opacity .9s 0s cubic-bezier(0.5, 0, 0, 1), transform .9s 0s cubic-bezier(0.5, 0, 0, 1)",
 
                                 }}>
-                            <img src={require(`../../../assets/img/${itemData[1].photo}`)} alt={itemData[1].name} style={{width:"100%", height:"100%"}}/>
+                            <img src={require(`../../../assets/img/crew/${itemData[1].photo}`)} alt={itemData[1].name} style={{width:"100%", height:"100%"}}/>
                             {descriptionDevelopper(itemData[1])} 
                         </Box>
                     </Grid>
@@ -111,7 +111,7 @@ const HomeCrew =()=>{
                                 transition:"opacity .9s 0s cubic-bezier(0.5, 0, 0, 1), transform .9s 0s cubic-bezier(0.5, 0, 0, 1)",
 
                                 }}>
-                            <img src={require(`../../../assets/img/${itemData[2].photo}`)} alt={itemData[2].name} style={{width:"100%", height:"100%"}}/> 
+                            <img src={require(`../../../assets/img/crew/${itemData[2].photo}`)} alt={itemData[2].name} style={{width:"100%", height:"100%"}}/> 
                             {descriptionDevelopper(itemData[2])}  
                         </Box>
                     </Grid>

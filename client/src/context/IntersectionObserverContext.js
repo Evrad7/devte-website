@@ -3,7 +3,6 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 import { useMediaQuery } from "@mui/material";
 
 const IntersectionObserverContext=createContext()
-
  function IntersectionObserverContextProvider({children}){
     const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
     const intersectionRatioTop=0.1
