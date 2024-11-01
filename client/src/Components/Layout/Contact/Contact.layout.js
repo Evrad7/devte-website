@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Link, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { useContext, useEffect, useRef, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -9,8 +10,71 @@ import { Phone ,MailOutline, WhatsApp} from '@mui/icons-material';
 import Maps from '../Maps/Maps.layout'
 import AnimatedWaveButton from '../AnimatedWaveButton/AnimatedWaveButton.layout';
 import CustomUpdateFollower from '../CustomUpdateFollower/CustomUpdateFollower.layout';
+import LinearProgress from '@mui/material/LinearProgress';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+import send from '../../../assets/img/send.gif'
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const Contact = () => {
+
+  const [nom, setNom] =  useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [response, setResponse] = useState(true);
+  const [succes, setSucces] = useState(false);
+  
+
+  const [open, setOpen] = React.useState(false);
+
+   const handleClose = () =>{
+    setOpen(false);
+   }
+
+
+  const handleSubmit =  async (e) => {
+    e.preventDefault()
+    setOpen(true);
+    if (nom !='' && email !='' && message != '' ) {
+      setResponse(true)
+      try {
+        const messages ='Username :'+nom+' \n Email :'+email+' \n Message:' +message; 
+       const response = await fetch('https://formspree.io/f/xpwaqdjg', {
+         method: 'POST',
+          headers: {
+           Accept: 'application/json',
+           'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({messages}),
+       });
+  
+       if (response.ok) {
+         // Le commentaire a été envoyé avec succès
+         setNom('');
+         setEmail('');
+         setMessage('');
+         setSucces(true)
+       } else {
+         // Une erreur s'est produite lors de l'envoi du commentaire
+         console.log('Erreur lors de l\'envoi du commentaire');
+         alert('Une erreur est survenu !! veiller ressayer')
+       }
+     } catch (error) {
+       console.log(error);
+     }
+
+    } else {
+      setResponse(false)
+    }
+ 
+  };
 
   const theme=useTheme()
   const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
@@ -93,16 +157,62 @@ const Contact = () => {
           >
             <form>
               
-              <TextField variant="filled"  label="Nom et prénom" fullWidth />
-              <TextField variant="filled" label="Adresse email" fullWidth />
-              <TextField variant="filled" label="Message" multiline rows={4} fullWidth />
+              <TextField variant="filled" value={nom} onChange={(e)=>setNom(e.target.value)}  label="Nom et prénom" fullWidth />
+              <TextField variant="filled" value={email} onChange={(e)=>setEmail(e.target.value)} label="Adresse email" fullWidth />
+              <TextField variant="filled" value={message} onChange={(e)=>setMessage(e.target.value)} label="Message" multiline rows={4} fullWidth />
               <Box sx={{display:"flex", justifyContent:"center"}}>
-                <AnimatedWaveButton text="Envoyer"  color="primary" size="large" />
+                <AnimatedWaveButton text="Envoyer"  onClick={(e)=>handleSubmit(e)} color="primary" size="large" />
               </Box>
             </form>
             
           </Grid>
         </Grid>
+
+
+
+
+        
+      <React.Fragment>
+      <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        {
+          response===true?
+            succes===true?
+            <DialogContent>
+                <DialogTitle>{"Message envoyer avec succès"}</DialogTitle>
+              <DialogContentText id="alert-dialog-slide-description">
+                 <img src={send} width={250} height={200}/>
+              </DialogContentText>
+            </DialogContent>
+            :
+              <DialogContent>
+              <DialogTitle>{"Envoie du message en cours"}</DialogTitle>
+             <DialogContentText id="alert-dialog-slide-description">
+              Veillez patienter...
+              <LinearProgress />
+             </DialogContentText>
+           </DialogContent>
+         :
+          <DialogContent>  
+            <DialogTitle>{"Veillez renseignez tous les champs"}</DialogTitle>
+            <DialogContentText id="alert-dialog-slide-description">
+              Merci de remplir tout vos information
+            </DialogContentText>
+          </DialogContent>
+        }
+        
+
+
+        <DialogActions>
+          <Button onClick={handleClose}>OK</Button>
+        </DialogActions>
+      </Dialog>
+    </React.Fragment>
       </Box>
 {/* 
       <Grid style={{width:'100%',height:'500px'}} >
