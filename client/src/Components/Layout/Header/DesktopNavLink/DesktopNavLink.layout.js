@@ -21,7 +21,7 @@ const DesktopNavLink=({navItem, color, activeColor, background})=>{
                 display:"flex",
                 alignItems:"center",
                 marginRight:2.5,
-                "&:hover":{
+                "&:hover, &:focus":{
                     "& .MuiSvgIcon-root":{
                         transform:"rotate(-180deg)",
                     },

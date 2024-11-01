@@ -85,8 +85,8 @@ const AgileItem=({title, body, positionHole})=>{
                 px:{xs:2, md:4},
                 pt:pt,
                 pb:pb,
-                width:310,
-                height:284,
+                width:365,
+                height:294,
                 //  background:`radial-gradient(circle 50px at ${positionHole} ,#0000 98%,red  )` 
                 maskImage:`url(${maskAgile})`,
                 maskSize:"cover",
@@ -94,12 +94,8 @@ const AgileItem=({title, body, positionHole})=>{
                 position:"relative",
                 zIndex:1000,            
          }}>
-              <Typography sx={{color:theme.palette.light.main, pb:2}} variant="h6" component="h3">APPROCHE INCREMETALE</Typography>
-              <Typography variant="body1" component="p" sx={{color:theme.palette.light.main}}> 
-                    Nous découpons votre projet en sections fonctionnelles et successives pour toujours s'assurer a chaque étape
-                    que votre besoin est respecté.
-                   
-              </Typography>
+              <Typography sx={{color:theme.palette.light.main, pb:2}} variant="h6" component="h3">{title}</Typography>
+              <Typography variant="body1" component="p" sx={{color:theme.palette.light.main}}> {body} </Typography>
            
         </Box>
 

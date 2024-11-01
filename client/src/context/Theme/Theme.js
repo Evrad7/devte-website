@@ -15,11 +15,8 @@ const theme=createTheme({
     palette:{
         primary:{
             main:"#10355b",
-            // gradientToBottom:"#10355b",
-            // gradientToTop:"#10355b",
-
-            gradientToBottom:"linear-gradient(to bottom, #10355B, #030b12)",
-            gradientToTop:"linear-gradient(to top, #10355B, #030b12)",
+            gradientToBottom:"linear-gradient(to bottom, #10355b, #030b12)",
+            gradientToTop:"linear-gradient(to top, #10355b, #030b12)",
         },
         secondary:{
             main:"#707070",
@@ -35,7 +32,8 @@ const theme=createTheme({
             main:"#f9f9f9",
         },
         darkSpace:{
-            main:"#0B253F"
+            main:"#0B253F",
+            gradient:"linear-gradient(to bottom, #0B253F,  #0B253F, black)",
         },
         
     }

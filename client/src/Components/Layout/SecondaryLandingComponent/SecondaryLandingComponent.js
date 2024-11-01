@@ -4,14 +4,35 @@ import Astro from '../../../assets/img/astro.png'
 import Star from '../../../assets/img/star.png'
 import Slogan from "../Slogan/Slogan.layout"
 import { useTheme } from "@emotion/react";
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { HeaderContext } from '../../../context/HeaderContext';
 import CustomUpdateFollower from '../CustomUpdateFollower/CustomUpdateFollower.layout';
+import { IntersectionObserverContext } from '../../../context/IntersectionObserverContext';
 
 
 const SecondaryLandingComponent =({title, description}) =>{
     const {isMobile, isDesktop}=useWindowDimensions()
     const theme=useTheme()
+    const {observe, unObserve}=useContext(IntersectionObserverContext)
+
+    const ref=useRef()
+    const imagesState=useRef([false, false])
+    const [loaded, isLoaded]=useState(false)
+    const onLoad=(index)=>{
+        imagesState.current[index]=true
+        if (imagesState.current.reduce((p, c)=>p&&c)){
+            isLoaded(true)
+        }
+    }
+
+    useEffect(()=>{
+        observe(ref.current)
+        return ()=>{
+            const currentRef=ref.current
+            unObserve(currentRef)
+        }
+    })
+
 
     const {setBackground, setElevation} =useContext(HeaderContext)
     const trigger=isDesktop?useScrollTrigger({
@@ -33,18 +54,35 @@ const SecondaryLandingComponent =({title, description}) =>{
             
         }
     }, [trigger])
-
-    
-   
-
-
-    
     return(
         <CustomUpdateFollower className="update-follower"  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
-            <Box sx={{
+            <Box ref={ref} sx={{
                 background:theme.palette.darkSpace.main,
                 height:600,
                 position:"relative",
+                ".star": {
+                    opacity:loaded?1:0,
+                    transform:loaded?"translate(0, 0) rotate(0deg) scale(1)":"translate(200px, 50px) rotate(190deg) scale(0)",
+                },
+                ".astro": {
+                    opacity:loaded?1:0,
+                },
+                ".title, .description, img":{
+                    opacity:0,
+                    transition:"transform 1s 0s  cubic-bezier(0.5, 0, 0, 1), opacity 1s 0s  cubic-bezier(0.5, 0, 0, 1)",
+                },
+                ".title":{
+                    transform:"translateX(-50%)",
+                },
+                ".description":{
+                    transform:"translateX(50%)",
+                },
+                "&.animate":{
+                    ".title, .description":{
+                        opacity:1,
+                        transform:"translateX(0)"
+                    },
+                }
             }}>
                 <Box sx={{
                     width:100,
@@ -53,7 +91,7 @@ const SecondaryLandingComponent =({title, description}) =>{
                     top:75,
                     right:175
                     }}>
-                    <img  src={Star} style={{width:"100%", height:"100%"}} alt="etoile"/>
+                    <img className="star" onLoad={()=>onLoad(0)}  src={Star} style={{width:"100%", height:"100%"}} alt="etoile"/>
                 </Box>
                 <Box sx={{
                     width:{xs:130, md:180},
@@ -63,14 +101,14 @@ const SecondaryLandingComponent =({title, description}) =>{
                     right:-3,
                     opacity:.35,
                     }}>
-                    <img  src={Astro} style={{width:"100%", height:"100%"}} alt="astronaute"/>
+                    <img className="astro" onLoad={()=>onLoad(1)}  src={Astro} style={{width:"100%", height:"100%"}} alt="astronaute"/>
                 </Box>
                 {isMobile && <Slogan/>}
                 <Box sx={{
                     height:"100%",
                     position:"relative",
                     }}>
-                    <Typography color="light.main" variant="h2" component="h1"
+                    <Typography className="title" color="light.main" variant="h2" component="h1"
                     sx={{
                         px:{xs:2, md:4},
                         fontSize:{xs:"2rem", md:"2.75rem", lg:"3.75rem"},
@@ -83,8 +121,7 @@ const SecondaryLandingComponent =({title, description}) =>{
                         textDecorationThickness:{xs:2, md:3},
                     }}
                     >{title}</Typography>
-                    <Typography
-                    sx={{
+                    <Typography className="description" sx={{
                         ml:{xs:2, md:4},
                         pr:{xs:3, md:4},
                         position:"absolute",
@@ -103,7 +140,7 @@ const SecondaryLandingComponent =({title, description}) =>{
                             transform:"translate(-200%, 50%)"
                         }
                     }}
-                    variant="body2" component="p"> 
+                    variant="body1" component="p"> 
                         {description}
                     </Typography>
                 </Box>

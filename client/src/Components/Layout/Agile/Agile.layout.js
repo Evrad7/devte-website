@@ -14,7 +14,6 @@ import Title from "../Title/Title.layout";
 
 
 export default function Agile() {
-  const theme=useTheme()
   const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
   const {observe:observeHeader, unObserve:unObserveHeader}=useContext(HeaderContext)
 
@@ -29,7 +28,7 @@ export default function Agile() {
   }, [observeHeader, unObserveHeader])
   return (
       <StyledContainer ref={ref}  matchesMd={matchesMd}>
-        <Title text="Une approche agile" icon="icon_flash.svg" color="light" textDecorationColor="dark"/>
+        <Title text=" tiojio Une approche agile" icon="icon_flash.svg" color="light" textDecorationColor="dark"/>
         <Grid container justifyContent="center" columnSpacing={{xs:3, md:12}} rowSpacing={{xs:4, md:12}} position="relative">
         <FocusMouseFollower scale={18}>
           <Box ref={imgAgileRef} className="intersection-observer"
@@ -60,60 +59,40 @@ export default function Agile() {
             }}}>
             <AgileItem 
                   positionHole="bottom right"
-                  title="ADAPTATIVE"
-                  body="Très pratique pour composer des documents complexes, beaucoup
-                      d’automatisation : références croisées, notes de bas de page, table des
-                      matières, des figures, bibliographie, index, mélange de plusieurs
-                      langues, équations mathématiques, présentations.
-                      Très pratique pour composer des documents complexes, beaucoup
-                      d’automatisation : références croisées, notes de bas de page, table des
-                      matières, des figures, bibliographie, index, mélange de plusieurs
-                      langues, équations mathématiques, présentations."
+                  title="Adaptabilité et flexibilité"
+                  body=" Nous nous adaptons rapidement aux changements. En suivant une approche itérative, 
+                  les équipes sont en mesure de revoir leurs priorités et d’ajuster le développement 
+                  en fonction de l’évolution des besoins, des feedbacks clients, ou des imprévus."
                 />
           </Grid>
     
           <Grid item xs={12} md={6} sx={{display:"flex", justifyContent:{xs:"center", md:"flex-start"}}}>
           <AgileItem 
                   positionHole="bottom left"
-                  title="ADAPTATIVE"
-                  body="Très pratique pour composer des documents complexes, beaucoup
-                      d’automatisation : références croisées, notes de bas de page, table des
-                      matières, des figures, bibliographie, index, mélange de plusieurs
-                      langues, équations mathématiques, présentations.
-                      Très pratique pour composer des documents complexes, beaucoup
-                      d’automatisation : références croisées, notes de bas de page, table des
-                      matières, des figures, bibliographie, index, mélange de plusieurs
-                      langues, équations mathématiques, présentations."
+                  title="Itération et incrément"
+                  body="Nous découpons le projet en cycles courts, appelés itérations, permettant 
+                  de développer et tester des fonctionnalités étape par étape. Cette méthode assure une 
+                  amélioration continue et une adaptation rapide aux besoins changeants, tout en livrant un produit de qualité."
                 />
           </Grid>
     
           <Grid item xs={12} md={6} sx={{display:"flex", justifyContent:{xs:"center",md:"flex-end"}}}>
           <AgileItem
                   positionHole="top right"
-                  title="ADAPTATIVE"
-                  body="Très pratique pour composer des documents complexes, beaucoup
-                      d’automatisation : références croisées, notes de bas de page, table des
-                      matières, des figures, bibliographie, index, mélange de plusieurs
-                      langues, équations mathématiques, présentations.
-                      Très pratique pour composer des documents complexes, beaucoup
-                      d’automatisation : références croisées, notes de bas de page, table des
-                      matières, des figures, bibliographie, index, mélange de plusieurs
-                      langues, équations mathématiques, présentations."
+                  title="Collaboration étroite avec le client"
+                  body="Pour nos projet, le client est intégré au processus. Grâce à des échanges 
+                  réguliers et transparents, le client peut apporter des retours constants, garantissant 
+                  que le produit final correspond précisément à ses attentes et aux exigences du marché."
                 />
           </Grid>
     
           <Grid item xs={12} md={6} sx={{display:"flex", justifyContent:{xs:"center", md:"flex-start"}}}>
                 <AgileItem
                   positionHole="top left"
-                  title="ADAPTATIVE"
-                  body="Très pratique pour composer des documents complexes, beaucoup
-                      d’automatisation : références croisées, notes de bas de page, table des
-                      matières, des figures, bibliographie, index, mélange de plusieurs
-                      langues, équations mathématiques, présentations.
-                      Très pratique pour composer des documents complexes, beaucoup
-                      d’automatisation : références croisées, notes de bas de page, table des
-                      matières, des figures, bibliographie, index, mélange de plusieurs
-                      langues, équations mathématiques, présentations."
+                  title="Amélioration continue et rétrospective"
+                  body="À la fin de chaque itération, une rétrospective est effectuée pour identifier 
+                  les points à améliorer et renforcer les processus. Cette dynamique d’auto-évaluation 
+                  assure un apprentissage constant et optimise la performance de l’équipe sur le long terme."
                 />
             </Grid>
         </Grid>

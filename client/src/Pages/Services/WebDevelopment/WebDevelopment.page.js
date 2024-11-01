@@ -37,31 +37,30 @@ const HomePage = () => {
       {
         title:"Analyse et Conception",
         photo:"analyse_et_conception.png",
-        description:`Irure laborum nisi exercitation cillum eiusmod consequat eu consectetur duis incididunt
-        cillum in elit. Minim ad deserunt duis Lorem qui pariatur ex aliqua. Ad ea est laborum duis ipsum id. `,
+        description:`Nous commençons chaque projet par une analyse approfondie de vos besoins et de vos objectifs. 
+        Grâce à une phase de conception rigoureuse, nous élaborons des solutions personnalisées qui répondent précisément 
+        aux enjeux de votre activité. Notre approche garantit une de solutions performantes et évolutives. `,
       
       },
       {
         title:"Expérience UI/UX",
         photo:"experience_ux_ui.png",
-        description:`Irure laborum nisi exercitation cillum eiusmod consequat eu consectetur duis incididunt
-        cillum in elit. Minim ad deserunt duis Lorem qui pariatur ex aliqua. Ad ea est laborum duis ipsum id. 
+        description:`Notre équipe de designers UI/UX crée des interfaces intuitives et attrayantes, pensées pour offrir une expérience 
+        utilisateur optimale. Nous concevons des parcours fluides, adaptés à votre audience, pour maximiser l’engagement et la satisfaction des utilisateurs.
         `, 
     
       },
       {
         title:"Developpement",
         photo:"developpement.png",
-        description:`Irure laborum nisi exercitation cillum eiusmod consequat eu consectetur duis incididunt
-        cillum in elit. Minim ad deserunt duis Lorem qui pariatur ex aliqua. Ad ea est laborum duis ipsum id. 
-        Sit veniam amet Lorem enim ad nisi aute et minim. Officia incididunt cupidatat.`,
+        description:`Experts en développement web et mobile, nous transformons vos idées en applications performantes et sécurisées. 
+        En utilisant les technologies les plus récentes, nous réalisons des solutions robustes et évolutives, adaptées à vos besoins actuels et futurs.`,
       },
       {
         title:"Tests",
         photo:"tests.png",
-        description:`Irure laborum nisi exercitation cillum eiusmod consequat eu consectetur duis incididunt
-        cillum in elit. Minim ad deserunt duis Lorem qui pariatur ex aliqua. Ad ea est laborum duis ipsum id. 
-        Sit veniam amet Lorem enim ad nisi aute et minim. Officia incididunt cupidatat`,
+        description:`Nous nous engageons à livrer des produits de haute qualité. Avant chaque lancement, nous effectuons une série de tests rigoureux 
+        pour assurer la fiabilité, la sécurité et les performances de votre solution. Notre processus de contrôle qualité garantit un produit sans défaut, prêt à l’emploi`,
       }
     ]
 
@@ -94,8 +93,7 @@ const HomePage = () => {
             <CustomUpdateFollower className="update-follower" style={{background:theme.palette.light.main}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
                 <SecondaryLandingComponent 
                     title="DEVELOPPEMENT DES SITES ET  APPLICATIONS WEB"
-                    description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, maxime. Autem tempore, minus sequi debitis eligendi
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+                    description="Transformez vos idées en solutions digitales performantes : des services de développement web sur-mesure, fiables et innovants."
                 />
                   <Box  ref={descriptionRef}>
                     <Box className="main" sx={{background:theme.palette.light.main}}>
@@ -111,13 +109,13 @@ const HomePage = () => {
                     
                     <Box component="section"  sx={{mt:{xs:10, md:15}, mb:0}}>
                       <Title text="Services associés selon vos besoins" icon="icon_flash_primary.svg" color="primary" mb={{xs:5, md:10}} />
-                      <Grid  sx={{pl:{xs:2, md:5}, pr:1, my:10}} container columnSpacing={{xs:10, lg:10}} rowSpacing={{xs:7, md:5}} justifyContent="center" alignItems="center">
+                      <Grid  sx={{pl:{xs:2.7, md:5}, pr:1, my:10}} container columnSpacing={{xs:10, lg:10}} rowSpacing={{xs:7, md:5}} justifyContent="center" alignItems="center">
                             <Grid item xs={12} sm={6} lg={3} sx={{display:"flex", justifyContent:{xs:"center", sm:"flex-end", ml:"center"}}}>
                               <Quality
                                 title="Hebergement"
                                 icon="hosting.svg"
-                                body="Très pratique pour composer des documents complexes, beaucoup
-                                        d’automatisation : références croisées, notes de bas de page, table des" />
+                                body="Profitez d'un hébergement fiable et sécurisé pour assurer la disponibilité optimale de 
+                                votre site web, avec une infrastructure flexible et performante adaptée à vos besoins." />
                             </Grid>
                             <Grid 
                                 item xs={12}  sm={6} lg={3}
@@ -125,34 +123,35 @@ const HomePage = () => {
                               <Quality
                                   title="Maintenance"
                                   icon="maintenance.svg"
-                                body="Très pratique pour composer des documents complexes, beaucoup
-                                        d’automatisation : références croisées, notes de bas de page, table des" />
+                                body="Nous assurons la maintenance régulière de vos plateformes pour garantir leur stabilité, 
+                                leur sécurité et des mises à jour en continu, tout en prévenant les risques d'interruption de service." />
                             </Grid>
                             <Grid item xs={12}  sm={6} lg={3} sx={{display:"flex", justifyContent:{xs:"center", sm:"flex-end", ml:"center"}}}>
                             <Quality
                               title="Analyse SEO"
                               icon="seo.svg"
-                              body="Très pratique pour composer des documents complexes, beaucoup
-                                      d’automatisation : références croisées, notes de bas de page, table des" />
+                              body="Boostez votre visibilité en ligne avec une analyse SEO complète de votre site. Nous identifions les 
+                              opportunités d’optimisation pour améliorer votre positionnement dans les résultats de recherche" />
                             </Grid>
 
                             <Grid item xs={12}  sm={6} lg={3} sx={{display:"flex", justifyContent:{xs:"center", sm:"flex-start", lg:"center"}}}>
                             <Quality
                               title="Audit"
                               icon="audit.svg"
-                              body="Très pratique pour composer des documents complexes, beaucoup
-                                      d’automatisation : références croisées, notes de bas de page, table des" />
+                              body="Notre audit technique et fonctionnel approfondi permet de diagnostiquer les forces et faiblesses 
+                              de votre site. Nous vous fournissons des recommandations concrètes pour une performance et une expérience utilisateur optimales." />
                             </Grid>
                       </Grid>
                     </Box>
                     
                     <Box component="section" sx={{mt:15,  mb:{xs:10, md:15}}}>
                       <Quote 
-                        name="TSOATA Evrad" 
-                        role="CO-FONDATEUR DEVTE"
-                        photo="dev.png" 
-                        text="Fugiat do nisi do irure nulla amet sint Lorem occaecat laboris exercitation deserunt. 
-                          Ut ad non aute aute eiusmod elit voluptate laboris ipsum elit exercitation amet sunt."
+                        name="TIOJIO ROMAIN" 
+                        role="FONDATEUR DEVTE"
+                        photo="dev2.jpg" 
+                        text="Transformez votre vision numérique en réalité avec nos solutions informatiques sur mesure. 
+                        Que vous soyez une start-up ambitieuse ou une entreprise établie, notre expertise vous accompagne 
+                        à chaque étape. Ensemble, développons des outils innovants qui propulsent votre succès. Rejoignez-nous pour bâtir l'avenir de votre entreprise !."
                       />
                     </Box>
 

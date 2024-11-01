@@ -8,9 +8,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Toolbar from '@mui/material/Toolbar';
 import FacebookIcon from "@mui/icons-material/Facebook"
-import LindedInIcon from "@mui/icons-material/LinkedIn"
+import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import WhatsAppIcon from "@mui/icons-material/WhatsApp"
-import InstagramIcon from "@mui/icons-material/Instagram"
 import { Link} from 'react-router-dom';
 import {useMediaQuery } from '@mui/material';
 import { useTheme } from '@emotion/react';
@@ -25,6 +24,8 @@ import FocusMouseFollower from "../FocusMouseFollower/FocusMouseFollower.layout"
 import Slogan from '../Slogan/Slogan.layout';
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import Logo from '../Logo/Logo.layout';
+import { GitHub } from '@mui/icons-material';
+import { socialNetworkLinks } from '../../../services/infos';
 
 
 
@@ -34,13 +35,15 @@ const navItems = [
       {name:"Developpement web", link:"/services/developpement-web"},
       {name:"Developpement mobile", link:"/services/developpement-mobile"},
       {name:"Administration système", link:"/services/administration-systeme"},
-      {name:"Infographie", link:"/services/inphographie"},
+      {name:"Infographie", link:"/services/infographie"},
   ]},
   {name:"A propos", link:"/about"},
   {name:"Contact", link:"/contact"}];
 
+  
+ 
+  
 function Header(props) {
-  const { window } = props;
   const position=props.position?props.position:"fixed"
   const [mobileOpen, setMobileOpen] =useState(false);
   const {background, elevation}=useContext(HeaderContext)
@@ -77,13 +80,12 @@ function Header(props) {
   };
 
   const matchesMd=useMediaQuery(theme=>theme.breakpoints.up("md"))
-  const matchesLg=useMediaQuery(theme=>theme.breakpoints.up("lg"))
   
-  const socialLinkItems=[
-    {name:"facebook", link:"https://fecabook.com", icon:<FacebookIcon fontSize={matchesMd?"medium":"small"}/>},
-    {name:"linkedin", link:"https://linkedin.com", icon:<LindedInIcon fontSize={matchesMd?"medium":"small"}/>},
-    {name:"whatsapp", link:"https://whatsapp.com", icon:<WhatsAppIcon fontSize={matchesMd?"medium":"small"}/>},
-    {name:"instagram", link:"https://instagram.com", icon:<InstagramIcon fontSize={matchesMd?"medium":"small"}/>},
+   const socialLinkItems=[
+    {name:"linkedin", link:socialNetworkLinks.linkedin, icon:<LinkedInIcon fontSize={matchesMd?"medium":"small"}/>},
+    {name:"github", link:socialNetworkLinks.github, icon:<GitHub fontSize={matchesMd?"medium":"small"}/>},
+    {name:"facebook", link:socialNetworkLinks.facebook, icon:<FacebookIcon fontSize={matchesMd?"medium":"small"}/>},
+    {name:"whatsapp", link:socialNetworkLinks.whatsapp, icon:<WhatsAppIcon fontSize={matchesMd?"medium":"small"}/>},
   ]
   const socialLinks=(_background)=>(
     socialLinkItems.map((item, index)=>(
@@ -131,13 +133,6 @@ function Header(props) {
       </List>
     </Box>
   );
-
-
-
-
- const container = window !== undefined ? () => window().document.body : undefined;
-
-
 
   return (
        <>
@@ -233,3 +228,4 @@ function Header(props) {
 
 
 export default Header;
+export {navItems}
