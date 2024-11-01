@@ -148,7 +148,7 @@ const HomePage = () => {
                       <Quote 
                         name="TIOJIO ROMAIN" 
                         role="FONDATEUR DEVTE"
-                        photo="lead.jpg" 
+                        photo="dev2.jpg" 
                         text="Transformez votre vision numérique en réalité avec nos solutions informatiques sur mesure. 
                         Que vous soyez une start-up ambitieuse ou une entreprise établie, notre expertise vous accompagne 
                         à chaque étape. Ensemble, développons des outils innovants qui propulsent votre succès. Rejoignez-nous pour bâtir l'avenir de votre entreprise !."

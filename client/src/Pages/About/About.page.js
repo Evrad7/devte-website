@@ -102,7 +102,7 @@ const AboutPage = () => {
 
                           <CrewMember 
                             name="TSOATA Evrad"
-                            photo="dev2.png"
+                            photo="dev1.png"
                             description="Culpa labore elit anim cillum sit pariatur irure magna officia nulla. Aute ex do dolore occaecat cillum labore consequat. Culpa labore elit anim cillum "
                             linkedInLink="https://www.linkedin.com/in/evrad-loïc-tsoata-manfouo-38420a215"
                             portoFilioLink="#"
@@ -111,7 +111,7 @@ const AboutPage = () => {
                             
                           <CrewMember 
                             name="TSOATA Evrad"
-                            photo="dev3.png"
+                            photo="dev1.png"
                             description="Culpa labore elit anim cillum sit pariatur irure magna officia nulla. Aute ex do dolore occaecat cillum labore consequat. Culpa labore elit anim cillum "
                             linkedInLink="https://www.linkedin.com/in/evrad-loïc-tsoata-manfouo-38420a215"
                             portoFilioLink="#"

@@ -78,7 +78,7 @@ const Quote=({name, role, photo, text})=>{
                         transition:"opacity 1s 0s  cubic-bezier(0.5, 0, 0, 1)",
 
                     }}>
-                        <img src={require(`../../../assets/img/${photo}`)} alt={`${name} ${role}`} style={{width:50, height:75}}/>
+                        <img src={require(`../../../assets/img/crew/${photo}`)} alt={`${name} ${role}`} style={{width:50, height:75}}/>
                         <Typography variant="subtitle1" component="span" sx={{color:theme.palette.primary.main, fontSize:12, fontWeight:"600"}}>{name}</Typography>
                         <Typography variant="subtitle2" component="span" sx={{color:theme.palette.dark.main,  fontSize:12, fontWeight:"500"}}>{role}</Typography>
 

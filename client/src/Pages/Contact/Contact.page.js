@@ -113,7 +113,7 @@ const ContactPage = () => {
                       <Quote 
                         name="TSOATA Evrad" 
                         role="CO-FONDATEUR DEVTE"
-                        photo="dev.png" 
+                        photo="dev1.png" 
                         text="Fugiat do nisi do irure nulla amet sint Lorem occaecat laboris exercitation deserunt. 
                           Ut ad non aute aute eiusmod elit voluptate laboris ipsum elit exercitation amet sunt."
                       />

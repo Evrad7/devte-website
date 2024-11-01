@@ -24,7 +24,7 @@ const HomeCrew =()=>{
         {
             name:"TIOJIO ROMAIN JUNIOR",
             role:"Fondateur DEVTE",
-            photo:"lead.jpg"
+            photo:"dev2.jpg"
         },
         {
             name:"TSOATA EVRAD",
