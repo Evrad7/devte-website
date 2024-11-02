@@ -132,7 +132,7 @@ const SystemAdministration = () => {
                       <Quote 
                         name="TIOJIO ROMAIN" 
                         role="FONDATEUR DEVTE"
-                        photo="tiojio.jpg" 
+                        photo="dev2.jpg" 
                         text="Transformez votre vision en réalité avec notre expertise en solutions numériques. Nous sommes déterminés à propulser votre entreprise vers l’avenir grâce à des technologies innovantes et sur mesure."
                       />
                     </Box>

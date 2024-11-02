@@ -15,39 +15,39 @@ export default function Services() {
       link:"/services/developpement-web",
       title:"Developpement des sites et applications web",
       image:"developpement_web.svg",
-      body:`Un bon business necessite un bon site web.
-              gagner en visibilité en digitalisant votre business et en automatisant
-              vos processus, cetta vous fera gagner en temps. nous mettons a votre 
-              disposition des plateforme moderne et de qualité adapté a vos différente activité.`
+      body:`Un bon business nécessite un bon site web.
+              Gagner en visibilité en digitalisant votre business et en automatisant
+              Vos processus, cela vous fera gagner du temps. Nous mettons à votre 
+              Disposition des plateformes modernes et de qualité adaptées à vos différentes activités.`
     },
 
     {
       link:"/services/developpement-mobile",
       title:"Developpement des applications mobiles",
       image:"developpement_mobile.svg",
-      body:`Passer a la vitesse superieur avec nos solution moible.
-              Dans un monde ou les smartphone sont omniprésente, nous vous aidons
-              a exploiter tout le potenciel du mobile en mattant a votre disposition des applications
-              flexible , fiable , securisé , ergonomique et adapter et vos besoins.`
+      body:`Passez à la vitesse supérieure avec nos solutions mobiles.
+              Dans un monde où les smartphones sont omniprésents, nous vous aidons
+              À exploiter tout le potentiel du mobile en mettant à votre disposition des applications
+              Flexible, fiable, sécurisé, ergonomique et adapté à vos besoins.`
     },
     
     {
       link:"/services/administration-systeme",
       title:"Administration système",
       image:"administration_systeme.svg",
-      body:`Gerer une infrastructure informatique est crusiale pour assuser la continuité
-              de son activité .Pour cela , Nous vous proposons donc des services complet
-              d'administrations système couvrant la surveillance , la maintenace et l'optimisation 
-              de vos serveur , base de bonnées et réseaux`
+      body:`Gérer une infrastructure informatique est crucial pour assurer la continuité
+              De son activité. Pour cela, nous vous proposons donc des services complets
+              D'administrations système couvrant la surveillance, la maintenance et l'optimisation 
+              De vos serveurs, base de données et réseaux`
     },
     
     {
       link:"/services/infographie",
       title:"Infographie",
       image:"infographie.png",
-      body:`l'image est crusial pour une bonne communication . nous nous chargons 
-              de sublimer votre identité visuelle a travers des créations originales et professionnels. 
-              que ce soit des support publicitaires , flyers ou bien des interfaces web.  `
+      body:`L'image est cruciale pour une bonne communication. Nous nous chargions 
+              De sublimer votre identité visuelle à travers des créations originales et professionnelles. 
+              Que ce soit des supports publicitaires, flyers ou bien des interfaces web. `
     },
     
   ]

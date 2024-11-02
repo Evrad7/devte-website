@@ -2,7 +2,8 @@ import React from 'react';
 import { Box, Link, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
+import TextField from '@mui/material/TextField'; 
+import Button from '@mui/material/Button';
 import LocationOn from '@mui/icons-material/LocationOn';
 import { Phone ,MailOutline, WhatsApp, GitHub, LinkedIn, Facebook, Email} from '@mui/icons-material';
 import AnimatedWaveButton from '../AnimatedWaveButton/AnimatedWaveButton.layout';
@@ -15,6 +16,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import send from '../../../assets/img/send.gif'
+import {socialNetworkLinks, telPhones} from '../../../services/infos'
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;

@@ -85,8 +85,8 @@ const AgileItem=({title, body, positionHole})=>{
                 px:{xs:2, md:4},
                 pt:pt,
                 pb:pb,
-                width:365,
-                height:294,
+                width:300,
+                height:280,
                 //  background:`radial-gradient(circle 50px at ${positionHole} ,#0000 98%,red  )` 
                 maskImage:`url(${maskAgile})`,
                 maskSize:"cover",
