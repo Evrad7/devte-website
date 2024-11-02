@@ -60,9 +60,8 @@ export default function Agile() {
             <AgileItem 
                   positionHole="bottom right"
                   title="Adaptabilité et flexibilité"
-                  body=" Nous nous adaptons rapidement aux changements. En suivant une approche itérative, 
-                  les équipes sont en mesure de revoir leurs priorités et d’ajuster le développement 
-                  en fonction de l’évolution des besoins, des feedbacks clients, ou des imprévus."
+                  body=" Nous adoptons une approche itérative, permettant aux équipes de s'ajuster 
+                  rapidement aux évolutions des besoins, aux retours clients, et aux imprévus."
                 />
           </Grid>
     
@@ -70,9 +69,8 @@ export default function Agile() {
           <AgileItem 
                   positionHole="bottom left"
                   title="Itération et incrément"
-                  body="Nous découpons le projet en cycles courts, appelés itérations, permettant 
-                  de développer et tester des fonctionnalités étape par étape. Cette méthode assure une 
-                  amélioration continue et une adaptation rapide aux besoins changeants, tout en livrant un produit de qualité."
+                  body="Nous découpons le projet en itérations courtes pour développer, tester et améliorer
+                   les fonctionnalités en continu, garantissant une adaptation rapide aux besoins et un produit de qualité."
                 />
           </Grid>
     
@@ -80,9 +78,8 @@ export default function Agile() {
           <AgileItem
                   positionHole="top right"
                   title="Collaboration étroite avec le client"
-                  body="Pour nos projet, le client est intégré au processus. Grâce à des échanges 
-                  réguliers et transparents, le client peut apporter des retours constants, garantissant 
-                  que le produit final correspond précisément à ses attentes et aux exigences du marché."
+                  body="Nous intégrons le client dans chaque étape du projet pour assurer, par des échanges 
+                  réguliers, que le produit final réponde précisément à ses attentes."
                 />
           </Grid>
     
@@ -90,9 +87,7 @@ export default function Agile() {
                 <AgileItem
                   positionHole="top left"
                   title="Amélioration continue et rétrospective"
-                  body="À la fin de chaque itération, une rétrospective est effectuée pour identifier 
-                  les points à améliorer et renforcer les processus. Cette dynamique d’auto-évaluation 
-                  assure un apprentissage constant et optimise la performance de l’équipe sur le long terme."
+                  body="À chaque itération, une rétrospective favorise l'amélioration continue et optimise la performance de l’équipe."
                 />
             </Grid>
         </Grid>

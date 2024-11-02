@@ -59,8 +59,8 @@ const InfographicPage = () => {
             <CustomUpdateFollower className="update-follower" style={{background:theme.palette.light.main}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
                 <SecondaryLandingComponent 
                     title="DESIGN D'INFOGRAPHIE"
-                    description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, maxime. Autem tempore, minus sequi debitis eligendi
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+                    description="Donnez une identité visuelle unique à votre marque grâce à nos services d'infographie 
+                    sur mesure. Captivez votre audience avec des designs créatifs et percutants !"
                 />
                   <Box  ref={mainBodyRef}>
                     <Box className="main" sx={{background:theme.palette.light.main}}>

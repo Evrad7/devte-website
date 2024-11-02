@@ -103,16 +103,15 @@ const HomePage = () => {
                   {isDesktop&&<Separator direction="top" translate />}
 
                       <Typography sx={{mx:{xs:1, md:10, lg:20}, py:15, textAlign:"center"}} variant="body1" component="p">
-                         Bienvenue chez DEVTE .
-                          Nous sommes spécialisés dans la conception de solution informatiques sur mesure en fonction de vos besoins . nous vous accompagnons ainsi dans la digitalisation de vos activités a l'aide des technologies de pointe. Faites décoller vos projet ici et maintenant .
-                      </Typography>
+                      Bienvenue chez DEVTE !
+                      Experts en solutions informatiques sur mesure, nous transformons vos besoins en leviers digitaux puissants. Profitez d’un accompagnement de pointe pour propulser la digitalisation de vos activités. Avec nous, Vous donnez vie à vos projets !</Typography>
                       <Grid component="section" sx={{pl:{xs:2, md:5}, pr:1, my:10}} container columnSpacing={{xs:10, lg:10}} rowSpacing={{xs:7, md:5}} justifyContent="center" alignItems="center">
                           <Grid item xs={12} sm={5} lg={4} sx={{display:"flex", justifyContent:"center"}}>
                             <Quality
                               title="Digitalisation"
                               icon="digitalization.svg"
-                              body="Piler important pour rester competitif dans le monde du numerique,
-                                      il vous facilite l'acces au données et et a pour but d'automatisation  vos processus" />
+                              body="Piler important pour rester compétitif dans le monde du numérique,
+                                      Il vous facilite l'accès aux données et a pour but d'automatiser vos processus" />
                           </Grid>
                           <Grid 
                               item xs={12}  sm={5} lg={4}
@@ -123,16 +122,17 @@ const HomePage = () => {
                             <Quality
                                 title="Innovation"
                                 icon="innovation.svg"
-                              body="C'est le coeur de tous ce que nous faisons . Innover Pour
-                                      anticipé les besoins futur , dans un monde en constante évolution technologique  " />
+                              body="
+                                    C'est le cœur de tout ce que nous faisons. Innover Pour
+                                      Anticiper les besoins futurs, dans un monde en constante évolution technologique " />
                           </Grid>
                           <Grid item xs={12}  sm={5} lg={4} sx={{display:"flex", justifyContent:"center"}}>
                             
                           <Quality
                             title="Flexibilité"
                             icon="flexibility.svg"
-                            body="Le flexibilité est essentielle dans un monde ou les besoins evolue rapidement ,
-                                    chez DEVTE , vous adaptons nos services et solutions a vos besoins spécifiques" />
+                            body="La flexibilité est essentielle dans un monde où les besoins évoluent rapidement,
+                                    Chez DEVTE, nous adaptons nos services et solutions à vos besoins spécifiques" />
                           </Grid>
                       </Grid>
                 </Box>

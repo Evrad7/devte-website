@@ -149,10 +149,9 @@ const HomePage = () => {
                         name="TIOJIO ROMAIN" 
                         role="FONDATEUR DEVTE"
                         photo="dev2.jpg" 
-                        text="Transformez votre vision numérique en réalité avec nos solutions informatiques sur mesure. 
-                        Que vous soyez une start-up ambitieuse ou une entreprise établie, notre expertise vous accompagne 
-                        à chaque étape. Ensemble, développons des outils innovants qui propulsent votre succès. Rejoignez-nous pour bâtir l'avenir de votre entreprise !."
-                      />
+                        text="Donnez vie à votre vision numérique avec nos solutions web sur mesure. Que vous 
+                        soyez une start-up ou une entreprise établie, nous créons ensemble des outils innovants 
+                        pour propulser votre succès en ligne."/>
                     </Box>
 
                     <Box component={"section"} sx={{mt:0, mb:{xs:10, md:20}}}>
