@@ -39,43 +39,60 @@ export default function ProjectForm() {
   
 
   const [open, setOpen] = React.useState(false);
+  const [openError, setOpenError] = React.useState(false);
 
    const handleClose = () =>{
     setOpen(false);
    }
 
+   const handleCloseError = () =>{
+    setOpenError(false);
+   }
+
+   const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
   const handleSubmit =  async () => {
     setOpen(true);
     if (nom !='' && email !='' && telephone!='' && pays != '' && message != '' ) {
       setResponse(true)
-      try {
-        const messages ='Username :'+nom+' \n Email :'+email+' \n phone :'+telephone+' \n Pays :'+pays+' \n Message:' +message; 
-       const response = await fetch('https://formspree.io/f/xpwaqdjg', {
-         method: 'POST',
-          headers: {
-           Accept: 'application/json',
-           'Content-Type': 'application/json',
-         },
-         body: JSON.stringify({messages}),
-       });
-  
-       if (response.ok) {
-         // Le commentaire a été envoyé avec succès
-         setNom('');
-         setTelephone('');
-         setEmail('');
-         setMessage('');
-         setPays('');
-         setSucces(true)
-       } else {
-         // Une erreur s'est produite lors de l'envoi du commentaire
-         console.log('Erreur lors de l\'envoi du commentaire');
-         alert('Une erreur est survenu !! veiller ressayer')
-       }
-     } catch (error) {
-       console.log(error);
-     }
+
+      if (validateEmail(email)) {
+          
+          try {
+            const messages ='Username :'+nom+' \n Email :'+email+' \n phone :'+telephone+' \n Pays :'+pays+' \n Message:' +message; 
+          const response = await fetch('https://formspree.io/f/xpwaqdjg', {
+            method: 'POST',
+              headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({messages}),
+          });
+      
+          if (response.ok) {
+            // Le commentaire a été envoyé avec succès
+            setNom('');
+            setTelephone('');
+            setEmail('');
+            setMessage('');
+            setPays('');
+            setSucces(true)
+          } else {
+            // Une erreur s'est produite lors de l'envoi du commentaire
+            console.log('Erreur lors de l\'envoi du commentaire');
+            alert('Une erreur est survenu !! veiller ressayer')
+          }
+        } catch (error) {
+          console.log(error);
+        }
+
+      } else {
+        setOpen(false)
+        setOpenError(true)
+      }
 
     } else {
       setResponse(false)
@@ -219,13 +236,14 @@ export default function ProjectForm() {
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
       >
+
         {
           response===true?
             succes===true?
             <DialogContent>
                 <DialogTitle>{"Message envoyer avec succès"}</DialogTitle>
               <DialogContentText id="alert-dialog-slide-description">
-                 <img src={send} width={250} height={200}/>
+                 <img src={send} width={255} height={200}/>
               </DialogContentText>
             </DialogContent>
             :
@@ -238,19 +256,37 @@ export default function ProjectForm() {
            </DialogContent>
          :
           <DialogContent>  
-            <DialogTitle>{"Veillez renseignez tous les champs"}</DialogTitle>
-            <DialogContentText id="alert-dialog-slide-description">
-              Merci de remplir tout vos information
+            <DialogTitle>{" Veillez renseigner tous les champs"}</DialogTitle>
+            <DialogContentText id="alert-dialog-slide-description">  
+                Merci de remplir toutes vos informations 
             </DialogContentText>
           </DialogContent>
         }
         
-
-
         <DialogActions>
           <Button onClick={handleClose}>OK</Button>
         </DialogActions>
       </Dialog>
+
+      <Dialog
+          open={openError}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={handleCloseError}
+          aria-describedby="alert-dialog-slide-description"
+      >
+          <DialogContent>  
+            <DialogTitle>{" Veillez renseigner correctement tous les champs"}</DialogTitle>
+            <DialogContentText id="alert-dialog-slide-description">  
+                Votre adresse email n'est pas valide !
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleCloseError}>OK</Button>
+          </DialogActions>
+      </Dialog>
+
+
     </React.Fragment>
 
     </Box>
