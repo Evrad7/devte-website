@@ -28,7 +28,7 @@ export default function Agile() {
   }, [observeHeader, unObserveHeader])
   return (
       <StyledContainer ref={ref}  matchesMd={matchesMd}>
-        <Title text=" tiojio Une approche agile" icon="icon_flash.svg" color="light" textDecorationColor="dark"/>
+        <Title text="Une approche agile" icon="icon_flash.svg" color="light" textDecorationColor="dark"/>
         <Grid container justifyContent="center" columnSpacing={{xs:3, md:12}} rowSpacing={{xs:4, md:12}} position="relative">
         <FocusMouseFollower scale={18}>
           <Box ref={imgAgileRef} className="intersection-observer"
@@ -57,10 +57,10 @@ export default function Agile() {
             display:"flex",
             justifyContent:{xs:"center",md:"flex-end",
             }}}>
-            <AgileItem 
+           <AgileItem 
                   positionHole="bottom right"
                   title="Adaptabilité et flexibilité"
-                  body=" Nous adoptons une approche itérative, permettant aux équipes de s'ajuster 
+                  body="Nos  équipes  s'ajustent
                   rapidement aux évolutions des besoins, aux retours clients, et aux imprévus."
                 />
           </Grid>
@@ -68,26 +68,25 @@ export default function Agile() {
           <Grid item xs={12} md={6} sx={{display:"flex", justifyContent:{xs:"center", md:"flex-start"}}}>
           <AgileItem 
                   positionHole="bottom left"
-                  title="Itération et incrément"
-                  body="Nous découpons le projet en itérations courtes pour développer, tester et améliorer
-                   les fonctionnalités en continu, garantissant une adaptation rapide aux besoins et un produit de qualité."
+                  title="Itérations et incréments"
+                  body="Votre projet est divisé en itérations courtes pour développer, tester et améliorer
+                   continuellement les fonctionnalités."
                 />
           </Grid>
     
           <Grid item xs={12} md={6} sx={{display:"flex", justifyContent:{xs:"center",md:"flex-end"}}}>
           <AgileItem
                   positionHole="top right"
-                  title="Collaboration étroite avec le client"
-                  body="Nous intégrons le client dans chaque étape du projet pour assurer, par des échanges 
-                  réguliers, que le produit final réponde précisément à ses attentes."
+                  title="Le client au centre du projet"
+                  body="Nous vous intégrons  dans chaque étape du projet pour assurer l'alignement du produit avec vos objectifs."
                 />
           </Grid>
     
           <Grid item xs={12} md={6} sx={{display:"flex", justifyContent:{xs:"center", md:"flex-start"}}}>
-                <AgileItem
+          <AgileItem
                   positionHole="top left"
-                  title="Amélioration continue et rétrospective"
-                  body="À chaque itération, une rétrospective favorise l'amélioration continue et optimise la performance de l’équipe."
+                  title="Amélioration  continue agile"
+                  body="Les retours nos permettent d'améliorer et optimiser inlassablement les qualités de votre produit."
                 />
             </Grid>
         </Grid>

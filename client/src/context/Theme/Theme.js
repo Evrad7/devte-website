@@ -30,12 +30,18 @@ const theme=createTheme({
         },
         light:{
             main:"#f9f9f9",
+            gray:""
         },
         darkSpace:{
             main:"#0B253F",
             gradient:"linear-gradient(to bottom, #0B253F,  #0B253F, black)",
         },
         
+    },
+    typography:{
+        body2:{
+            fontSize:"1rem"
+        }
     }
 })
 

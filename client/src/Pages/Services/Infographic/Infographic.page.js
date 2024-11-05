@@ -28,14 +28,17 @@ const InfographicPage = () => {
     const mainBodyRef=useRef(null)
     const serviceRef=useRef(null)
     const projectFormRef=useRef(null)
+    const genericLightSectionRef=useRef(null)
 
   const allTechnoligies=technologies.filter(item=>item.infographic)
 
     useEffect(()=>{
       if(isDesktop){
-        observe(mainBodyRef.current, "primary")
+        observe(mainBodyRef.current, "light")
         observe(serviceRef.current, "light")  
         observe(projectFormRef.current, "primary")
+        observe(genericLightSectionRef.current, "primary")
+
       }
       else{
          observeMobile(mainBodyRef.current)
@@ -45,10 +48,13 @@ const InfographicPage = () => {
           const currentBodyRef=mainBodyRef
           const currentSericeRef=serviceRef
           const currentProjectFormRef=projectFormRef
+          const currentGenericLightSectionRef=genericLightSectionRef
 
           unObserve(currentBodyRef.current)
           unObserve(currentSericeRef.current)
           unObserve(currentProjectFormRef.current)
+          unObserve(currentGenericLightSectionRef.current)
+
         }
       
       }
@@ -68,53 +74,57 @@ const InfographicPage = () => {
                     </Box>
                     <Title text="Transformons vos idées" color="primary"/> 
 
-                    <Box sx={{mb:20}} component="section">
-                      <InfographicServiceDetails/>  
-                    </Box>
-
-
-                    <Box component="section"  sx={{mt:{xs:10, md:15}, mb:0}}>
-                      <Title text="Services associés selon vos besoins" icon="icon_flash_primary.svg" color="primary" mb={{xs:5, md:10}} />
-                      <Grid  sx={{pl:{xs:2.7, md:5}, pr:1, my:10}} container columnSpacing={{xs:10, lg:10}} rowSpacing={{xs:7, md:5}} justifyContent="center" alignItems="center">
-                            <Grid item xs={12} sm={6} sx={{display:"flex", justifyContent:{xs:"center", sm:"flex-end"}}}>
-                              <Quality
-                                title="Impressions"
-                                icon="printing.svg"
-                                body="Très pratique pour composer des documents complexes, beaucoup
-                                        d’automatisation : références croisées, notes de bas de page, table des" />
-                            </Grid>
-                            <Grid 
-                                item xs={12}  sm={6}
-                                sx={{display:"flex",justifyContent:{xs:"center", sm:"flex-start"}}}>
-                              <Quality
-                                  title="Annimations"
-                                  icon="animation.svg"
-                                body="Très pratique pour composer des documents complexes, beaucoup
-                                        d’automatisation : références croisées, notes de bas de page, table des" />
-                            </Grid>
-                         
-                      </Grid>
-                    </Box>
-                    
-
-                    <Action/>
-
-                    <Box  component={"section"} sx={{mt:{xs:10, md:15}, mb:{xs:5, md:10}}}>
-                      <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
-                        <GridHexagon items={allTechnoligies}/>         
-                      </CustomUpdateFollower>
-                    </Box>  
-              
-                    <Box component="section" sx={{mt:15,  mb:{xs:10, md:15}}}>
-                      <Quote 
-                        name="TSOATA Evrad" 
-                        role="CO-FONDATEUR DEVTE"
-                        photo="dev1.png" 
-                        text="Fugiat do nisi do irure nulla amet sint Lorem occaecat laboris exercitation deserunt. 
-                          Ut ad non aute aute eiusmod elit voluptate laboris ipsum elit exercitation amet sunt."
-                      />
+                    <Box sx={{mb:{xs:10, md:20}}} component="section">
+                        <CustomUpdateFollower className="update-follower"mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
+                          <InfographicServiceDetails/>  
+                        </CustomUpdateFollower>
                     </Box>
                   </Box>
+
+                  
+                  <Box ref={genericLightSectionRef}>
+                      <Box component="section"  sx={{mt:{xs:5, md:15}, mb:0}}>
+                        <Title text="Services associés selon vos besoins" icon="icon_flash_primary.svg" color="primary" mb={{xs:5, md:10}} />
+                        <Grid  sx={{pl:{xs:2.7, md:5}, pr:1, my:10}} container columnSpacing={{xs:10, lg:10}} rowSpacing={{xs:7, md:5}} justifyContent="center" alignItems="center">
+                              <Grid item xs={12} sm={6} sx={{display:"flex", justifyContent:{xs:"center", sm:"flex-end"}}}>
+                                <Quality
+                                  title="Impressions"
+                                  icon="printing.svg"
+                                  body="Profitez d'une qualité d'impression irreprochable, au prix de rien, avec des matériaux durables, et sur tout types de format." />
+                              </Grid>
+                              <Grid 
+                                  item xs={12}  sm={6}
+                                  sx={{display:"flex",justifyContent:{xs:"center", sm:"flex-start"}}}>
+                                <Quality
+                                    title="Annimations"
+                                    icon="animation.svg"
+                                  body="Donnez vie à vos présentations et dynamisez-les grâce à  des animations fluides, adaptées et rythmées " />
+                              </Grid>
+                          
+                        </Grid>
+                      </Box>
+                    
+
+                      <Action/>
+
+                      <Box  component={"section"} sx={{mt:{xs:10, md:15}, mb:{xs:5, md:10}}}>
+                        <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
+                          <GridHexagon items={allTechnoligies}/>         
+                        </CustomUpdateFollower>
+                      </Box>  
+              
+                      <Box component="section" sx={{mt:15,  mb:{xs:10, md:15}}}>
+                        <Quote 
+                          name="TSOATA Evrad" 
+                          role="CO-FONDATEUR DEVTE"
+                          photo="evrad7.png"
+                          text=" La souris remplace le pinceau, le pixel l'encre : l'infographie devient art. C'est l'art de transmettre des messages puissants à travers des canaux numériques,
+                          où chaque détail graphique parle autant que les mots. 
+                          " 
+                          
+                        />
+                      </Box>
+                    </Box>
                  
                   <Box ref={serviceRef} component={"section"} sx={{mt:0, mb:{xs:10, md:20}}}>
                         <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>

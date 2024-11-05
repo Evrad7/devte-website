@@ -22,7 +22,7 @@ const config = {
     output: {
         path: path.join(CURRENT_WORKING_DIR , '/dist/'),
         filename: "server.generated.js",
-        publicPath: 'dist/',
+        publicPath: '/dist/',
         library:{
             type:"commonjs",
         },

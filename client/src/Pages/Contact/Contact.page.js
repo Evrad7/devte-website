@@ -113,9 +113,8 @@ const ContactPage = () => {
                       <Quote 
                         name="TSOATA Evrad" 
                         role="CO-FONDATEUR DEVTE"
-                        photo="dev1.png" 
-                        text="Fugiat do nisi do irure nulla amet sint Lorem occaecat laboris exercitation deserunt. 
-                          Ut ad non aute aute eiusmod elit voluptate laboris ipsum elit exercitation amet sunt."
+                        photo="evrad7.png" 
+                        text="DEVTE croit que chaque individu possède une idée qui, bien cernée et implémentée convenablement, peut changer positivement le monde."
                       />
                     </Box>
              

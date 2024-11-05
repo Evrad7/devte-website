@@ -2,7 +2,7 @@
 import { useTheme } from '@emotion/react'
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import CrewImage from "../../../assets/img/crew.jpg"
+import CrewImage from "../../../assets/img/crew.png"
 
 
 const Crew = () => {
@@ -54,9 +54,7 @@ const Crew = () => {
             mt:15,
             ml:25,
             display:{xs:"none", md:"inline"}
-         }}>
-            Fugiat tempor consequat minim sint et non elit labore irure consectetur exercitation velit cillum.
-            Fugiat tempor consequat minim sint et non elit labore irure consectetur exercitation velit cillum.
+         }}>La réalisation de votre projet, des conseils stratégiques, des assistances techniques, des soutiens personnalisés, nous sommes là pour transformer vos idées en succès durable.
         </Typography>
     </Box>
   )

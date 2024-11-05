@@ -63,8 +63,7 @@ const AboutPage = () => {
             <CustomUpdateFollower className="update-follower" style={{background:theme.palette.light.main}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
                 <SecondaryLandingComponent 
                     title="A PROPOS DE DEVTE"
-                    description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, maxime. Autem tempore, minus sequi debitis eligendi
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+                    description="DEVTE est l'agence de développement web et mobile de référence, qui a su trouver sa place et s'imposer dans le monde digital. Ses experts sont toujours disponible pour vous écouter et vous aider à propulser vos projets."
                 />
                   <Box  ref={descriptionRef}>
                     <Box className="main" sx={{background:theme.palette.light.main}}>
@@ -77,11 +76,9 @@ const AboutPage = () => {
                             textAlign:"center",
                             px:{xs:2, sm:10, md:20, lg:40}
                         }}>
-                            Eiusmod do ea occaecat commodo eiusmod ad adipisicing elit.
-                             Irure reprehenderit nostrud ex dolor consequat dolore nisi fugiat. Do ut commodo id cillum 
-                             duis ullamco. Eu incididunt sint anim sunt consectetur consequat. Aliqua ea enim adipisicing dolor
-                              excepteur qui adipisicing culpa nulla non amet aute. Qui eu incididunt labore ea nisi anim deserunt
-                               nulla mollit.
+                          L'agence DEVTE a été créée en 2022 au Cameroun par un groupe d'experts passionnés du digital. Initialement spécialisée dans le développement web et mobile, elle a rapidement connu une ascension avec des antennes créées  dans d'autres pays et  de nouveaux services comme l'administration système et l'infographie. 
+                          DEVTE croit que chaque individu possède une idée qui, bien cernée et implémentée convenablement, peut changer positivement le monde.
+                            
                         </Typography>
                     </Box>
 
@@ -95,26 +92,26 @@ const AboutPage = () => {
                           <CrewMember 
                             name="TSOATA Evrad"
                             photo="dev1.png"
-                            description="Culpa labore elit anim cillum sit pariatur irure magna officia nulla. Aute ex do dolore occaecat cillum labore consequat. Culpa labore elit anim cillum "
+                            description="En tant qu'expert DevOps, je maîtrise le développement d'applications web et mobiles et mets en place des infrastructures pour automatiser leur déploiement et assurer une livraison continue."
                             linkedInLink="https://www.linkedin.com/in/evrad-loïc-tsoata-manfouo-38420a215"
-                            portoFilioLink="#"
+                            portoFilioLink="/"
                             />
 
                           <CrewMember 
-                            name="TSOATA Evrad"
-                            photo="dev1.png"
-                            description="Culpa labore elit anim cillum sit pariatur irure magna officia nulla. Aute ex do dolore occaecat cillum labore consequat. Culpa labore elit anim cillum "
-                            linkedInLink="https://www.linkedin.com/in/evrad-loïc-tsoata-manfouo-38420a215"
-                            portoFilioLink="#"
+                            name="TIOJIO Romain"
+                            photo="dev2.png"
+                            description="Ma mission en tant que software enginer et projet manager est de me rassurer de fournir une solution adaptée au besoin spécifique de tout un chacun en respectant le rapport qualité - coût - délai"
+                            linkedInLink="https://www.linkedin.com/in/tiojio/"
+                            portoFilioLink="https://tiojio.github.io/Portfolio/"
                             inverse/>
 
                             
                           <CrewMember 
                             name="TSOATA Evrad"
-                            photo="dev1.png"
-                            description="Culpa labore elit anim cillum sit pariatur irure magna officia nulla. Aute ex do dolore occaecat cillum labore consequat. Culpa labore elit anim cillum "
-                            linkedInLink="https://www.linkedin.com/in/evrad-loïc-tsoata-manfouo-38420a215"
-                            portoFilioLink="#"
+                            photo="dev3.png"
+                            description="Passionné par l'innovation numérique, je possède une solide expertise en génie logiciel. Mes compétences en développement me permettent de concevoir et de déployer des applications performantes. "
+                            linkedInLink="linkedin.com/in/rochinel-feujio-540b602a5"
+                            portoFilioLink="/"
                             />
                     </Box>
 

@@ -23,17 +23,17 @@ const HomeCrew =()=>{
     const itemData=[
         {
             name:"TIOJIO ROMAIN JUNIOR",
-            role:"Fondateur DEVTE",
-            photo:"dev2.jpg"
+            role:"Developpeur fullstack",
+            photo:"dev2.png"
         },
         {
-            name:"TSOATA EVRAD",
-            role:"CO-FONDATEUR DEVTE",
+            name:"FEUDJIO",
+            role:"Developpeur frontend",
             photo:"dev3.png"
         },
         {
             name:"TSOATA EVRAD",
-            role:"Developpeur fullstack",
+            role:"Devops fullstack",
             photo:"dev1.png"
         },
      
@@ -124,7 +124,7 @@ const HomeCrew =()=>{
                         transition:"opacity .9s 0s cubic-bezier(0.5, 0, 0, 1), transform .9s 0s cubic-bezier(0.5, 0, 0, 1)",
 
                     }}>
-                    <Typography sx={{px:1}} variant="body1" component="p" textAlign="center">
+                    <Typography sx={{px:1}} variant="body1" component="p" textAlign="center" px={{xs:2, md:10}} mr={{xs:"auto", md:10}}>
                     Notre équipe est composée de passionnés du numérique, experts en développement 
                     web et mobile, et dédiés à créer des solutions performantes et innovantes. Chaque 
                     membre apporte son savoir-faire unique, qu'il s'agisse de développement, de gestion 
