@@ -51,10 +51,10 @@ const HomeCrew =()=>{
             <Box 
                 sx={{display:{xs:"block", lg:"flex"},
                      justifyContent:"center",
-                     "& > div:nth-child(1)":{
+                     "& > div:nth-of-type(1)":{
                         transform:{md:"translateX(100px)"},
                      },
-                     "& > div:nth-child(2)":{
+                     "& > div:nth-of-type(2)":{
                         transform:"translate(-100px, 100%)",
                         display:{xs:"none", md:"flex"}
                      }

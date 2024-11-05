@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, lazy } from 'react';
 import Footer from '../../../Components/Layout/Footer/Footer.layout';
 import { Box, Grid } from '@mui/material';
 import { useTheme } from '@emotion/react';
@@ -11,7 +11,6 @@ import Quality from '../../../Components/Layout/Quality/Quality.layout';
 import { fonctionalities, technologies } from '../../../services/data';
 import Services from '../../../Components/Layout/Services/Services.layout';
 import GridDrowned from '../../../Components/Layout/GridDrowned/GridDrowned.layout';
-import GridHexagon from '../../../Components/Layout/GridHexagon/GridHexagon.layout';
 import SecondaryLandingComponent from '../../../Components/Layout/SecondaryLandingComponent/SecondaryLandingComponent';
 import ServiceDetails from '../../../Components/Layout/ServiceDetails/ServiceDetails.layout';
 import Action from '../../../Components/Layout/Action/Action.layout';
@@ -19,6 +18,8 @@ import Title from '../../../Components/Layout/Title/Title.layout';
 import Quote from '../../../Components/Layout/Quote/Quote.layout';
 import RocketFlying from '../../../Components/Layout/RocketFlying/RocketFlying.layout';
 import ProjectForm from '../../../Components/Layout/ProjectForm/PojectForm.layout';
+import { Suspense } from 'react';
+const GridHexagon=lazy(()=>import("../../../Components/Layout/GridHexagon/GridHexagon.layout"));
 
 
 
@@ -159,7 +160,9 @@ const MobileDevelopmentPage = () => {
 
                     <Box  component={"section"} sx={{mt:{xs:10, md:15}, mb:0}}>
                       <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
-                        <GridHexagon items={allTechnoligies}/>         
+                        <Suspense>
+                          <GridHexagon items={allTechnoligies}/>         
+                        </Suspense>
                       </CustomUpdateFollower>
                     </Box>  
                   </Box>

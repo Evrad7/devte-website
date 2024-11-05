@@ -12,11 +12,11 @@ const StyledFormContainer=styled(Box, {shouldForwardProp:prop=>prop!=="matchesMd
             borderBottomLeftRadius:matchesMd?6:0,
             borderBottomRightRadius:matchesMd?6:0
         },
-        "&:nth-child(2n) input":{
+        "&:nth-of-type(2n) input":{
             borderTopRightRadius:matchesMd?0:6,
             borderBottomRightRadius:0,
         },
-        "&:nth-child(2n+1) input":{
+        "&:nth-of-type(2n+1) input":{
             borderTopLeftRadius:matchesMd?0:6,
             borderBottomLeftRadius:0,
         }

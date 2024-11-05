@@ -54,6 +54,11 @@ const config = {
               },
         ]
     },
+    ignoreWarnings:[
+        {
+            file: /\.(css|js|svg|)$/,
+        }
+    ],
     resolve: {
         // extensions: ['.js', '.jsx', '.json'],
         

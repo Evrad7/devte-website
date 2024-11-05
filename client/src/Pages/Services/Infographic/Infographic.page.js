@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, lazy } from 'react';
 import Footer from '../../../Components/Layout/Footer/Footer.layout';
 import { Box, Grid } from '@mui/material';
 import { useTheme } from '@emotion/react';
@@ -9,7 +9,6 @@ import PageContainer from '../../../Components/Layout/PageContainer/PageContaine
 import CustomUpdateFollower from '../../../Components/Layout/CustomUpdateFollower/CustomUpdateFollower.layout';
 import Quality from '../../../Components/Layout/Quality/Quality.layout';
 import Services from '../../../Components/Layout/Services/Services.layout';
-import GridHexagon from '../../../Components/Layout/GridHexagon/GridHexagon.layout';
 import SecondaryLandingComponent from '../../../Components/Layout/SecondaryLandingComponent/SecondaryLandingComponent';
 import Action from '../../../Components/Layout/Action/Action.layout';
 import Title from '../../../Components/Layout/Title/Title.layout';
@@ -18,6 +17,8 @@ import RocketFlying from '../../../Components/Layout/RocketFlying/RocketFlying.l
 import ProjectForm from '../../../Components/Layout/ProjectForm/PojectForm.layout';
 import { technologies } from '../../../services/data';
 import InfographicServiceDetails from '../../../Components/Layout/InfographicServiceDetails/InfographicServiceDetails.layout';
+import { Suspense } from 'react';
+const GridHexagon=lazy(()=>import("../../../Components/Layout/GridHexagon/GridHexagon.layout"))
 
 
 
@@ -109,7 +110,9 @@ const InfographicPage = () => {
 
                       <Box  component={"section"} sx={{mt:{xs:10, md:15}, mb:{xs:5, md:10}}}>
                         <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
-                          <GridHexagon items={allTechnoligies}/>         
+                          <Suspense>
+                            <GridHexagon items={allTechnoligies}/>     
+                          </Suspense>
                         </CustomUpdateFollower>
                       </Box>  
               

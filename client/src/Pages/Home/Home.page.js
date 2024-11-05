@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, lazy } from 'react';
 import Footer from '../../Components/Layout/Footer/Footer.layout';
-import { styled } from '@mui/material/styles';
 import LandingComponent from '../../Components/Layout/LandingComponent/LandingComponent.layout';
 import { Box, Grid, Typography } from '@mui/material';
 import { useTheme } from '@emotion/react';
@@ -11,16 +10,19 @@ import PageContainer from '../../Components/Layout/PageContainer/PageContainer.l
 import CustomUpdateFollower from '../../Components/Layout/CustomUpdateFollower/CustomUpdateFollower.layout';
 import Header from '../../Components/Layout/Header/Header.layout';
 import Quality from '../../Components/Layout/Quality/Quality.layout';
-import { fonctionalities, qualities, technologies } from '../../services/data';
+import { fonctionalities, technologies } from '../../services/data';
 import Services from '../../Components/Layout/Services/Services.layout';
 import GridDrowned from '../../Components/Layout/GridDrowned/GridDrowned.layout';
-import GridHexagon from '../../Components/Layout/GridHexagon/GridHexagon.layout';
 import Agile from '../../Components/Layout/Agile/Agile.layout';
 import HomeCrew from '../../Components/Layout/HomeCrew/HomeCrew.layout';
 import Action from '../../Components/Layout/Action/Action.layout';
 import Experiences from '../../Components/Layout/Experiences/Experiences.layout';
 import RocketFlying from '../../Components/Layout/RocketFlying/RocketFlying.layout';
 import ProjectForm from '../../Components/Layout/ProjectForm/PojectForm.layout';
+import { Suspense } from 'react';
+const GridHexagon=lazy(()=>import("../../Components/Layout/GridHexagon/GridHexagon.layout"))
+
+
 
 
 
@@ -159,7 +161,9 @@ const HomePage = () => {
 
                 <Box ref={technologiesRef} component={"section"} sx={{mt:{xs:10, md:15}, mb:0}}>
                   <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
-                    <GridHexagon items={allTechnoligies}/>         
+                    <Suspense>
+                      <GridHexagon items={allTechnoligies}/>         
+                    </Suspense>
                   </CustomUpdateFollower>
                 </Box>    
 

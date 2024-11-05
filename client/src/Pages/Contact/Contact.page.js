@@ -1,21 +1,16 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import Footer from '../../Components/Layout/Footer/Footer.layout';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box} from '@mui/material';
 import { useTheme } from '@emotion/react';
 import Separator from '../../Components/Layout/Separator/Separator.layout';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import { HeaderContext } from '../../context/HeaderContext';
 import PageContainer from '../../Components/Layout/PageContainer/PageContainer.layout';
 import CustomUpdateFollower from '../../Components/Layout/CustomUpdateFollower/CustomUpdateFollower.layout';
-import Quality from '../../Components/Layout/Quality/Quality.layout';
 import { fonctionalities, technologies } from '../../services/data';
 import Services from '../../Components/Layout/Services/Services.layout';
-import GridDrowned from '../../Components/Layout/GridDrowned/GridDrowned.layout';
-import GridHexagon from '../../Components/Layout/GridHexagon/GridHexagon.layout';
 import SecondaryLandingComponent from '../../Components/Layout/SecondaryLandingComponent/SecondaryLandingComponent';
-import ServiceDetails from '../../Components/Layout/ServiceDetails/ServiceDetails.layout';
 import Action from '../../Components/Layout/Action/Action.layout';
-import Title from '../../Components/Layout/Title/Title.layout';
 import Quote from '../../Components/Layout/Quote/Quote.layout';
 import RocketFlying from '../../Components/Layout/RocketFlying/RocketFlying.layout';
 import ProjectForm from '../../Components/Layout/ProjectForm/PojectForm.layout';
@@ -95,8 +90,8 @@ const ContactPage = () => {
             <CustomUpdateFollower className="update-follower" style={{background:theme.palette.light.main}} mouseOptions={{zIndex:10000, backgroundColor:theme.palette.primary.main}}>
                 <SecondaryLandingComponent 
                     title="RESTONS EN CONTACT"
-                    description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, maxime. Autem tempore, minus sequi debitis eligendi
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+                    description="Restez connecté à DEVTE pour nourrir l'innovation et saisir chaque opportunité d'impact, en transformant vos idées en réalités concrètes."
+
                 />
                   <Box  ref={descriptionRef}>
                     <Box className="main" sx={{background:theme.palette.light.main}}>

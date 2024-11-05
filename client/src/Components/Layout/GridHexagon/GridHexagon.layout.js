@@ -8,11 +8,6 @@ import Title from "../Title/Title.layout";
 import { IntersectionObserverContext } from "../../../context/IntersectionObserverContext";
 
 
-
-
-
-
-
 const GridHexagon=({items})=>{
     const {width}=useWindowDimensions()
     const ref=useRef(null)
