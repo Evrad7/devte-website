@@ -100,7 +100,7 @@ const SystemAdministration = () => {
                         <Separator direction="top" translate/>
                     </Box>
 
-                    <Box component="section" sx={{mt:10, mb:{xs:10, md:20}}}>
+                    <Box component="section" sx={{mt:{xs:0, md:10}, mb:{xs:10, md:20}}}>
                         <ServiceDetails data={detailsServiceData}/>
                     </Box>
 
@@ -114,15 +114,16 @@ const SystemAdministration = () => {
                               <Quality
                                 title="Formation et sensibilisations"
                                 icon="training.svg"
-                                body="Développez les compétences de votre équipe grâce à nos sessions de formation personnalisées. Sensibilisez vos collaborateurs aux enjeux de la sécurité informatique pour une meilleure protection de vos données." />
+                                body="Développez les compétences de vos collaborateurs et sensibilisez-les aux enjeux de la sécurité informatique grâce à nos formations sur mesure.
+                                 " />
                             </Grid>
                             <Grid 
                                 item xs={12}  sm={6}
                                 sx={{display:"flex",justifyContent:{xs:"center", sm:"flex-start"}}}>
                               <Quality
-                                  title="Gestion du support technique"
+                                  title="Support technique"
                                   icon="technical_support_management.svg"
-                                body="Assurez la continuité de votre activité avec notre service de support technique réactif et efficace. Bénéficiez d'une assistance dédiée pour résoudre rapidement tous vos problèmes informatiques." />
+                                body="Assurez la continuité de vos activité. Bénéficiez d'une assistance dédiée pour résoudre rapidement tous vos problèmes informatiques." />
                             </Grid>
                          
                       </Grid>
@@ -132,7 +133,7 @@ const SystemAdministration = () => {
                       <Quote 
                         name="TIOJIO ROMAIN" 
                         role="FONDATEUR DEVTE"
-                        photo="dev2.jpg" 
+                        photo="tiojio.png" 
                         text="Transformez votre vision en réalité avec notre expertise en solutions numériques. Nous sommes déterminés à propulser votre entreprise vers l’avenir grâce à des technologies innovantes et sur mesure."
                       />
                     </Box>

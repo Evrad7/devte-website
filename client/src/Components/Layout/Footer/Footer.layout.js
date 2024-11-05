@@ -6,7 +6,6 @@ import FacebookIcon from "@mui/icons-material/Facebook"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import WhatsAppIcon from "@mui/icons-material/WhatsApp"
 import GithubIcon from "@mui/icons-material/Github"
-import Maps from '../Maps/Maps.layout'
 import Globe from '../../../assets/img/globe.svg'
 import FooterItem from './FooterItem.layout';
 import Logo from '../Logo/Logo.layout';
@@ -99,9 +98,7 @@ const Footer = () => {
                     <Logo width={matchesMd?100:60} height={matchesMd?130:90} />
                   </FocusMouseFollower>
                   <Typography mt={2} component="p" variant="body1" color="light.main">
-                    <Typography  >
-                    Irure sunt aliqua magna exercitation nisi aute reprehenderit nostrud pariatur magna id amet elit.
-                  </Typography>
+                    Des experts toujours disponibles pour vous écouter et vous aider à propulser vos projets.
                   </Typography>
               </FooterItem>
             </Grid>
@@ -120,7 +117,7 @@ const Footer = () => {
                       listStyleType:"none",
                       pl:0,
                     }}>
-                      {navItems[1].items.map(elt=><Box component="li" mb={2}>
+                      {navItems[1].items.map((elt, i)=><Box key={i} component="li" mb={2}>
                           <ButtonMouseFollower style={{display:"inline"}}>
                             <Link style={{
                               color:theme.palette.light.main,
@@ -150,8 +147,8 @@ const Footer = () => {
                       listStyleType:"none",
                       pl:0,
                     }}>
-                      {navItems.map(elt=>
-                      (elt.name!="Services")&&<Box component="li" mb={2}>
+                      {navItems.map((elt, i)=>
+                      (elt.name!="Services")&&<Box key={i} component="li" mb={2}>
                           <ButtonMouseFollower  style={{display:"inline"}}>
                             <Link style={{
                               color:theme.palette.light.main,
@@ -181,7 +178,7 @@ const Footer = () => {
                         listStyleType:"none",
                         pl:0,
                       }}>
-                      {socialLinkItems.map(item=><Box component="li" mb={2}>
+                      {socialLinkItems.map((item, i)=><Box key={i} component="li" mb={2}>
                             <ButtonMouseFollower style={{display:"inline", display:"flex", alignItems:"center"}}>
                               {item.icon}
                               <Link style={{

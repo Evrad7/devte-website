@@ -109,7 +109,7 @@ const MobileDevelopmentPage = () => {
                         <Separator direction="top" translate/>
                     </Box>
 
-                    <Box component="section" sx={{mt:10, mb:{xs:10, md:20}}}>
+                    <Box component="section" sx={{mt:{xs:0, md:10}, mb:{xs:10, md:20}}}>
                         <ServiceDetails data={detailsServiceData}/>
                     </Box>
 
@@ -123,8 +123,8 @@ const MobileDevelopmentPage = () => {
                               <Quality
                                 title="Hebergement"
                                 icon="hosting.svg"
-                                body="Profitez d'un hébergement fiable et sécurisé pour assurer la disponibilité optimale de 
-                                votre site web, avec une infrastructure flexible et performante adaptée à vos besoins." />
+                                body="Assurez la présence de vos applications mobiles sur toutes les plateformes de téléchargement populaires, 
+                                afin de maximiser leur visibilité." />
                             </Grid>
                             <Grid 
                                 item xs={12}  sm={6}
@@ -132,8 +132,8 @@ const MobileDevelopmentPage = () => {
                               <Quality
                                   title="Maintenance"
                                   icon="maintenance.svg"
-                                body="Nous assurons la maintenance régulière de vos plateformes pour garantir leur stabilité, 
-                                leur sécurité et des mises à jour en continu, tout en prévenant les risques d'interruption de service." />
+                                body="Laissez-nous gérer la maintenance de vos plateformes. Nous garantissons la stabilité, la sécurité, les mises 
+                                  à jour continues et la disponibilité." />
                             </Grid>
                          
                       </Grid>
@@ -143,9 +143,9 @@ const MobileDevelopmentPage = () => {
                       <Quote 
                         name="TSOATA Evrad" 
                         role="CO-FONDATEUR DEVTE"
-                        photo="dev1.png" 
-                        text="Fugiat do nisi do irure nulla amet sint Lorem occaecat laboris exercitation deserunt. 
-                          Ut ad non aute aute eiusmod elit voluptate laboris ipsum elit exercitation amet sunt."
+                        photo="evrad7.png" 
+                        text="Aujourd'hui, les téléphones sont devenus presque une extension de nous-mêmes.
+                        Le développement mobile est ainsi, plus que jamais, essentiel."
                       />
                     </Box>
 

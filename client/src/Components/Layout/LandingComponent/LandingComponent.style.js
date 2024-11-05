@@ -21,7 +21,7 @@ const starAnimation=keyframes`
  }
 `
 
-const StyledLandingContainerBox=styled(Box, {shouldForwardProp:prop=>prop!=="isDesktop" && prop!=="height" && prop!=="height"})(({theme, isDesktop, matchesMd, height})=>({
+const StyledLandingContainerBox=styled(Box, {shouldForwardProp:prop=>prop!=="isDesktop" && prop!=="height" && prop!=="height"})(({theme, isDesktop, height})=>({
   backgroundColor:theme.palette.primary.main,
   backgroundImage:`radial-gradient(circle at bottom, ${theme.palette.primary.main} -2%, black 100%)`,
   top:-75,

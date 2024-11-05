@@ -33,7 +33,7 @@ const AgileItem=({title, body, positionHole})=>{
     }, [])
 
     let maskAgile=matchesMd?maskAgileTopLeft:maskAgileTop
-    let pt=!matchesMd?5:8
+    let pt=!matchesMd?5:8.7
     let pb=3
     const translateDistance=60
     const transition=".7s 0s  cubic-bezier(0.5, 0, 0, 1)"
@@ -45,13 +45,13 @@ const AgileItem=({title, body, positionHole})=>{
     else if(positionHole==="bottom right"){
         maskAgile=matchesMd?maskAgileBottomRight:maskAgileBottom
         pt=!matchesMd?5:3
-        pb=7
+        pb=!matchesMd?2:7
         translateValue=`translateX(-${translateDistance}px) translateY(-${translateDistance}px)`
     }
     else if(positionHole==="bottom left"){
         maskAgile=matchesMd?maskAgileBottomLeft:maskAgileTopBottom
         pt=!matchesMd?5:3
-        pb=7
+        pb=!matchesMd?2:7
         translateValue=`translateX(${translateDistance}px) translateY(-${translateDistance}px)`
 
     }
@@ -79,14 +79,14 @@ const AgileItem=({title, body, positionHole})=>{
                 <img src={AgileImg} style={{width:70}} alt="Approche agile"/>
             </Box>
 
-            <Box sx={{px:5,
+            <Box sx={{
                 backgroundColor:theme.palette.info.dark,
                 border:`solid 1.5px ${theme.palette.secondary.main}`,
-                px:{xs:2, md:4},
+                px:{xs:2, md:3},
                 pt:pt,
                 pb:pb,
-                width:300,
-                height:280,
+                width:310,
+                height:284,
                 //  background:`radial-gradient(circle 50px at ${positionHole} ,#0000 98%,red  )` 
                 maskImage:`url(${maskAgile})`,
                 maskSize:"cover",
@@ -94,8 +94,10 @@ const AgileItem=({title, body, positionHole})=>{
                 position:"relative",
                 zIndex:1000,            
          }}>
-              <Typography sx={{color:theme.palette.light.main, pb:2}} variant="h6" component="h3">{title}</Typography>
-              <Typography variant="body1" component="p" sx={{color:theme.palette.light.main}}> {body} </Typography>
+              <Typography sx={{color:theme.palette.light.main, pb:2, textTransform:"uppercase"}} variant="h6" component="h3">{title}</Typography>
+              <Typography variant="body1" component="p" sx={{color:theme.palette.light.main}}> 
+                {body}                   
+              </Typography>
            
         </Box>
 

@@ -102,9 +102,15 @@ const HomePage = () => {
                 <Box className="first-section"  ref={descriptionRef} sx={{background:theme.palette.light.main}} >
                   {isDesktop&&<Separator direction="top" translate />}
 
-                      <Typography sx={{mx:{xs:1, md:10, lg:20}, py:15, textAlign:"center"}} variant="body1" component="p">
-                      Bienvenue chez DEVTE !
-                      Experts en solutions informatiques sur mesure, nous transformons vos besoins en leviers digitaux puissants. Profitez d’un accompagnement de pointe pour propulser la digitalisation de vos activités. Avec nous, Vous donnez vie à vos projets !</Typography>
+                      <Typography sx={{mx:{xs:1, md:10, lg:20}, py:{xs:10, md:15}, textAlign:"center"}} variant="body1" component="p">
+                          <Typography component="span">
+                            Bienvenue chez DEVTE !
+                            Experts en solutions informatiques sur mesure, nous transformons vos besoins en leviers digitaux puissants.
+                          </Typography> 
+                          <Typography component="span" sx={{display: {xs:"none", md:"inline"}}}>
+                            . Profitez d’un accompagnement de pointe pour propulser la digitalisation de vos activités. Avec nous, Vous donnez vie à vos projets !
+                          </Typography>
+                      </Typography>
                       <Grid component="section" sx={{pl:{xs:2, md:5}, pr:1, my:10}} container columnSpacing={{xs:10, lg:10}} rowSpacing={{xs:7, md:5}} justifyContent="center" alignItems="center">
                           <Grid item xs={12} sm={5} lg={4} sx={{display:"flex", justifyContent:"center"}}>
                             <Quality
@@ -158,7 +164,7 @@ const HomePage = () => {
                 </Box>    
 
 
-                <Box ref={agileRef} component={"section"} sx={{my:15}}>
+                <Box ref={agileRef} component={"section"} sx={{my:{xs:0, md:10}}}>
                   <CustomUpdateFollower  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}}>
                     <Agile/>
                   </CustomUpdateFollower>

@@ -18,7 +18,7 @@ const LandingComponent=()=>{
     document.getElementById("start-project").scrollIntoView()
   }
     return (
-    <StyledLandingContainerBox isDesktop={isDesktop} matchesMd={matchesMd}  height={height} sx={{}}>
+    <StyledLandingContainerBox isDesktop={isDesktop}  height={height} sx={{}}>
       <CustomUpdateFollower className="mouse-follower"    style={{height:"100%", position:"relative", transformStyle:"preserve-3d", zIndex:-1}}  mouseOptions={{zIndex:10000, backgroundColor:theme.palette.light.main}} >
         <div className="stars"></div>
         <LandingImages/>

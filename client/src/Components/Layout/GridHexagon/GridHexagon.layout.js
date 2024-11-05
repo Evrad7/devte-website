@@ -96,7 +96,7 @@ const GridHexagon=({items})=>{
         }
         c++
         return(
-            <StyledHexagon q={q} r={r} s={0} >
+            <StyledHexagon key={i} q={q} r={r} s={0} >
                 {item.svg}
                 <StyledText size={xSize} y={(ySize/2)}>{item.name}</StyledText>
             </StyledHexagon>

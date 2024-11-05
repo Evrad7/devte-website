@@ -14,7 +14,7 @@ const InfographicServiceDetails = () => {
            
         }}>
            <Grid container  columnSpacing={1.5} rowSpacing={{xs:8, md:3}} sx={{
-                opacity:.9,
+                opacity:.85,
                  position:"relative",
                 "&:before":{
                     position:"absolute",
@@ -34,12 +34,10 @@ const InfographicServiceDetails = () => {
                     }}>
                          <InfographicServiceDetailsItem
                             title="Billets" 
-                            photo={"ticket.png"}
-                            description="Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum."
+                            photo="ticket.png"
+                            description="Les billets de mariage, d'anniversaire ou faire-part d'obsèques 
+                            : DEVTE vous accompagne dans ces moments importants de la vie avec des designs beaux et adaptés.
+                            "
                             
                             sx={{
                                 height:{xs:"auto", md:750},
@@ -56,11 +54,7 @@ const InfographicServiceDetails = () => {
                         <InfographicServiceDetailsItem
                             title="Flyers" 
                             photo={"flyer.png"}
-                            description="Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum."
+                            description="Créez avec nous des flyers et prospectus inspirants pour connecter et engager votre audience."
                             sx={{
                                 display:"flex",
                                 flexDirection:"column",
@@ -79,11 +73,7 @@ const InfographicServiceDetails = () => {
                      <InfographicServiceDetailsItem
                             title="Logos" 
                             photo={"logo.png"}
-                            description="Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum."
+                            description="Nous concevons pour vous Le logo  qui incarne vos valeurs, raconte votre histoire et inspire en communiquant votre vision."
                             sx={{
                                 height:{xs:"auto", md:750},
                                 display:"flex",
@@ -101,11 +91,7 @@ const InfographicServiceDetails = () => {
                      <InfographicServiceDetailsItem
                             title="Etiquettes" 
                             photo={"label.png"}
-                            description="Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum.
-                                        Minim ullamco ipsum culpa ipsum."
+                            description="Décorez et embellissez vos produits avec des éttiquettes qui reflètent votre marque et créent des liens avec les clients."
                             sx={{
                                 display:"flex",
                                 flexDirection:"column",

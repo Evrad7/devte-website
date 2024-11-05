@@ -52,6 +52,7 @@ const CrewMember = ({name, photo, description, linkedInLink, portoFilioLink, inv
                 backgroundImage:`url(${require(`../../../assets/img/crew/${photo}`)})`,
                 backgroundRepeat:"no-repeat",
                 backgroundSize:"cover",
+                backgroundPosition:"center",
                 zIndex:theme.zIndex.fab,
                 transition:"opacity .9s 0s cubic-bezier(0.5, 0, 0, 1), transform .9s 0s cubic-bezier(0.5, 0, 0, 1)",
                 opacity:0,
