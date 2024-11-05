@@ -32,10 +32,20 @@ const Contact = () => {
   
 
   const [open, setOpen] = React.useState(false);
+  const [openError, setOpenError] = React.useState(false);
 
    const handleClose = () =>{
     setOpen(false);
    }
+
+   const handleCloseError = () =>{
+    setOpenError(false);
+   }
+
+   const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
 
   const handleSubmit =  async (e) => {
@@ -43,31 +53,37 @@ const Contact = () => {
     setOpen(true);
     if (nom !='' && email !='' && message != '' ) {
       setResponse(true)
-      try {
-        const messages ='Username :'+nom+' \n Email :'+email+' \n Message:' +message; 
-       const response = await fetch('https://formspree.io/f/xpwaqdjg', {
-         method: 'POST',
-          headers: {
-           Accept: 'application/json',
-           'Content-Type': 'application/json',
-         },
-         body: JSON.stringify({messages}),
-       });
-  
-       if (response.ok) {
-         // Le commentaire a été envoyé avec succès
-         setNom('');
-         setEmail('');
-         setMessage('');
-         setSucces(true)
+
+       if (validateEmail(email)) {
+            try {
+              const messages ='Username :'+nom+' \n Email :'+email+' \n Message:' +message; 
+            const response = await fetch('https://formspree.io/f/xpwaqdjg', {
+              method: 'POST',
+                headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({messages}),
+            });
+        
+            if (response.ok) {
+              // Le commentaire a été envoyé avec succès
+              setNom('');
+              setEmail('');
+              setMessage('');
+              setSucces(true)
+            } else {
+              // Une erreur s'est produite lors de l'envoi du commentaire
+              console.log('Erreur lors de l\'envoi du commentaire');
+              alert('Une erreur est survenu !! veiller ressayer')
+            }
+          } catch (error) {
+            console.log(error);
+          }
        } else {
-         // Une erreur s'est produite lors de l'envoi du commentaire
-         console.log('Erreur lors de l\'envoi du commentaire');
-         alert('Une erreur est survenu !! veiller ressayer')
+        setOpen(false)
+        setOpenError(true)
        }
-     } catch (error) {
-       console.log(error);
-     }
 
     } else {
       setResponse(false)
@@ -195,9 +211,9 @@ const Contact = () => {
           response===true?
             succes===true?
             <DialogContent>
-                <DialogTitle>{"Message envoyer avec succès"}</DialogTitle>
+                <DialogTitle>{"Message envoyé avec succès"}</DialogTitle>
               <DialogContentText id="alert-dialog-slide-description">
-                 <img src={send} width={250} height={200}/>
+                 <img src={send} width={255} height={200}/>
               </DialogContentText>
             </DialogContent>
             :
@@ -216,12 +232,29 @@ const Contact = () => {
             </DialogContentText>
           </DialogContent>
         }
-        
-
-
         <DialogActions>
           <Button onClick={handleClose}>OK</Button>
         </DialogActions>
+      </Dialog>
+
+
+      
+      <Dialog
+          open={openError}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={handleCloseError}
+          aria-describedby="alert-dialog-slide-description"
+      >
+          <DialogContent>  
+            <DialogTitle>{" Veillez renseigner correctement tous les champs"}</DialogTitle>
+            <DialogContentText id="alert-dialog-slide-description">  
+                Votre adresse email n'est pas valide !
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleCloseError}>OK</Button>
+          </DialogActions>
       </Dialog>
     </React.Fragment>
       </Box>
