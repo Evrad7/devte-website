@@ -32,7 +32,7 @@ const HomeCrew =()=>{
             photo:"dev3.png"
         },
         {
-            name:"TSOATA EVRAD",
+            name:"TSOATA Evrad",
             role:"Devops fullstack",
             photo:"dev1.png"
         },
