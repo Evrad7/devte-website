@@ -22,12 +22,12 @@ const HomeCrew =()=>{
 
     const itemData=[
         {
-            name:"TIOJIO ROMAIN JUNIOR",
+            name:"TIOJIO Romain",
             role:"Developpeur fullstack",
             photo:"dev2.png"
         },
         {
-            name:"FEUDJIO",
+            name:"FEUDJIO Rochinel",
             role:"Developpeur frontend",
             photo:"dev3.png"
         },

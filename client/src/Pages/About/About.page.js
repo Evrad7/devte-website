@@ -107,7 +107,7 @@ const AboutPage = () => {
 
                             
                           <CrewMember 
-                            name="TSOATA Evrad"
+                            name="FEUJIO Rochinel"
                             photo="dev3.png"
                             description="Passionné par l'innovation numérique, je possède une solide expertise en génie logiciel. Mes compétences en développement me permettent de concevoir et de déployer des applications performantes. "
                             linkedInLink="linkedin.com/in/rochinel-feujio-540b602a5"
