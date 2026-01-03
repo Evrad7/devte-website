@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import FacebookIcon from "@mui/icons-material/Facebook"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import WhatsAppIcon from "@mui/icons-material/WhatsApp"
-import GithubIcon from "@mui/icons-material/Github"
+import GithubIcon from "@mui/icons-material/GitHub"
 import Globe from '../../../assets/img/globe.svg'
 import FooterItem from './FooterItem.layout';
 import Logo from '../Logo/Logo.layout';
